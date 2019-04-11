@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{
+	font-family: 'Roboto', sans-serif;
+}
+
+.contain1{
+	background-image: url('../img/kota-malang.jpg');
+	height: 91.1vh;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.contain2{
+	height: 91.3vh;
+	background-color: #d9d9d9;
+}
