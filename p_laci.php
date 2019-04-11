@@ -1,7 +1,6 @@
 <?php  
   session_start();
   include_once 'connection.php';
-  $_SESSION['user'] = $user;
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +30,9 @@
             <a class="nav-link" href="#">About</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link">Hello, <?=$_SESSION['user']?></a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="logout.php">Log Out</a>
           </li>
         </ul>
@@ -39,13 +41,37 @@
 
     <!-- Container -->
 
-    <div class="container-fluid">
+    <div class="container-fluid bckgrnd">
           <div class="row">
-            <div class="col-sm-12">Pilih Surat</div>
+            <div class="col-sm-12">
+              <div class="judul m-3">Pilih Surat</div>
+            </div>
           </div>
-          <div class="row">
-            <div class="col-sm-6"></div>
-            <div class="col-sm-6"></div>
+          <div class="row mt-3 ml-3">
+            <div class="col-sm-3 text-center">
+              <div class="card bg-card">
+                <div class="card-header">
+                  Surat Pengantar
+                </div>
+                <img class="card-img-top mt-3" src="assets/img/newsletter.svg" height="100" width="100" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div> 
+            <div class="col-sm-3 text-center">
+              <div class="card bg-card">
+                <div class="card-header">
+                  Surat Pengantar
+                </div>
+                <img class="card-img-top mt-3" src="assets/img/message.svg" height="100" width="100" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>    
 

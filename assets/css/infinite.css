@@ -4,6 +4,8 @@ body{
 	font-family: 'Roboto', sans-serif;
 }
 
+/* index.php */
+
 .contain1{
 	background-image: url('../img/kota-malang.jpg');
 	height: 91.1vh;
@@ -12,6 +14,22 @@ body{
 }
 
 .contain2{
-	height: 91.3vh;
+	height: 91.1vh;
 	background-color: #d9d9d9;
+}
+
+/* p_laci.php */
+
+.bckgrnd{
+	background-color: #3B3B3B;
+	height: 91vh;
+}
+
+.bg-card{
+	background-color: #ffffcc;
+}
+
+.judul{
+	font-size: 40px;
+	color: #FFF;
 }
