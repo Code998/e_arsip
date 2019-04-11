@@ -55,25 +55,105 @@
                 </div>
                 <img class="card-img-top mt-3" src="assets/img/newsletter.svg" height="100" width="100" alt="Card image cap">
                 <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <p class="card-text">Surat yang dibuat dan dialamatkan  kepada seseorang atau pejabat yang berguna untuk mengantarkan surat, dokumen, barang, dan lain sebagainya.</p>
+                  <a href="#" data-toggle="modal" data-target="#spen" class="btn btn-primary">Pilih!</a>
                 </div>
               </div>
             </div> 
             <div class="col-sm-3 text-center">
               <div class="card bg-card">
                 <div class="card-header">
-                  Surat Pengantar
+                  Surat Keterangan
                 </div>
                 <img class="card-img-top mt-3" src="assets/img/message.svg" height="100" width="100" alt="Card image cap">
                 <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <p class="card-text">Surat yang isinya menerangkan seseorang atau suatu hal. Surat ini termasuk jenis surat yang banyak di buat karena isi surat ini umumnya menyangkut aktivitas manusia.</p>
+                  <a href="#" data-toggle="modal" data-target="#sket" class="btn btn-primary">Pilih!</a>
                 </div>
               </div>
             </div>
           </div>
-        </div>    
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="spen" tabindex="-1" role="dialog" aria-labelledby="Title1" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Surat Pengantar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form class="mx-3">
+                  <div class="form-group row">
+                    <label for="NIK" class="col-sm-2 col-form-label">NIK</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="NIK" nama="nik">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="namaKet" class="col-sm-2 col-form-label">Nama</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="namaKet" nama="namaket">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="jenis" class="col-sm-2 col-form-label">Jenis</label>
+                    <div class="col-sm-10">
+                      <select class="form-control" id="jenis" name="jenisP">
+                        <option>KK</option>
+                        <option>KTP</option>
+                      </select>
+                    </div>
+                  </div>
+                  <input type="submit" value="Buat" class="btn btn-primary float-right">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="sket" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Surat Keterangan</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form class="mx-3">
+                  <div class="form-group row">
+                    <label for="NIKp" class="col-sm-2 col-form-label">NIK</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="NIKp" name="nikp">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="NAMA" class="col-sm-2 col-form-label">text</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="NAMA" name="namap">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="Guide" class="col-sm-2 col-form-label">Guide</label>
+                    <div class="col-sm-10">
+                      <select class="form-control" id="Guide" name="guide">
+                        <option>SKCK</option>
+                        <option>Domisili</option>
+                      </select>
+                    </div>
+                  </div>
+                  <input type="submit" value="Buat" class="btn btn-primary float-right">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
 
     <!-- JavaScript -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
