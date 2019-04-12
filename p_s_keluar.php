@@ -87,6 +87,7 @@
               </div>
               <div class="modal-body">
                 <form class="mx-3">
+                  <input type="hidden" name="jenis_sp" value="Surat Keluar">
                   <div class="form-group row">
                     <label for="NIK" class="col-sm-2 col-form-label">NIK</label>
                     <div class="col-sm-10">
@@ -127,6 +128,7 @@
               <div class="modal-body">
                 <form class="mx-3">
                   <div class="form-group row">
+                  <input type="hidden" name="jenis_sk" value="Surat Keluar">
                     <label for="NIKp" class="col-sm-2 col-form-label">NIK</label>
                     <div class="col-sm-10">
                       <input type="text" class="form-control" id="NIKp" name="nikp">

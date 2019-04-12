@@ -1,6 +1,9 @@
 <?php  
   session_start();
   include_once 'connection.php';
+
+  $sql = "SELECT * FROM arsip_surat";
+  $result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +30,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="p_s_keluar.php">Surat Keluar</a>
           </li>
           <li class="nav-item">
             <a class="nav-link">Hello, <?=$_SESSION['user']?></a>
@@ -48,36 +51,50 @@
         <div class="col-sm-12 px-5">
           <div class="card">
             <div class="card-body">
-              <table class="table">
-                <thead class="thead-light">
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="table-responsive-lg">
+                <table class="table">
+                  <thead class="thead-light">
+                    <tr>
+                      <th scope="col">No. Surat</th>
+                      <th scope="col">Jenis</th>
+                      <th scope="col">Dari / Kepada</th>
+                      <th scope="col">Tanggal Surat</th>
+                      <th scope="col">Perihal</th>
+                      <th scope="col">Laci</th>
+                      <th scope="col">Guide</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php 
+                      while ($row = $result->fetch_assoc()) {
+                    ?>
+                        <tr>
+                          <td>
+                            <?= $row['no_surat'] ?>
+                          </td>
+                          <td>
+                            <?= $row['jenis'] ?>
+                          </td>
+                          <td>
+                            <?= $row['dari_kpd'] ?>
+                          </td>
+                          <td>
+                            <?= $row['tanggal_surat'] ?>
+                          </td>
+                          <td>
+                            <?= $row['perihal'] ?>
+                          </td>
+                          <td>
+                            <?= $row['laci'] ?>
+                          </td>
+                          <td>
+                            <?= $row['guide'] ?>
+                          </td>
+                        </tr>
+                      <?php } ?>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>

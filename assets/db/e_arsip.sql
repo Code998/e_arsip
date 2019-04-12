@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 11, 2019 at 01:00 PM
+-- Generation Time: Apr 12, 2019 at 09:50 AM
 -- Server version: 5.6.26
 -- PHP Version: 5.5.28
 
@@ -23,58 +23,45 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Table structure for table `arsip_surat`
 --
 
-CREATE TABLE IF NOT EXISTS `admin` (
-  `id` int(11) NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `arsip_surat` (
+  `jenis` varchar(25) NOT NULL,
+  `no_surat` bigint(16) NOT NULL,
+  `dari_kpd` varchar(50) NOT NULL,
+  `tanggal_surat` date NOT NULL,
+  `perihal` varchar(30) NOT NULL,
+  `laci` varchar(20) NOT NULL,
+  `guide` varchar(30) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=1000000000000001 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `admin`
+-- Dumping data for table `arsip_surat`
 --
 
-INSERT INTO `admin` (`id`, `username`, `password`) VALUES
-(1, 'admin', 'admin');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `penduduk`
---
-
-CREATE TABLE IF NOT EXISTS `penduduk` (
-  `nik` varchar(16) NOT NULL,
-  `no_kk` varchar(16) NOT NULL,
-  `nama` varchar(50) NOT NULL,
-  `tempat_lahir` varchar(20) NOT NULL,
-  `tanggal_lahir` date NOT NULL,
-  `usia` int(3) NOT NULL,
-  `alamat` text NOT NULL,
-  `agama` varchar(10) NOT NULL,
-  `pekerjaan` varchar(20) NOT NULL,
-  `kewarnegaraan` varchar(20) NOT NULL,
-  `tanggal_buat` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `arsip_surat` (`jenis`, `no_surat`, `dari_kpd`, `tanggal_surat`, `perihal`, `laci`, `guide`) VALUES
+('Surat Keluar', 1000000000000000, 'James Albus', '2019-04-12', 'Surat Keterangan Domisili', 'Surat Keterangan', 'Domisili');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
+-- Indexes for table `arsip_surat`
 --
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `arsip_surat`
+  ADD PRIMARY KEY (`no_surat`);
 
 --
--- Indexes for table `penduduk`
+-- AUTO_INCREMENT for dumped tables
 --
-ALTER TABLE `penduduk`
-  ADD PRIMARY KEY (`nik`);
 
+--
+-- AUTO_INCREMENT for table `arsip_surat`
+--
+ALTER TABLE `arsip_surat`
+  MODIFY `no_surat` bigint(16) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1000000000000001;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
