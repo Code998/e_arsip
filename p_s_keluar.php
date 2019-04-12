@@ -27,7 +27,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="p_data_surat.php">Data Surat Keluar</a>
           </li>
           <li class="nav-item">
             <a class="nav-link">Hello, <?=$_SESSION['user']?></a>
@@ -44,7 +44,7 @@
     <div class="container-fluid bckgrnd">
           <div class="row">
             <div class="col-sm-12">
-              <div class="judul m-3">Pilih Surat</div>
+              <div class="judul m-3">Pilih Surat Keluar</div>
             </div>
           </div>
           <div class="row mt-3 ml-3">
@@ -53,7 +53,7 @@
                 <div class="card-header">
                   Surat Pengantar
                 </div>
-                <img class="card-img-top mt-3" src="assets/img/newsletter.svg" height="100" width="100" alt="Card image cap">
+                <img class="card-img-top mt-3" src="assets/img/message.svg" height="100" width="100" alt="Card image cap">
                 <div class="card-body">
                   <p class="card-text">Surat yang dibuat dan dialamatkan  kepada seseorang atau pejabat yang berguna untuk mengantarkan surat, dokumen, barang, dan lain sebagainya.</p>
                   <a href="#" data-toggle="modal" data-target="#spen" class="btn btn-primary">Pilih!</a>
@@ -65,7 +65,7 @@
                 <div class="card-header">
                   Surat Keterangan
                 </div>
-                <img class="card-img-top mt-3" src="assets/img/message.svg" height="100" width="100" alt="Card image cap">
+                <img class="card-img-top mt-3" src="assets/img/newsletter.svg" height="100" width="100" alt="Card image cap">
                 <div class="card-body">
                   <p class="card-text">Surat yang isinya menerangkan seseorang atau suatu hal. Surat ini termasuk jenis surat yang banyak di buat karena isi surat ini umumnya menyangkut aktivitas manusia.</p>
                   <a href="#" data-toggle="modal" data-target="#sket" class="btn btn-primary">Pilih!</a>
@@ -133,7 +133,7 @@
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="NAMA" class="col-sm-2 col-form-label">text</label>
+                    <label for="NAMA" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
                       <input type="text" class="form-control" id="NAMA" name="namap">
                     </div>

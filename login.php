@@ -9,7 +9,7 @@
 
 	if ($conn->query($sql)->num_rows == 1) {
 		$_SESSION['user'] = $user;
-		header("Location:p_laci.php");
+		header("Location:p_s_keluar.php");
 	}
 	else{
 		echo "Username atau Pass salah!!!!";
