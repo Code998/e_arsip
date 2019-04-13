@@ -86,18 +86,19 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form class="mx-3">
+                <form class="mx-3" method="POST" action="a_suratp.php">
                   <input type="hidden" name="jenis_sp" value="Surat Keluar">
+                  <input type="hidden" name="lacip" value="Surat Pengantar">
                   <div class="form-group row">
                     <label for="NIK" class="col-sm-2 col-form-label">NIK</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="NIK" nama="nik">
+                      <input type="text" class="form-control" id="NIK" name="nik">
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="namaKet" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="namaKet" nama="namaket">
+                      <input type="text" class="form-control" id="namaKet" name="namaket">
                     </div>
                   </div>
                   <div class="form-group row">
@@ -126,9 +127,10 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form class="mx-3">
+                <form class="mx-3" method="POST" action="a_suratk.php">
                   <div class="form-group row">
                   <input type="hidden" name="jenis_sk" value="Surat Keluar">
+                  <input type="hidden" name="laci" value="Surat Keterangan">
                     <label for="NIKp" class="col-sm-2 col-form-label">NIK</label>
                     <div class="col-sm-10">
                       <input type="text" class="form-control" id="NIKp" name="nikp">
