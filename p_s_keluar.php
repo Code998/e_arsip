@@ -27,7 +27,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="p_data_surat.php">Data Surat Keluar</a>
+            <a class="nav-link" href="pilih_surat.php">Pilih Surat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="p_data_surat.php">Data Surat</a>
           </li>
           <li class="nav-item">
             <a class="nav-link">Hello, <?=$_SESSION['user']?></a>
@@ -48,7 +51,7 @@
             </div>
           </div>
           <div class="row mt-3 ml-3">
-            <div class="col-sm-3 text-center">
+            <div class="col-md-3 text-center">
               <div class="card bg-card">
                 <div class="card-header">
                   Surat Pengantar

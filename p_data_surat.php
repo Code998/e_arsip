@@ -30,7 +30,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="p_s_keluar.php">Surat Keluar</a>
+            <a class="nav-link" href="pilih_surat.php">Pilih Surat</a>
           </li>
           <li class="nav-item">
             <a class="nav-link">Hello, <?=$_SESSION['user']?></a>

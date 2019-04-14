@@ -1,7 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@font-face{
+	font-family: "Product Sans";
+	src: url('font/Product-Sans-Regular.ttf');
+}
 
 body{
-	font-family: 'Roboto', sans-serif;
+	width: 100%;
+	height: 100%;
+	font-family: 'Product Sans';
+	background-attachment: fixed;
 }
 
 /* index.php */
@@ -16,6 +22,8 @@ body{
 .contain2{
 	height: 91.1vh;
 	background-color: #d9d9d9;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 /* p_laci.php */

@@ -19,28 +19,25 @@
       <img src="assets/img/office-material.svg" width="40" height="30" alt="">
       E-Arsip
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
   </nav>
   
   <!-- Container -->
   <div class="container-fluid">
       <div class="row">
-        <div class="col-md-8 contain1">
+        <div class="col-lg-8 col-md-12 col-sm-12 contain1">
           <div class="container h-100">
             <div class="row align-items-center h-100">
                 <div class="col-md-10 mx-auto">
-                  <h1 class="text-light">E-Arsip</h1>
+                  <h1 class="text-light" style="font-size: 80px;">E-Arsip</h1>
                  </div>
               </div>
           </div>
         </div>
-        <div class="col-md-4 contain2">
+        <div class="col-lg-4 col-md-12 col-sm-12 contain2">
           <div class="container h-100">
             <div class="row align-items-center h-100">
               <div class="col-md-12 mx-auto">
-                <div class="jumbotron p-5 shadow">
+                <div class="jumbotron p-md-5 shadow">
                   <form action="login.php" method="POST">
                     <div class="form-group">
                       <label for="user">Username</label>
