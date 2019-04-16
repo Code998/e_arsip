@@ -68,7 +68,7 @@
             <img class="card-img-top mt-3" src="assets/img/newsletter.svg" height="100" width="100" alt="Card image cap">
             <div class="card-body">
               <p class="card-text">Semua surat yang dikeluarkan oleh suatu perusahaan atau organisasi untuk diberikan kepada pihak perorangan maupun perusahaan/ organisasi.</p>
-              <a href="p_s_keluar.php" data-toggle="modal" data-target="#sm" class="btn btn-primary">Pilih!</a>
+              <a href="p_s_keluar.php" class="btn btn-primary">Pilih!</a>
             </div>
           </div>
         </div>
@@ -86,10 +86,10 @@
             </button>
           </div>
           <div class="modal-body">
-            <form class="mx-3" method="POST" action="a_sum.php">
+            <form class="mx-3" method="POST" action="a_sum.php" enctype="multipart/form-data">
               <input type="hidden" name="jenis_sp" value="Surat Masuk">
               <div class="form-group row">
-                <label for="Asal" class="col-sm-2 col-form-label">Asal</label>
+                <label for="Asal" class="col-sm-2 col-form-label">Nama</label>
                 <div class="col-sm-10">
                   <input type="text" class="form-control" id="Asal" name="asal">
                 </div>
@@ -98,8 +98,8 @@
                 <label for="Laci" class="col-sm-2 col-form-label">Laci</label>
                 <div class="col-sm-10">
                   <select class="form-control" id="Laci" name="laci">
-                    <option value="dinas">Dinas</option>
-                    <option value="umum">Umum</option>
+                    <option value="Surat Dinas">Dinas</option>
+                    <option value="Surat Umum">Umum</option>
                   </select>
                 </div>
               </div>
@@ -108,6 +108,24 @@
                 <div class="col-sm-10">
                   <select class="form-control" id="Guide" name="guide">
                   </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="Indeks" class="col-sm-2 col-form-label">Indeks</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="Indeks" name="indeks">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="isir" class="col-sm-2 col-form-label">Isi Ringkasan</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="isir" name="isri">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="File" class="col-sm-2 col-form-label">File</label>
+                <div class="col-sm-10">
+                  <input type="file" name="file">
                 </div>
               </div>
               <input type="submit" value="Buat" class="btn btn-primary float-right">
@@ -124,10 +142,10 @@
         $(document).ready(function () {
           $("#Laci").change(function () {
               var val = $(this).val();
-              if (val == "dinas") {
+              if (val == "Surat Dinas") {
                   $("#Guide").html("<option>Undangan Dinas</option><option>Tugas Dinas</option>");
               } 
-              else if (val == "umum") {
+              else if (val == "Surat Umum") {
                   $("#Guide").html("<option>Pengantar</option>");
               }
           });
