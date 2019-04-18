@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 13, 2019 at 09:37 AM
+-- Generation Time: Apr 18, 2019 at 01:53 PM
 -- Server version: 5.6.26
 -- PHP Version: 5.5.28
 
@@ -48,22 +48,27 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 CREATE TABLE IF NOT EXISTS `arsip_surat` (
   `jenis` varchar(25) NOT NULL,
   `no_surat` bigint(16) NOT NULL,
-  `nik` bigint(16) NOT NULL,
+  `nik` varchar(16) DEFAULT NULL,
   `dari_kpd` varchar(50) NOT NULL,
-  `tanggal_surat` date NOT NULL,
+  `indeks` varchar(30) DEFAULT NULL,
+  `tanggal_surat` date DEFAULT NULL,
+  `tanggal_input` datetime NOT NULL,
+  `alamat` text,
   `perihal` varchar(30) NOT NULL,
+  `isi_ringkas` text,
   `laci` varchar(20) NOT NULL,
-  `guide` varchar(30) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=1000000000000003 DEFAULT CHARSET=latin1;
+  `guide` varchar(30) NOT NULL,
+  `file` varchar(255) DEFAULT NULL,
+  `admin` varchar(20) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `arsip_surat`
 --
 
-INSERT INTO `arsip_surat` (`jenis`, `no_surat`, `nik`, `dari_kpd`, `tanggal_surat`, `perihal`, `laci`, `guide`) VALUES
-('Surat Keluar', 1000000000000000, 1234567891011121, 'James Albus', '2019-04-12', 'Surat Keterangan Domisili', 'Surat Keterangan', 'Domisili'),
-('Surat Keluar', 1000000000000001, 1234567891011121, 'James Albus', '2019-04-13', 'Surat Keterangan SKCK', 'Surat Keterangan', 'SKCK'),
-('Surat Keluar', 1000000000000002, 1234567891011121, 'James Albus', '2019-04-13', 'Surat Pengantar KK', 'Surat Pengantar', 'KK');
+INSERT INTO `arsip_surat` (`jenis`, `no_surat`, `nik`, `dari_kpd`, `indeks`, `tanggal_surat`, `tanggal_input`, `alamat`, `perihal`, `isi_ringkas`, `laci`, `guide`, `file`, `admin`) VALUES
+('Surat Keluar', 1, '1234567891011121', 'James Albus', NULL, NULL, '2019-04-18 18:20:37', NULL, 'Surat Keterangan Domisili', NULL, 'Surat Keterangan', 'Domisili', NULL, 'admin'),
+('Surat Keluar', 2, '1234567891011121', 'James Albus', NULL, NULL, '2019-04-18 19:17:13', NULL, 'Surat Pengantar KK', NULL, 'Surat Pengantar', 'KK', NULL, 'admin');
 
 -- --------------------------------------------------------
 
@@ -78,6 +83,8 @@ CREATE TABLE IF NOT EXISTS `penduduk` (
   `tempat_lahir` varchar(20) NOT NULL,
   `tanggal_lahir` date NOT NULL,
   `usia` int(3) NOT NULL,
+  `jenis_kelamin` varchar(1) NOT NULL,
+  `status` varchar(30) NOT NULL,
   `alamat` text NOT NULL,
   `agama` varchar(10) NOT NULL,
   `pekerjaan` varchar(20) NOT NULL,
@@ -89,8 +96,8 @@ CREATE TABLE IF NOT EXISTS `penduduk` (
 -- Dumping data for table `penduduk`
 --
 
-INSERT INTO `penduduk` (`nik`, `no_kk`, `nama`, `tempat_lahir`, `tanggal_lahir`, `usia`, `alamat`, `agama`, `pekerjaan`, `kewarnegaraan`, `tanggal_buat`) VALUES
-('1234567891011121', '1000000000000000', 'James Albus', 'Malang', '1911-04-13', 100, 'Jalan Ikan Piranha Kanan Nomor 12', 'Atheist', 'Penyihir', 'Indonesia', '2019-04-13');
+INSERT INTO `penduduk` (`nik`, `no_kk`, `nama`, `tempat_lahir`, `tanggal_lahir`, `usia`, `jenis_kelamin`, `status`, `alamat`, `agama`, `pekerjaan`, `kewarnegaraan`, `tanggal_buat`) VALUES
+('1234567891011121', '1000000000000000', 'James Albus', 'Malang', '1911-04-13', 100, 'L', 'Single', 'Jalan Ikan Piranha Kanan Nomor 12', 'Atheist', 'Penyihir', 'Indonesia', '2019-04-13');
 
 --
 -- Indexes for dumped tables
@@ -122,7 +129,7 @@ ALTER TABLE `penduduk`
 -- AUTO_INCREMENT for table `arsip_surat`
 --
 ALTER TABLE `arsip_surat`
-  MODIFY `no_surat` bigint(16) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1000000000000003;
+  MODIFY `no_surat` bigint(16) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

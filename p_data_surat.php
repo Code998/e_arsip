@@ -79,7 +79,7 @@
                             <?= $row['dari_kpd'] ?>
                           </td>
                           <td>
-                            <?= $row['tanggal_surat'] ?>
+                            <?= date('d/m/Y', strtotime($row['tanggal_input']))?>
                           </td>
                           <td>
                             <?= $row['perihal'] ?>

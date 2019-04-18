@@ -95,6 +95,42 @@
                 </div>
               </div>
               <div class="form-group row">
+                <label for="nos" class="col-sm-2 col-form-label">No.Surat</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="nos" name="nosu">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="tanggal" class="col-sm-2 col-form-label">Tanggal</label>
+                <div class="col-sm-10">
+                  <input type="date" class="form-control" id="tanggal" name="t_sur">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="Alamat" class="col-sm-2 col-form-label">Alamat</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="Alamat" name="alamat">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="Indeks" class="col-sm-2 col-form-label">Indeks</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="Indeks" name="indeks">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="peri" class="col-sm-2 col-form-label">Perihal</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="peri" name="perihal">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="isir" class="col-sm-2 col-form-label">Isi Ringkasan</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="isir" name="isri">
+                </div>
+              </div>
+              <div class="form-group row">
                 <label for="Laci" class="col-sm-2 col-form-label">Laci</label>
                 <div class="col-sm-10">
                   <select class="form-control" id="Laci" name="laci">
@@ -111,24 +147,12 @@
                 </div>
               </div>
               <div class="form-group row">
-                <label for="Indeks" class="col-sm-2 col-form-label">Indeks</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="Indeks" name="indeks">
-                </div>
-              </div>
-              <div class="form-group row">
-                <label for="isir" class="col-sm-2 col-form-label">Isi Ringkasan</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="isir" name="isri">
-                </div>
-              </div>
-              <div class="form-group row">
                 <label for="File" class="col-sm-2 col-form-label">File</label>
                 <div class="col-sm-10">
                   <input type="file" name="file">
                 </div>
               </div>
-              <input type="submit" value="Buat" class="btn btn-primary float-right">
+              <input type="submit" value="Simpan" class="btn btn-primary float-right">
             </form>
           </div>
         </div>

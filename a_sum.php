@@ -4,6 +4,7 @@
 
 	$target = "assets/photo/".basename($_FILES['file']['name']);
 
+	$nosu = $_POST['nosu'];
 	$jenis = $_POST['jenis_sp'];
 	$dake = $_POST['asal'];
 	$laci = $_POST['laci'];

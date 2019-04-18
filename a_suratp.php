@@ -12,7 +12,7 @@
 
 	$sql0 = "SELECT * FROM arsip_surat WHERE nik = '" . $nik . "' AND dari_kpd = '" . $dake . "' AND perihal = '" . $laci . " " . $guide . "'";
 
-	$sql1 = "INSERT INTO arsip_surat VALUES ('" . $jenis . "', '', '" . $nik . "','" . $dake . "', NOW(), '" . $laci . " " . $guide . "', '" . $laci . "', '" . $guide . "')";
+	$sql1 = "INSERT INTO arsip_surat(jenis, no_surat, nik, dari_kpd, tanggal_input, perihal, laci, guide, admin) VALUES ('" . $jenis . "', '', '" . $nik . "','" . $dake . "', NOW(), '" . $laci . " " . $guide . "', '" . $laci . "', '" . $guide . "', '" . $_SESSION['user'] . "')";
 
 	if ($conn->query($sql)->num_rows == 1) {
 		if ($conn->query($sql0)->num_rows == 0) {
