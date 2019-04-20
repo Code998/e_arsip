@@ -2,7 +2,27 @@
   session_start();
   include_once 'connection.php';
 
-  $sql = "SELECT * FROM arsip_surat";
+  $jenis = $_POST['jenis'];
+
+  if ($jenis == "Surat Masuk") {
+    $sql = "SELECT * FROM arsip_surat WHERE jenis = '" . $jenis . "'";
+  }
+  elseif ($jenis == "Surat Keluar") {
+    $sql = "SELECT * FROM arsip_surat WHERE jenis = '" . $jenis . "'";
+  }
+  else{
+    $sql = "SELECT * FROM arsip_surat";
+  }
+
+  $search = $_POST['search'];
+
+  if ($search == "") {
+    $sql = "SELECT * FROM arsip_surat";
+  }
+  else{
+    $sql = "SELECT * FROM arsip_surat WHERE jenis LIKE '%" . $search . "%' OR no_surat LIKE '%" . $search . "%' OR dari_kpd LIKE '%" . $search . "%' OR tanggal_surat LIKE '%" . $search . "%' OR tanggal_input LIKE '%" . $search . "%' OR perihal LIKE '%" . $search . "%' OR laci LIKE '%" . $search . "%' OR guide LIKE '%" . $search . "%'";
+  }
+
   $result = $conn->query($sql);
 ?>
 
@@ -12,6 +32,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Homepage</title>
+  <link rel="icon" href="assets/img/office-material.svg">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/infinite.css">
 </head>
@@ -51,6 +72,24 @@
         <div class="col-sm-12 px-5">
           <div class="card">
             <div class="card-body">
+              <div class="float-right mb-3">
+                <form action="p_data_surat.php" method="POST" class="form-inline">
+                <select name="jenis" class="form-group mx-sm-3 mb-2">
+                  <option>Semua</option>
+                  <option>Surat Masuk</option>
+                  <option>Surat Keluar</option>
+                </select>
+                <input type="submit" class="btn btn-outline-primary mb-2" value="Sort">
+                </form>
+              </div>
+              <div class="float-left mb-3">
+                <form class="form-inline" method="POST" action="p_data_surat.php">
+                  <div class="form-group mx-sm-3 mb-2">
+                    <input type="text" class="form-control" name="search" placeholder="Search....">
+                  </div>
+                  <button type="submit" class="btn btn-primary mb-2">Search</button>
+                </form>
+              </div>
               <div class="table-responsive-lg">
                 <table class="table">
                   <thead class="thead-light">
