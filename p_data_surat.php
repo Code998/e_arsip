@@ -31,7 +31,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Homepage</title>
+  <title>Data Surat</title>
   <link rel="icon" href="assets/img/office-material.svg">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/infinite.css">
@@ -84,7 +84,7 @@
               </div>
               <div class="float-left mb-3">
                 <form class="form-inline" method="POST" action="p_data_surat.php">
-                  <div class="form-group mx-sm-3 mb-2">
+                  <div class="form-group mr-sm-3 mb-2">
                     <input type="text" class="form-control" name="search" placeholder="Search....">
                   </div>
                   <button type="submit" class="btn btn-primary mb-2">Search</button>
@@ -101,6 +101,7 @@
                       <th scope="col">Perihal</th>
                       <th scope="col">Laci</th>
                       <th scope="col">Guide</th>
+                      <th scope="col" colspan="3">Keterangan</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -128,6 +129,17 @@
                           </td>
                           <td>
                             <?= $row['guide'] ?>
+                          </td>
+                          <td>
+                            <a href="#">
+                                <img src="assets/img/writing.svg" height="25" width="25">
+                            </a>&nbsp;
+                            <a href="delete.php?id=<?=$row['no_surat']?>">
+                              <img src="assets/img/clear-button.svg" height="25" width="25">
+                            </a>&nbsp;
+                            <a href="detail.php?id=<?=$row['no_surat']?>">
+                              <img src="assets/img/info.svg" height="25" width="25">
+                            </a>
                           </td>
                         </tr>
                       <?php } ?>
