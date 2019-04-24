@@ -16,7 +16,7 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">
         <img src="assets/img/office-material.svg" width="40" height="30" alt="">
         E-Arsip
@@ -30,14 +30,25 @@
           <li class="nav-item">
             <a class="nav-link" href="pilih_surat.php">Pilih Surat</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="p_data_surat.php">Data Surat</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Data
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="p_data_surat.php">Data Surat</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Data Pegawai</a>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link">Hello, <?=$_SESSION['user']?></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="logout.php">Log Out</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Hello, <?=$_SESSION['user']?>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">About</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="logout.php">Log Out</a>
+            </div>
           </li>
         </ul>
       </div>

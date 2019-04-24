@@ -3,7 +3,7 @@
   include_once 'connection.php';
 
   $id = $_GET['id'];
-  $sql = $sql = "SELECT * FROM arsip_surat WHERE no_surat = " . $id;
+  $sql =  "SELECT * FROM arsip_surat WHERE no_surat = " . $id;
   $result = $conn->query($sql);
 	$data = $result->fetch_assoc();
 ?>
@@ -21,25 +21,30 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">
-        <img src="assets/img/office-material.svg" width="40" height="30" alt="">
-        E-Arsip
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a class="nav-link" href="pilih_surat.php">Pilih Surat</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link">Hello, <?=$_SESSION['user']?></a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Data
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="p_data_surat.php">Data Surat</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Data Pegawai</a>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="logout.php">Log Out</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Hello, <?=$_SESSION['user']?>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">About</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="logout.php">Log Out</a>
+            </div>
           </li>
         </ul>
       </div>

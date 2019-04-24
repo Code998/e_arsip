@@ -53,11 +53,25 @@
           <li class="nav-item">
             <a class="nav-link" href="pilih_surat.php">Pilih Surat</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link">Hello, <?=$_SESSION['user']?></a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Data
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="p_data_surat.php">Data Surat</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Data Pegawai</a>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="logout.php">Log Out</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Hello, <?=$_SESSION['user']?>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">About</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="logout.php">Log Out</a>
+            </div>
           </li>
         </ul>
       </div>
