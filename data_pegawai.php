@@ -2,28 +2,14 @@
   session_start();
   include_once 'connection.php';
 
-  $jenis = $_POST['jenis'];
-
-  if ($jenis == "Surat Masuk") {
-    $sql = "SELECT * FROM arsip_surat WHERE jenis = '" . $jenis . "'";
-  }
-  elseif ($jenis == "Surat Keluar") {
-    $sql = "SELECT * FROM arsip_surat WHERE jenis = '" . $jenis . "'";
-  }
-  else{
-    $sql = "SELECT * FROM arsip_surat";
-  }
-
   $search = $_POST['search'];
 
   if ($search == "") {
-    $sql = "SELECT * FROM arsip_surat";
+    $sql = "SELECT * FROM pegawai";
   }
   else{
-    $sql = "SELECT * FROM arsip_surat WHERE jenis LIKE '%" . $search . "%' OR no_surat LIKE '%" . $search . "%' OR dari_kpd LIKE '%" . $search . "%' OR tanggal_surat LIKE '%" . $search . "%' OR tanggal_input LIKE '%" . $search . "%' OR perihal LIKE '%" . $search . "%' OR laci LIKE '%" . $search . "%' OR guide LIKE '%" . $search . "%'";
+    $sql = "SELECT * FROM pegawai WHERE nip LIKE '%" . $search . "%' OR nama LIKE '%" . $search . "%' OR alamat LIKE '%" . $search . "%' OR jabatan LIKE '%" . $search . "%'";
   }
-
-  $result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -81,21 +67,11 @@
     <div class="container-fluid bckgrnd">
        <div class="row">
         <div class="col-sm-12">
-          <div class="judul m-3">Data Surat</div>
+          <div class="judul m-3">Data Pegawai</div>
         </div>
         <div class="col-sm-12 px-5">
           <div class="card">
             <div class="card-body">
-              <div class="float-right mb-3">
-                <form action="p_data_surat.php" method="POST" class="form-inline">
-                <select name="jenis" class="form-group mx-sm-3 mb-2">
-                  <option>Semua</option>
-                  <option>Surat Masuk</option>
-                  <option>Surat Keluar</option>
-                </select>
-                <input type="submit" class="btn btn-primary mb-2" value="Sort">
-                </form>
-              </div>
               <div class="float-left mb-3">
                 <form class="form-inline" method="POST" action="p_data_surat.php">
                   <div class="form-group mr-sm-3 mb-2">
@@ -104,18 +80,18 @@
                   <button type="submit" class="btn btn-outline-primary mb-2">Search</button>
                 </form>
               </div>
+              <div class="float-right">
+                <a href="data_add_pegawai.php" class="btn btn-primary">Tambah</a>
+              </div>
               <div class="table-responsive-lg">
-                <table class="table">
+                <table class="table text-center">
                   <thead class="thead-light">
                     <tr>
-                      <th scope="col">No. Surat</th>
-                      <th scope="col">Jenis</th>
-                      <th scope="col">Dari / Kepada</th>
-                      <th scope="col">Tanggal Surat</th>
-                      <th scope="col">Perihal</th>
-                      <th scope="col">Laci</th>
-                      <th scope="col">Guide</th>
-                      <th scope="col" colspan="3">Keterangan</th>
+                      <th scope="col">NIP</th>
+                      <th scope="col">Nama</th>
+                      <th scope="col">Alamat</th>
+                      <th scope="col">Jabatan</th>
+                      <th scope="col">Keterangan</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -124,44 +100,23 @@
                     ?>
                         <tr>
                           <td>
-                            <?= $row['no_surat'] ?>
+                            <?= $row['nip'] ?>
                           </td>
                           <td>
-                            <?= $row['jenis'] ?>
+                            <?= $row['nama'] ?>
                           </td>
                           <td>
-                            <?= $row['dari_kpd'] ?>
+                            <?= $row['alamat'] ?>
                           </td>
                           <td>
-                            <?php
-                              if ($row['jenis'] == "Surat Masuk") {
-                                $a = date('d/m/Y', strtotime($row['tanggal_surat']));
-                                echo $a;
-                              }
-                              else{
-                                $a = date('d/m/Y', strtotime($row['tanggal_input']));
-                                echo $a;
-                              }
-                            ?>
+                            <?= $row['jabatan'] ?>
                           </td>
                           <td>
-                            <?= $row['perihal'] ?>
-                          </td>
-                          <td>
-                            <?= $row['laci'] ?>
-                          </td>
-                          <td>
-                            <?= $row['guide'] ?>
-                          </td>
-                          <td>
-                            <a href="show_image.php?id=<?=$row['no_surat']?>">
+                            <a href="#">
                                 <img src="assets/img/writing.svg" height="25" width="25">
-                            </a>&nbsp;
-                            <a href="delete.php?id=<?=$row['no_surat']?>">
+                            </a>
+                            <a href="data_delete_action_p.php?nip=<?=$row['nip']?>">
                               <img src="assets/img/clear-button.svg" height="25" width="25">
-                            </a>&nbsp;
-                            <a href="detail.php?id=<?=$row['no_surat']?>">
-                              <img src="assets/img/info.svg" height="25" width="25">
                             </a>
                           </td>
                         </tr>

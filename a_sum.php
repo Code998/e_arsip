@@ -14,7 +14,7 @@
 	$isri = $_POST['isri'];
 	$laci = $_POST['laci'];
 	$guide = $_POST['guide'];
-	$image = $_FILES['file']['name'];
+	$image = trim($_FILES['file']['name'], " ");
 
 	$sql0 = "SELECT * FROM arsip_surat WHERE no_surat = '" . $nosu . "'";
 
@@ -24,7 +24,7 @@
 		if ($conn->query($sql1) === TRUE) {
 			echo "Data Sudah Dimasukkan";
 			if (move_uploaded_file($_FILES['file']['tmp_name'], $target)) {
-				header("refresh:2;url=p_data_surat.php");
+				header("Location:p_data_surat.php");
 			}
 		}
 		else{
