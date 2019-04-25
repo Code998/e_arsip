@@ -16,10 +16,7 @@
 
   $search = $_POST['search'];
 
-  if ($search == "") {
-    $sql = "SELECT * FROM arsip_surat";
-  }
-  else{
+  if ($search != "") {
     $sql = "SELECT * FROM arsip_surat WHERE jenis LIKE '%" . $search . "%' OR no_surat LIKE '%" . $search . "%' OR dari_kpd LIKE '%" . $search . "%' OR tanggal_surat LIKE '%" . $search . "%' OR tanggal_input LIKE '%" . $search . "%' OR perihal LIKE '%" . $search . "%' OR laci LIKE '%" . $search . "%' OR guide LIKE '%" . $search . "%'";
   }
 
@@ -59,8 +56,8 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="p_data_surat.php">Data Surat</a>
-              <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="data_pegawai.php">Data Pegawai</a>
+              <a class="dropdown-item" href="data_penduduk.php">Data Penduduk</a>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -89,9 +86,9 @@
               <div class="float-right mb-3">
                 <form action="p_data_surat.php" method="POST" class="form-inline">
                 <select name="jenis" class="form-group mx-sm-3 mb-2">
-                  <option>Semua</option>
-                  <option>Surat Masuk</option>
-                  <option>Surat Keluar</option>
+                  <option value="Semua">Semua</option>
+                  <option value="Surat Masuk">Surat Masuk</option>
+                  <option value="Surat Keluar">Surat Keluar</option>
                 </select>
                 <input type="submit" class="btn btn-primary mb-2" value="Sort">
                 </form>
@@ -155,13 +152,13 @@
                           </td>
                           <td>
                             <a href="show_image.php?id=<?=$row['no_surat']?>">
-                                <img src="assets/img/writing.svg" height="25" width="25">
+                                <img src="assets/img/writing.svg" height="25" width="25" title="Lihat Lampiran">
                             </a>&nbsp;
                             <a href="delete.php?id=<?=$row['no_surat']?>">
-                              <img src="assets/img/clear-button.svg" height="25" width="25">
+                              <img src="assets/img/clear-button.svg" height="25" width="25" title="Hapus">
                             </a>&nbsp;
                             <a href="detail.php?id=<?=$row['no_surat']?>">
-                              <img src="assets/img/info.svg" height="25" width="25">
+                              <img src="assets/img/info.svg" height="25" width="25" title="Detail">
                             </a>
                           </td>
                         </tr>

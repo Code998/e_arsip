@@ -1,19 +1,3 @@
-<?php  
-  session_start();
-  include_once 'connection.php';
-
-  $search = $_POST['search'];
-
-  if ($search == "") {
-    $sql = "SELECT * FROM pegawai";
-  }
-  else{
-    $sql = "SELECT * FROM pegawai WHERE nip LIKE '%" . $search . "%' OR nama LIKE '%" . $search . "%' OR alamat LIKE '%" . $search . "%' OR jabatan LIKE '%" . $search . "%'";
-  }
-
-  $result = $conn->query($sql);
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,67 +49,48 @@
       </div>
     </nav>
 
-    <!-- Container -->
+    <!-- Content -->
     <div class="container-fluid bckgrnd">
        <div class="row">
         <div class="col-sm-12">
-          <div class="judul m-3">Data Pegawai</div>
+          <div class="judul m-3">Tambah Data Pegawai</div>
         </div>
         <div class="col-sm-12 px-5">
           <div class="card">
             <div class="card-body">
-              <div class="float-left mb-3">
-                <form class="form-inline" method="POST" action="data_pegawai.php">
-                  <div class="form-group mr-sm-3 mb-2">
-                    <input type="text" class="form-control" name="search" placeholder="Search....">
+              <form method="POST" action="data_add_action_p.php">
+                <div class="form-group row">
+                  <label for="NIP" class="col-sm-2 col-form-label">NIP</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="NIP" name="nip">
                   </div>
-                  <button type="submit" class="btn btn-outline-primary mb-2">Search</button>
-                </form>
-              </div>
-              <div class="float-right">
-                <a href="data_add_pegawai.php" class="btn btn-primary">Tambah</a>
-              </div>
-              <div class="table-responsive-lg">
-                <table class="table text-center">
-                  <thead class="thead-light">
-                    <tr>
-                      <th scope="col">NIP</th>
-                      <th scope="col">Nama</th>
-                      <th scope="col">Alamat</th>
-                      <th scope="col">Jabatan</th>
-                      <th scope="col">Keterangan</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php 
-                      while ($row = $result->fetch_assoc()) {
-                    ?>
-                        <tr>
-                          <td>
-                            <?= $row['nip'] ?>
-                          </td>
-                          <td>
-                            <?= $row['nama'] ?>
-                          </td>
-                          <td>
-                            <?= $row['alamat'] ?>
-                          </td>
-                          <td>
-                            <?= $row['jabatan'] ?>
-                          </td>
-                          <td>
-                            <a href="#">
-                                <img src="assets/img/writing.svg" height="25" width="25">
-                            </a>
-                            <a href="data_delete_action_p.php?nip=<?=$row['nip']?>">
-                              <img src="assets/img/clear-button.svg" height="25" width="25">
-                            </a>
-                          </td>
-                        </tr>
-                      <?php } ?>
-                  </tbody>
-                </table>
-              </div>
+                </div>
+                <div class="form-group row">
+                  <label for="Nama" class="col-sm-2 col-form-label">Nama</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="Nama" name="nama">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="Alamat" class="col-sm-2 col-form-label">Alamat</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="Alamat" name="alamat">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="Jabatan" class="col-sm-2 col-form-label">Jabatan</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="Jabatan" name="jabatan">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-6">
+                    <div class="float-right">
+                      <input type="submit" value="Tambah" class="btn btn-primary">
+                    </div>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>

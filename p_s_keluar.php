@@ -36,8 +36,8 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="p_data_surat.php">Data Surat</a>
-              <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="data_pegawai.php">Data Pegawai</a>
+              <a class="dropdown-item" href="data_penduduk.php">Data Penduduk</a>
             </div>
           </li>
           <li class="nav-item dropdown">
