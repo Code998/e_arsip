@@ -5,10 +5,10 @@
   $search = $_POST['search'];
 
   if ($search == "") {
-    $sql = "SELECT * FROM pegawai";
+    $sql = "SELECT * FROM penduduk";
   }
   else{
-    $sql = "SELECT * FROM pegawai WHERE nip LIKE '%" . $search . "%' OR nama LIKE '%" . $search . "%' OR alamat LIKE '%" . $search . "%' OR jabatan LIKE '%" . $search . "%'";
+    $sql = "SELECT * FROM penduduk WHERE nik LIKE '%" . $search . "%' OR no_kk LIKE '%" . $search . "%' OR nama LIKE '%" . $search . "%' OR tempat_lahir LIKE '%" . $search . "%' OR tanggal_lahir LIKE '%" . $search . "%' OR usia LIKE '%" . $search . "%' OR jenis_kelamin LIKE '%" . $search . "%' OR status LIKE '%" . $search . "%' OR alamat LIKE '%" . $search . "%' OR agama LIKE '%" . $search . "%' OR pekerjaan LIKE '%" . $search . "%' OR kewarnegaraan LIKE '%" . $search . "%' OR tanggal_buat LIKE '%" . $search . "%'";
   }
 
   $result = $conn->query($sql);
@@ -71,7 +71,7 @@
     </nav>
 
     <!-- Container -->
-    <div class="container-fluid">
+    <div class="container-fluid bckgrnd">
        <div class="row">
         <div class="col-sm-12">
           <div class="judul m-3">Data Pegawai</div>
@@ -80,7 +80,7 @@
           <div class="card">
             <div class="card-body">
               <div class="float-left mb-3">
-                <form class="form-inline" method="POST" action="data_pegawai.php">
+                <form class="form-inline" method="POST" action="data_penduduk.php">
                   <div class="form-group mr-sm-3 mb-2">
                     <input type="text" class="form-control" name="search" placeholder="Search....">
                   </div>
@@ -88,16 +88,25 @@
                 </form>
               </div>
               <div class="float-right">
-                <a href="data_add_pegawai.php" class="btn btn-primary">Tambah</a>
+                <a href="data_add_penduduk.php" class="btn btn-primary">Tambah</a>
               </div>
-              <div class="table-responsive-lg">
+              <div class="table-responsive">
                 <table class="table text-center">
                   <thead class="thead-light">
                     <tr>
-                      <th scope="col">NIP</th>
+                      <th scope="col">NIK</th>
+                      <th scope="col">No KK</th>
                       <th scope="col">Nama</th>
+                      <th scope="col">Tempat Lahir</th>
+                      <th scope="col">Tanggal Lahir</th>
+                      <th scope="col">Usia</th>
+                      <th scope="col">Jenis Kelamin</th>
+                      <th scope="col">Status</th>
                       <th scope="col">Alamat</th>
-                      <th scope="col">Jabatan</th>
+                      <th scope="col">Agama</th>
+                      <th scope="col">Pekerjaan</th>
+                      <th scope="col">Kewarnegaraan</th>
+                      <th scope="col">Tanggal Buat</th>
                       <th scope="col">Keterangan</th>
                     </tr>
                   </thead>
@@ -107,22 +116,56 @@
                     ?>
                         <tr>
                           <td>
-                            <?= $row['nip'] ?>
+                            <?= $row['nik'] ?>
+                          </td>
+                          <td>
+                            <?= $row['no_kk'] ?>
                           </td>
                           <td>
                             <?= $row['nama'] ?>
                           </td>
                           <td>
+                            <?= $row['tempat_lahir'] ?>
+                          </td>
+                          <td>
+                            <?= $row['tanggal_lahir'] ?>
+                          </td>
+                          <td>
+                            <?= $row['usia'] ?>
+                          </td>
+                          <td>
+                            <?php
+                            if ($row['jenis_kelamin'] == "L") {
+                              echo "Laki-Laki";
+                            }
+                            else{
+                              echo "Perempuan";
+                            }
+                            ?>
+                          </td>
+                          <td>
+                            <?= $row['status'] ?>
+                          </td>
+                          <td>
                             <?= $row['alamat'] ?>
                           </td>
                           <td>
-                            <?= $row['jabatan'] ?>
+                            <?= $row['agama'] ?>
+                          </td>
+                          <td>
+                            <?= $row['pekerjaan'] ?>
+                          </td>
+                          <td>
+                            <?= $row['kewarnegaraan'] ?>
+                          </td>
+                          <td>
+                            <?= $row['tanggal_buat'] ?>
                           </td>
                           <td>
                             <a href="#">
                                 <img src="assets/img/writing.svg" height="25" width="25">
                             </a>
-                            <a href="data_delete_action_p.php?nip=<?=$row['nip']?>">
+                            <a href="data_delete_action_pe.php?nik=<?=$row['nik']?>">
                               <img src="assets/img/clear-button.svg" height="25" width="25">
                             </a>
                           </td>

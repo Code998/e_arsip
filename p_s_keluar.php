@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/infinite.css">
 </head>
-<body>
+<body style="background-color: #3B3B3B;">
 
   <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -36,9 +36,14 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="p_data_surat.php">Data Surat</a>
+              <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="data_pegawai.php">Data Pegawai</a>
+              <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="data_penduduk.php">Data Penduduk</a>
             </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="data_chart.php">Statistik Surat</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -56,7 +61,7 @@
 
     <!-- Container -->
 
-    <div class="container-fluid bckgrnd">
+    <div class="container-fluid">
           <div class="row">
             <div class="col-sm-12">
               <div class="judul m-3">Pilih Surat Keluar</div>

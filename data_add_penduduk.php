@@ -37,9 +37,6 @@
               <a class="dropdown-item" href="data_penduduk.php">Data Penduduk</a>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="data_chart.php">Statistik Surat</a>
-          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Hello, <?=$_SESSION['user']?>
@@ -63,11 +60,33 @@
         <div class="col-sm-12 px-5">
           <div class="card">
             <div class="card-body">
-              <form method="POST" action="data_add_action_p.php">
+              <form method="POST" action="data_add_action_pe.php">
                 <div class="form-group row">
-                  <label for="NIP" class="col-sm-2 col-form-label">NIP</label>
+                  <label for="NIK" class="col-sm-2 col-form-label">NIK</label>
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" id="NIP" name="nip">
+                    <input type="text" class="form-control" id="NIK" name="nik">
+                  </div>
+                  <label for="jk" class="col-sm-2 col-form-label">Jenis Kelamin</label>
+                  <div class="col-sm-4">
+                    <select class="form-control" id="jk" name="jeka">
+                      <option value="L">L</option>
+                      <option value="P">P</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="NoKK" class="col-sm-2 col-form-label">No KK</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="NoKK" name="no_kk">
+                  </div>
+                  <label for="stat" class="col-sm-2 col-form-label">Status</label>
+                  <div class="col-sm-4">
+                    <select class="form-control" id="stat" name="status">
+                      <option>Single</option>
+                      <option>Menikah</option>
+                      <option>Cerai Hidup</option>
+                      <option>Cerai Mati</option>
+                    </select>
                   </div>
                 </div>
                 <div class="form-group row">
@@ -75,21 +94,43 @@
                   <div class="col-sm-4">
                     <input type="text" class="form-control" id="Nama" name="nama">
                   </div>
-                </div>
-                <div class="form-group row">
                   <label for="Alamat" class="col-sm-2 col-form-label">Alamat</label>
                   <div class="col-sm-4">
                     <input type="text" class="form-control" id="Alamat" name="alamat">
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="Jabatan" class="col-sm-2 col-form-label">Jabatan</label>
+                  <label for="tl" class="col-sm-2 col-form-label">Tempat Lahir</label>
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" id="Jabatan" name="jabatan">
+                    <input type="text" class="form-control" id="tl" name="tela">
+                  </div>
+                  <label for="ag" class="col-sm-2 col-form-label">Agama</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="ag" name="agama">
                   </div>
                 </div>
                 <div class="form-group row">
-                  <div class="col-sm-6">
+                  <label for="t_l" class="col-sm-2 col-form-label">Tanggal Lahir</label>
+                  <div class="col-sm-4">
+                    <input type="date" class="form-control" id="t_l" name="tala">
+                  </div>
+                  <label for="pk" class="col-sm-2 col-form-label">Pekerjaan</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="pk" name="peker">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="usia" class="col-sm-2 col-form-label">Usia</label>
+                  <div class="col-sm-4">
+                    <input type="number" class="form-control" id="usia" name="usi">
+                  </div>
+                  <label for="kn" class="col-sm-2 col-form-label">Kewarnegaraan</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="kn" name="kener">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-12">
                     <div class="float-right">
                       <input type="submit" value="Tambah" class="btn btn-primary">
                     </div>

@@ -76,22 +76,6 @@ body{
 	background-attachment: fixed;
 }
 
-/* p_laci.php */
-
-.bckgrnd{
-	background-size: cover;
-	background-color: #3B3B3B;
-	height: 100vh;
-}
-
-/* Edit Data */
-
-.bckgrnd2{
-	background-size: cover;
-	background-color: #3B3B3B;
-	height: 120vh;
-}
-
 
 .bg-card{
 	background-color: #ffffcc;

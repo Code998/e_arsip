@@ -1,19 +1,7 @@
 <?php  
   session_start();
   include_once 'connection.php';
-
-  $search = $_POST['search'];
-
-  if ($search == "") {
-    $sql = "SELECT * FROM pegawai";
-  }
-  else{
-    $sql = "SELECT * FROM pegawai WHERE nip LIKE '%" . $search . "%' OR nama LIKE '%" . $search . "%' OR alamat LIKE '%" . $search . "%' OR jabatan LIKE '%" . $search . "%'";
-  }
-
-  $result = $conn->query($sql);
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,62 +62,22 @@
     <div class="container-fluid">
        <div class="row">
         <div class="col-sm-12">
-          <div class="judul m-3">Data Pegawai</div>
+          <div class="judul m-3">Statistik Surat</div>
         </div>
         <div class="col-sm-12 px-5">
           <div class="card">
             <div class="card-body">
-              <div class="float-left mb-3">
-                <form class="form-inline" method="POST" action="data_pegawai.php">
-                  <div class="form-group mr-sm-3 mb-2">
-                    <input type="text" class="form-control" name="search" placeholder="Search....">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-8">
+                    <h2 class="h2">Per M/K</h2>
+                    <canvas id="mycanvas"></canvas>
                   </div>
-                  <button type="submit" class="btn btn-outline-primary mb-2">Search</button>
-                </form>
-              </div>
-              <div class="float-right">
-                <a href="data_add_pegawai.php" class="btn btn-primary">Tambah</a>
-              </div>
-              <div class="table-responsive-lg">
-                <table class="table text-center">
-                  <thead class="thead-light">
-                    <tr>
-                      <th scope="col">NIP</th>
-                      <th scope="col">Nama</th>
-                      <th scope="col">Alamat</th>
-                      <th scope="col">Jabatan</th>
-                      <th scope="col">Keterangan</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php 
-                      while ($row = $result->fetch_assoc()) {
-                    ?>
-                        <tr>
-                          <td>
-                            <?= $row['nip'] ?>
-                          </td>
-                          <td>
-                            <?= $row['nama'] ?>
-                          </td>
-                          <td>
-                            <?= $row['alamat'] ?>
-                          </td>
-                          <td>
-                            <?= $row['jabatan'] ?>
-                          </td>
-                          <td>
-                            <a href="#">
-                                <img src="assets/img/writing.svg" height="25" width="25">
-                            </a>
-                            <a href="data_delete_action_p.php?nip=<?=$row['nip']?>">
-                              <img src="assets/img/clear-button.svg" height="25" width="25">
-                            </a>
-                          </td>
-                        </tr>
-                      <?php } ?>
-                  </tbody>
-                </table>
+                  <div class="col-md-6">
+                    <h2 class="h2">Per Guide</h2>
+                    <canvas id="canv"></canvas>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -140,5 +88,7 @@
     <!-- JavaScript -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="assets/js/chart_1.js"></script>
   </body>
 </html>
