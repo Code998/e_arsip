@@ -165,7 +165,7 @@
                             <a href="#">
                                 <img src="assets/img/writing.svg" height="25" width="25">
                             </a>
-                            <a href="data_delete_action_pe.php?nik=<?=$row['nik']?>">
+                            <a href="#" data-href="data_delete_action_pe.php?nik=<?=$row['nik']?>" data-toggle="modal" data-target="#confirm-delete">
                               <img src="assets/img/clear-button.svg" height="25" width="25">
                             </a>
                           </td>
@@ -180,8 +180,30 @@
       </div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            Delete Data Penduduk
+          </div>
+            <div class="modal-body">
+                Are you sure want to delete this record?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-danger btn-ok">Delete</a>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+      $('#confirm-delete').on('show.bs.modal', function(e) {
+        $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+      });
+    </script>
   </body>
 </html>
