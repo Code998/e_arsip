@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Data Surat</title>
+  <title>E-Sip - Chart</title>
   <link rel="icon" href="assets/img/office-material.svg">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/infinite.css">
@@ -18,7 +18,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">
         <img src="assets/img/office-material.svg" width="40" height="30" alt="">
-        E-Arsip
+        E-Sip
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -73,9 +73,21 @@
                     <h2 class="h2">Per M/K</h2>
                     <canvas id="mycanvas"></canvas>
                   </div>
+                </div>
+                <div class="row mt-5">
                   <div class="col-md-6">
-                    <h2 class="h2">Per Guide</h2>
+                    <h2 class="h2">
+                      Per Guide
+                      <small class="text-muted">Surat Masuk</small>
+                    </h2>
                     <canvas id="canv"></canvas>
+                  </div>
+                  <div class="col-md-6">
+                    <h2 class="h2">
+                      Per Guide
+                      <small class="text-muted">Surat Keluar</small>
+                    </h2>
+                    <canvas id="canva"></canvas>
                   </div>
                 </div>
               </div>
@@ -90,5 +102,7 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="node_modules/chart.js/dist/Chart.min.js"></script>
     <script src="assets/js/chart_1.js"></script>
+    <script src="assets/js/chart_2.js"></script>
+    <script src="assets/js/chart_3.js"></script>
   </body>
 </html>

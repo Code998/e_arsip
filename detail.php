@@ -13,7 +13,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Data Surat</title>
+  <title>E-Sip - Detail</title>
   <link rel="icon" href="assets/img/office-material.svg">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/infinite.css">
@@ -24,7 +24,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">
         <img src="assets/img/office-material.svg" width="40" height="30" alt="">
-        E-Arsip
+        E-Sip
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

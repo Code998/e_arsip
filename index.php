@@ -18,7 +18,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
       <img src="assets/img/office-material.svg" width="40" height="30" alt="">
-      E-Arsip
+      E-Sip
     </a>
   </nav>
   
@@ -29,7 +29,7 @@
           <div class="container h-100">
             <div class="row align-items-center h-100">
                 <div class="col-md-10 mx-auto">
-                  <h1 class="text-light" style="font-size: 80px;">E-Arsip</h1>
+                  <h1 class="text-light" style="font-size: 80px;">E-Sip</h1>
                  </div>
               </div>
           </div>

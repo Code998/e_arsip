@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$.ajax({
-		url: "http://localhost:8000/data_action_chart_sm.php",
+		url: "http://localhost:8000/data_action_chart_sk.php",
 		method: "GET",
 		success: function(data) {
 			console.log(data);
@@ -33,14 +33,14 @@ $(document).ready(function(){
 				labels: g,
 				datasets : [
 					{
-						label : ["Guide Surat Masuk"],
-						backgroundColor: ["#34495e", "#95a5a6", "#ecf0f1"],
+						label : ["Guide Surat Keluar"],
+						backgroundColor: ["#1abc9c", "#f39c12", "#c0392b", "#2980b9"],
 						data: s
 					}
 				]
 			};
 
-			var ctx = $("#canv");
+			var ctx = $("#canva");
 
 			var barGraph = new Chart(ctx, {
 				type: 'bar',
