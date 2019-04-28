@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$.ajax({
-		url: "http://localhost:8000/data_action_chart_sm.php",
+		url: "../../data_action_chart_sm.php",
 		method: "GET",
 		success: function(data) {
 			console.log(data);

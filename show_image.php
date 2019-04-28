@@ -14,7 +14,7 @@
 
 	if ($data['jenis'] == "Surat Masuk") {
 		$info = pathinfo($data['file']);
-		if ($info["extension"] == "jpg") {
+		if ($info["extension"] == "jpg" OR $info["extension"] == "png") {
 			echo '<img src="assets/photo/'. rawurldecode($data['file']) .'">';
 		}
 		elseif ($info["extension"] == "pdf") {

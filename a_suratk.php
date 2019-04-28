@@ -22,7 +22,6 @@
 	if ($conn->query($sql)->num_rows == 1) {
 		if ($conn->query($sql0)->num_rows == 0) {
 			if ($conn->query($sql1) === TRUE) {
-				echo "Data Sudah Dimasukkan";
 				header("Location:p_data_surat.php");
 			}
 			else{
