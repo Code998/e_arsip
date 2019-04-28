@@ -31,11 +31,11 @@
 			}
 		}
 		else{
-			echo "Gagal!";
+			echo "<script> alert('Data Gagal Dimasukkan'); </script>";
 		}
 	}
 	else{
-		echo "Maaf anda sudah Terdaftar";
+		echo "<script> alert('Data Anda Sudah Terdaftar'); </script>";
 	}
 
 	// echo $sql1;
