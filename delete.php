@@ -18,7 +18,7 @@
 			header("Location: p_data_surat.php");
 		}
 		else{
-			echo "Gagal!";
+			echo "<script> alert('Maaf Anda Sudah Mendaftar'); </script>";
 		}
 	}
 	else{
@@ -28,7 +28,7 @@
 			header("Location: p_data_surat.php");
 		}
 		else{
-			echo "Gagal!";
+			echo "<script> alert('Maaf Anda Sudah Mendaftar'); </script>";
 		}
 
 	}

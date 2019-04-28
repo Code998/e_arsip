@@ -20,10 +20,10 @@
 			header("Location:data_pegawai.php");
 		}
 		else{
-			echo "Gagal!";
+			echo "<script> alert('Maaf Anda Sudah Mendaftar'); </script>";
 		}
 	}
 	else{
-		echo "Maaf anda sudah Terdaftar";
+		echo "<script> alert('Data Anda Sudah Terdaftar'); </script>";
 	}
 ?>

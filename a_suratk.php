@@ -25,14 +25,14 @@
 				header("Location:p_data_surat.php");
 			}
 			else{
-				echo "Gagal!";
+				echo "<script> alert('Data Gagal Dimasukkan'); </script>";
 			}
 		}
 		else{
-			echo "Maaf anda sudah Terdaftar";
+			echo "<script> alert('Maaf Anda Sudah Mendaftar'); </script>";
 		}
 	}
 	else{
-		echo "Tidak Terdaftar dalam Penduduk";
+		echo "<script> alert('Data Anda Sudah Terdaftar'); </script>";
 	}
 ?>

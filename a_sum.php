@@ -37,6 +37,4 @@
 	else{
 		echo "<script> alert('Data Anda Sudah Terdaftar'); </script>";
 	}
-
-	// echo $sql1;
 ?>

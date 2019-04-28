@@ -20,6 +20,6 @@
 		header("Location: p_data_surat.php");
 	}
 	else{
-		echo "Gagal!";
-	}
+			echo "<script> alert('Maaf Anda Sudah Mendaftar'); </script>";
+		}
 ?>

@@ -12,6 +12,6 @@
 		header("Location: data_pegawai.php");
 	}
 	else{
-		echo "Gagal!";
+			echo "<script> alert('Maaf Anda Sudah Mendaftar'); </script>";
 	}
 ?>

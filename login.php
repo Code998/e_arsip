@@ -15,6 +15,6 @@
 		header("Location:data_chart.php");
 	}
 	else{
-		echo "Username atau Pass salah!!!!";
-	}
+			echo "<script> alert('Username / Pass Salah'); </script>";
+		}
 ?>

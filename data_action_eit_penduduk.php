@@ -24,5 +24,5 @@
 		header("Location: data_penduduk.php");
 	}
 	else{
-		echo "Gagal!";
+		echo "<script> alert('Data Gagal Dimasukkan'); </script>";
 	}

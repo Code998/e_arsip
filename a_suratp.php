@@ -29,10 +29,10 @@
 			}
 		}
 		else{
-			echo "Maaf anda sudah Terdaftar";
+			echo "<script> alert('Data Gagal Dimasukkan'); </script>";
 		}
 	}
 	else{
-		echo "Tidak Terdaftar dalam Penduduk";
+		echo "<script> alert('Data Anda Sudah Terdaftar'); </script>";
 	}
 ?>

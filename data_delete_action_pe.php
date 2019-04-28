@@ -12,6 +12,6 @@
 		header("Location: data_penduduk.php");
 	}
 	else{
-		echo "Gagal!";
-	}
+			echo "<script> alert('Maaf Anda Sudah Mendaftar'); </script>";
+		}
 ?>
