@@ -1,4 +1,5 @@
-<?php  
+<?php
+  error_reporting(0);
   session_start();
   if ($_SESSION['user'] == "") {
     header("Location: index.php");
@@ -77,7 +78,7 @@
     <div class="container-fluid bckgrnd">
        <div class="row">
         <div class="col-sm-12">
-          <div class="judul m-3">Data Pegawai</div>
+          <div class="judul m-3">Data Penduduk</div>
         </div>
         <div class="col-sm-12 px-5">
           <div class="card">
@@ -109,7 +110,6 @@
                       <th scope="col">Agama</th>
                       <th scope="col">Pekerjaan</th>
                       <th scope="col">Kewarnegaraan</th>
-                      <th scope="col">Tanggal Buat</th>
                       <th scope="col">Keterangan</th>
                     </tr>
                   </thead>
@@ -160,9 +160,6 @@
                           </td>
                           <td>
                             <?= $row['kewarnegaraan'] ?>
-                          </td>
-                          <td>
-                            <?= $row['tanggal_buat'] ?>
                           </td>
                           <td>
                             <a href="data_edit_penduduk.php?nik=<?=$row['nik']?>">

@@ -1,4 +1,5 @@
-<?php  
+<?php
+  error_reporting(0);
   session_start();
   if ($_SESSION['user'] == "") {
     header("Location: index.php");

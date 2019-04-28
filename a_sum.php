@@ -17,11 +17,11 @@
 	$isri = $_POST['isri'];
 	$laci = $_POST['laci'];
 	$guide = $_POST['guide'];
-	$image = trim($_FILES['file']['name'], " ");
+	$image = $_FILES['file']['name'];
 
 	$sql0 = "SELECT * FROM arsip_surat WHERE no_surat = '" . $nosu . "'";
 
-	$sql1 = "INSERT INTO arsip_surat (jenis, no_surat, dari_kpd, tanggal_surat, tanggal_input, perihal, isi_ringkas, laci, guide, file, admin) VALUES ('" . $jenis . "', '" . $nosu . "', '" . $dake . "', '" . $tsur . "' , NOW(), '" . $indeks . "', '" . $isri . "', '" . $laci . "', '" . $guide . "', '" . $image . "', '" . $_SESSION['user'] . "')";
+	$sql1 = "INSERT INTO arsip_surat (jenis, no_surat, dari_kpd, indeks, tanggal_surat, tanggal_input, alamat, perihal, isi_ringkas, laci, guide, file, admin) VALUES ('" . $jenis . "', '" . $nosu . "', '" . $dake . "', '" . $indeks . "', '" . $tsur . "' , NOW(), '" . $alamat . "', '" . $perihal . "', '" . $isri . "', '" . $laci . "', '" . $guide . "', '" . $image . "', '" . $_SESSION['user'] . "')";
 
 	if ($conn->query($sql0)->num_rows == 0) {
 		if ($conn->query($sql1) === TRUE) {

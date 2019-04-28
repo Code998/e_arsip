@@ -124,8 +124,27 @@
 								    </div>
 								  </div>
 								  <div class="form-group row">
+								    <label for="Jam" class="col-sm-2 col-form-label">Jam</label>
+								    <div class="col-sm-4">
+								      <input type="text" readonly class="form-control-plaintext" id="Jam" name="jam" value="<?=date('h:i:s', strtotime($data['tanggal_input']))?>">
+								    </div>
+								  </div>
+								  <div class="form-group row">
+								    <label for="Admin" class="col-sm-2 col-form-label">Admin</label>
+								    <div class="col-sm-4">
+								      <input type="text" readonly class="form-control-plaintext" id="Admin" name="admin" value="<?=$data['admin']?>">
+								    </div>
+								  </div>
+								  <div class="form-group row">
+								    <label for="Tgl" class="col-sm-2 col-form-label">Tanggal Pembuatan</label>
+								    <div class="col-sm-4">
+								      <input type="text" readonly class="form-control-plaintext" id="Tgl" name="tgl_pem" value="<?=date('d/m/Y', strtotime($data['tanggal_input']))?>">
+								    </div>
+								  </div>
+								  <div class="form-group row">
 								    <div class="col-sm-6">
-											<input type="submit" value="Edit" class="btn btn-primary">
+								    	<a href="p_data_surat.php" class="btn btn-primary">Back</a>
+										<input type="submit" value="Edit" class="btn btn-primary float-right">
 								    </div>
 								  </div>
 						  	<?php
@@ -185,6 +204,11 @@
 								    <label for="Admin" class="col-sm-2 col-form-label">Admin</label>
 								    <div class="col-sm-10">
 								      <input type="text" readonly class="form-control-plaintext" id="Admin" value="<?=$data['admin']?>">
+								    </div>
+								  </div>
+								  <div class="form-group row">
+								    <div class="col-sm-6">
+								    	<a href="p_data_surat.php" class="btn btn-primary">Back</a>
 								    </div>
 								  </div>
 						  	<?php

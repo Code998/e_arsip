@@ -152,8 +152,8 @@
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6">
-                    <div class="float-right">
-                      <input type="submit" value="Edit" class="btn btn-primary">
+                      <a href="data_penduduk.php" class="btn btn-primary">Back</a>
+                      <input type="submit" value="Edit" class="btn btn-primary float-right">
                     </div>
                   </div>
                 </div>
