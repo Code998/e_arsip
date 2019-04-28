@@ -162,7 +162,7 @@
                             <a href="show_image.php?id=<?=$row['no_surat']?>">
                                 <img src="assets/img/writing.svg" height="25" width="25" title="Lihat Lampiran">
                             </a>&nbsp;
-                            <a href="#" data-href="ddelete.php?id=<?=$row['no_surat']?>" data-toggle="modal" data-target="#confirm-delete">
+                            <a href="#" data-href="delete.php?id=<?=$row['no_surat']?>" data-toggle="modal" data-target="#confirm-delete">
                               <img src="assets/img/clear-button.svg" height="25" width="25" title="Delete">
                             </a>&nbsp;
                             <a href="detail.php?id=<?=$row['no_surat']?>">

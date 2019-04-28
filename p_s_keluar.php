@@ -7,6 +7,7 @@
 
   $sql = "SELECT * FROM pegawai";
   $result = $conn->query($sql);
+  $result1 = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -141,7 +142,7 @@
                     <div class="col-sm-10">
                       <select class="form-control" id="namaP" name="namaPeg">
                         <?php 
-                          while ($data = $result->fetch_assoc()) {
+                          while ($data = $result1->fetch_assoc()) {
                             echo "<option>" . $data['nama'] . "</option>";
                           }
                         ?>
@@ -194,8 +195,8 @@
                     <div class="col-sm-10">
                       <select class="form-control" id="namaPe" name="namaPeg1">
                         <?php 
-                          while ($data = $result->fetch_assoc()) {
-                            echo "<option>" . $data['nama'] . "</option>";
+                          while ($dat = $result->fetch_assoc()) {
+                            echo "<option>" . $dat['nama'] . "</option>";
                           }
                         ?>
                       </select>

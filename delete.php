@@ -25,7 +25,7 @@
 		$sql = "DELETE FROM arsip_surat WHERE no_surat = " . $a;
 
 		if ($conn->query($sql) === TRUE) {
-			header("Location: p_data_surat.php.php");
+			header("Location: p_data_surat.php");
 		}
 		else{
 			echo "Gagal!";

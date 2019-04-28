@@ -5,7 +5,7 @@
   }
   include_once 'connection.php';
 
-  	$noas = $_POST['noas']
+  	$noas = $_POST['noas'];
 	$nosu = $_POST['nosu'];
 	$dake = $_POST['asal'];
 	$tsur = $_POST['t_sur'];
