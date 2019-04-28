@@ -4,6 +4,9 @@
     header("Location: index.php");
   }
   include_once 'connection.php';
+
+  $sql = "SELECT * FROM pegawai";
+  $result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -133,6 +136,18 @@
                       </select>
                     </div>
                   </div>
+                  <div class="form-group row">
+                    <label for="namaP" class="col-sm-2 col-form-label">Nama</label>
+                    <div class="col-sm-10">
+                      <select class="form-control" id="namaP" name="namaPeg">
+                        <?php 
+                          while ($data = $result->fetch_assoc()) {
+                            echo "<option>" . $data['nama'] . "</option>";
+                          }
+                        ?>
+                      </select>
+                    </div>
+                  </div>
                   <input type="submit" value="Buat" class="btn btn-primary float-right">
                 </form>
               </div>
@@ -171,6 +186,18 @@
                       <select class="form-control" id="Guide" name="guide">
                         <option>SKCK</option>
                         <option>Domisili</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="namaPe" class="col-sm-2 col-form-label">Nama</label>
+                    <div class="col-sm-10">
+                      <select class="form-control" id="namaPe" name="namaPeg1">
+                        <?php 
+                          while ($data = $result->fetch_assoc()) {
+                            echo "<option>" . $data['nama'] . "</option>";
+                          }
+                        ?>
                       </select>
                     </div>
                   </div>

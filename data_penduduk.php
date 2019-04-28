@@ -165,7 +165,7 @@
                             <?= $row['tanggal_buat'] ?>
                           </td>
                           <td>
-                            <a href="#">
+                            <a href="data_edit_penduduk.php?nik=<?=$row['nik']?>">
                                 <img src="assets/img/writing.svg" height="25" width="25" title="Edit Data">
                             </a>
                             <a href="#" data-href="data_delete_action_pe.php?nik=<?=$row['nik']?>" data-toggle="modal" data-target="#confirm-delete">

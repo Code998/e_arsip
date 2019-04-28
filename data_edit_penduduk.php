@@ -5,9 +5,9 @@
   }
   include_once 'connection.php';
 
-  $a = $_GET['nip'];
+  $a = $_GET['nik'];
 
-  $sql = "SELECT * FROM penduduk WHERE nip = " . $a;
+  $sql = "SELECT * FROM penduduk WHERE nik = " . $a;
   $result = $conn->query($sql);
   $data = $result->fetch_assoc();
 ?>
@@ -71,23 +71,59 @@
     <div class="container-fluid">
        <div class="row">
         <div class="col-sm-12">
-          <div class="judul m-3">Edit Data Pegawai</div>
+          <div class="judul m-3">Edit Data Penduduk</div>
         </div>
         <div class="col-sm-12 px-5">
           <div class="card">
             <div class="card-body">
-              <form method="POST" action="data_edit_action_pegawai.php">
+              <form method="POST" action="data_action_eit_penduduk.php">
                 <div class="form-group row">
-                  <label for="NIP" class="col-sm-2 col-form-label">NIP</label>
+                  <label for="nik" class="col-sm-2 col-form-label">nik</label>
                   <div class="col-sm-4">
-                    <input type="hidden" name="nipas" value="<?=$data['nip']?>">
-                    <input type="text" class="form-control" id="NIP" name="nip" value="<?=$data['nip']?>">
+                    <input type="hidden" name="nikas" value="<?=$data['nik']?>">
+                    <input type="text" class="form-control" id="nik" name="anik" value="<?=$data['nik']?>">
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="Nama" class="col-sm-2 col-form-label">Nama</label>
+                  <label for="no_k" class="col-sm-2 col-form-label">No KK</label>
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" id="Nama" name="nama" value="<?=$data['nama']?>">
+                    <input type="text" class="form-control" id="no_k" name="no_kk" value="<?=$data['no_kk']?>">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="namA" class="col-sm-2 col-form-label">Nama</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="namA" name="nama" value="<?=$data['nama']?>">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="Tempat_Lahir" class="col-sm-2 col-form-label">Tempat Lahir</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="Tempat_Lahir" name="tempat_lahir" value="<?=$data['tempat_lahir']?>">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="Tanngal_Lahir" class="col-sm-2 col-form-label">Tangal Lahir</label>
+                  <div class="col-sm-4">
+                    <input type="date" class="form-control" id="Tanngal_Lahir" name="tanggal_lahir" value="<?=$data['tanggal_lahir']?>">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="Usia" class="col-sm-2 col-form-label">Usia</label>
+                  <div class="col-sm-4">
+                    <input type="number" class="form-control" id="Usia" name="usia" value="<?=$data['usia']?>">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="JenisKelamin" class="col-sm-2 col-form-label">Jenis Kelamin</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="JenisKelamin" name="jenis_kelamin" value="<?=$data['jenis_kelamin']?>">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="Status" class="col-sm-2 col-form-label">Status</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="Status" name="status" value="<?=$data['status']?>">
                   </div>
                 </div>
                 <div class="form-group row">
@@ -97,9 +133,21 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="Jabatan" class="col-sm-2 col-form-label">Jabatan</label>
+                  <label for="Agama" class="col-sm-2 col-form-label">Agama</label>
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" id="Jabatan" name="jabatan" value="<?=$data['jabatan']?>">
+                    <input type="text" class="form-control" id="Agama" name="agama" value="<?=$data['agama']?>">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="Pekerjaan" class="col-sm-2 col-form-label">Pekerjaan</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="Pekerjaan" name="pekerjaan" value="<?=$data['pekerjaan']?>">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="KN" class="col-sm-2 col-form-label">Kewarnegaraan</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="KN" name="kewarnegaraan" value="<?=$data['kewarnegaraan']?>">
                   </div>
                 </div>
                 <div class="form-group row">
