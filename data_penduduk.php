@@ -1,5 +1,8 @@
 <?php  
   session_start();
+  if ($_SESSION['user'] == "") {
+    header("Location: index.php");
+  }
   include_once 'connection.php';
 
   $search = $_POST['search'];
@@ -163,10 +166,10 @@
                           </td>
                           <td>
                             <a href="#">
-                                <img src="assets/img/writing.svg" height="25" width="25">
+                                <img src="assets/img/writing.svg" height="25" width="25" title="Edit Data">
                             </a>
                             <a href="#" data-href="data_delete_action_pe.php?nik=<?=$row['nik']?>" data-toggle="modal" data-target="#confirm-delete">
-                              <img src="assets/img/clear-button.svg" height="25" width="25">
+                              <img src="assets/img/clear-button.svg" height="25" width="25" title="Delete">
                             </a>
                           </td>
                         </tr>

@@ -1,7 +1,10 @@
 <?php  
-	include_once 'connection.php';
+  session_start();
+  if ($_SESSION['user'] == "") {
+    header("Location: index.php");
+  }
+  include_once 'connection.php';
 	include('docxtemplate.class.php');
-	session_start();
 
 	$id = $_GET['id'];
 

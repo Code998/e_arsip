@@ -1,5 +1,8 @@
 <?php  
   session_start();
+  if ($_SESSION['user'] == "") {
+    header("Location: index.php");
+  }
   include_once 'connection.php';
 
   $id = $_GET['id'];
@@ -80,6 +83,7 @@
 								  <div class="form-group row">
 								    <label for="no" class="col-sm-2 col-form-label">No. Surat</label>
 								    <div class="col-sm-4">
+								    	<input type="hidden" value="<?=$data['no_surat']?>" name="noas">
 								      <input type="text" readonly class="form-control-plaintext" id="no" name="nosu" value="<?=$data['no_surat']?>">
 								    </div>
 								  </div>

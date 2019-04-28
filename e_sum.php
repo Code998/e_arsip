@@ -1,7 +1,11 @@
-<?php
-	session_start();
-	include_once 'connection.php';
+<?php  
+  session_start();
+  if ($_SESSION['user'] == "") {
+    header("Location: index.php");
+  }
+  include_once 'connection.php';
 
+  	$noas = $_POST['noas']
 	$nosu = $_POST['nosu'];
 	$dake = $_POST['asal'];
 	$tsur = $_POST['t_sur'];
@@ -10,7 +14,7 @@
 	$perihal = $_POST['perihal'];
 	$isri = $_POST['isri'];
 
-	$sql = "UPDATE arsip_surat SET dari_kpd = '" . $dake . "', tanggal_surat = '" . $tsur . "', alamat = '" . $alamat . "', indeks = '" . $indeks . "', perihal = '" . $perihal . "', isi_ringkas = '" . $isri . "' WHERE no_surat = ". $nosu;
+	$sql = "UPDATE arsip_surat SET dari_kpd = '" . $dake . "', tanggal_surat = '" . $tsur . "', alamat = '" . $alamat . "', indeks = '" . $indeks . "', perihal = '" . $perihal . "', isi_ringkas = '" . $isri . "', no_surat = '" . $nosu . "' WHERE no_surat = ". $noas;
 
 	if ($conn->query($sql) === TRUE) {
 		header("Location: p_data_surat.php");
@@ -18,3 +22,4 @@
 	else{
 		echo "Gagal!";
 	}
+?>

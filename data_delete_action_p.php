@@ -1,6 +1,10 @@
-<?php
-	include_once 'connection.php';
-
+<?php  
+  session_start();
+  if ($_SESSION['user'] == "") {
+    header("Location: index.php");
+  }
+  include_once 'connection.php';
+	
 	$a = $_GET['nip'];
 	$sql = "DELETE FROM pegawai WHERE nip = " . $a;
 
@@ -10,3 +14,4 @@
 	else{
 		echo "Gagal!";
 	}
+?>

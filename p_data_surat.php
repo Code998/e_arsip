@@ -1,5 +1,8 @@
 <?php  
   session_start();
+  if ($_SESSION['user'] == "") {
+    header("Location: index.php");
+  }
   include_once 'connection.php';
 
   $jenis = $_POST['jenis'];
@@ -160,7 +163,7 @@
                                 <img src="assets/img/writing.svg" height="25" width="25" title="Lihat Lampiran">
                             </a>&nbsp;
                             <a href="#" data-href="ddelete.php?id=<?=$row['no_surat']?>" data-toggle="modal" data-target="#confirm-delete">
-                              <img src="assets/img/clear-button.svg" height="25" width="25">
+                              <img src="assets/img/clear-button.svg" height="25" width="25" title="Delete">
                             </a>&nbsp;
                             <a href="detail.php?id=<?=$row['no_surat']?>">
                               <img src="assets/img/info.svg" height="25" width="25" title="Detail">

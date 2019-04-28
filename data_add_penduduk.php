@@ -1,3 +1,10 @@
+<?php  
+  session_start();
+  if ($_SESSION['user'] == "") {
+    header("Location: index.php");
+  }
+  include_once 'connection.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>

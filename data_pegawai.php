@@ -1,5 +1,8 @@
 <?php  
   session_start();
+  if ($_SESSION['user'] == "") {
+    header("Location: index.php");
+  }
   include_once 'connection.php';
 
   $search = $_POST['search'];
@@ -119,11 +122,11 @@
                             <?= $row['jabatan'] ?>
                           </td>
                           <td>
-                            <a href="#">
-                                <img src="assets/img/writing.svg" height="25" width="25">
+                            <a href="data_edit_pegawai.php?nip=<?=$row['nip']?>">
+                                <img src="assets/img/writing.svg" height="25" width="25" title="Edit">
                             </a>
                             <a href="#" data-href="data_delete_action_p.php?nip=<?=$row['nip']?>" data-toggle="modal" data-target="#confirm-delete">
-                              <img src="assets/img/clear-button.svg" height="25" width="25">
+                              <img src="assets/img/clear-button.svg" height="25" width="25" title="Delete">
                             </a>
                           </td>
                         </tr>

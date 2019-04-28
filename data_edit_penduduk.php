@@ -7,7 +7,7 @@
 
   $a = $_GET['nip'];
 
-  $sql = "SELECT * FROM pegawai WHERE nip = " . $a;
+  $sql = "SELECT * FROM penduduk WHERE nip = " . $a;
   $result = $conn->query($sql);
   $data = $result->fetch_assoc();
 ?>
