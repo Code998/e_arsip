@@ -9,10 +9,10 @@
   $search = $_POST['search'];
 
   if ($search == "") {
-    $sql = "SELECT * FROM penduduk";
+    $sql = "SELECT * FROM penduduk ORDER BY nama";
   }
   else{
-    $sql = "SELECT * FROM penduduk WHERE nik LIKE '%" . $search . "%' OR no_kk LIKE '%" . $search . "%' OR nama LIKE '%" . $search . "%' OR tempat_lahir LIKE '%" . $search . "%' OR tanggal_lahir LIKE '%" . $search . "%' OR usia LIKE '%" . $search . "%' OR jenis_kelamin LIKE '%" . $search . "%' OR status LIKE '%" . $search . "%' OR alamat LIKE '%" . $search . "%' OR agama LIKE '%" . $search . "%' OR pekerjaan LIKE '%" . $search . "%' OR kewarnegaraan LIKE '%" . $search . "%' OR tanggal_buat LIKE '%" . $search . "%'";
+    $sql = "SELECT * FROM penduduk WHERE nik LIKE '%" . $search . "%' OR no_kk LIKE '%" . $search . "%' OR nama LIKE '%" . $search . "%' OR tempat_lahir LIKE '%" . $search . "%' OR tanggal_lahir LIKE '%" . $search . "%' OR usia LIKE '%" . $search . "%' OR jenis_kelamin LIKE '%" . $search . "%' OR status LIKE '%" . $search . "%' OR alamat LIKE '%" . $search . "%' OR agama LIKE '%" . $search . "%' OR pekerjaan LIKE '%" . $search . "%' OR kewarnegaraan LIKE '%" . $search . "%' OR tanggal_buat LIKE '%" . $search . "%' ORDER BY nama";
   }
 
   $result = $conn->query($sql);

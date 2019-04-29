@@ -143,7 +143,7 @@
                       <select class="form-control" id="namaP" name="namaPeg">
                         <?php 
                           while ($data = $result1->fetch_assoc()) {
-                            echo "<option>" . $data['nama'] . "</option>";
+                            echo "<option value='" . $data['nama'] . "'>" . $data['nama'] . "</option>";
                           }
                         ?>
                       </select>
@@ -196,7 +196,7 @@
                       <select class="form-control" id="namaPe" name="namaPeg1">
                         <?php 
                           while ($dat = $result->fetch_assoc()) {
-                            echo "<option>" . $dat['nama'] . "</option>";
+                            echo "<option value='" . $data['nama'] . "'>" . $data['nama'] . "</option>";
                           }
                         ?>
                       </select>

@@ -40,7 +40,7 @@
 			$dat0 = $res0->fetch_assoc();
 
 			$docx = new DOCXTemplate('template/template_pengantar.docx');
-			$docx->set('nomor',  $data['no_surat']);
+			$docx->set('nomor',  '470 / ' . $data['no_surat'] . ' / 35.07.23.2003 / ' . date('Y', strtotime($data['tanggal_input'])));
 			$docx->set('nama', $data['dari_kpd']);
 			$docx->set('nik', $dat['nik']);
 			$docx->set('ttl', $dat['tempat_lahir'] . "/ " . $dat['tanggal_lahir']);
@@ -73,7 +73,7 @@
 			$dat0 = $res0->fetch_assoc();
 
 			$docx = new DOCXTemplate('template/template_skck.docx');
-			$docx->set('nomor',  $data['no_surat']);
+			$docx->set('nomor',  '470 / ' . $data['no_surat'] . ' / 35.07.23.2003 / ' . date('Y', strtotime($data['tanggal_input'])));
 			$docx->set('nama', $data['dari_kpd']);
 			$docx->set('nik', $dat['nik']);
 			$docx->set('ttl', $dat['tempat_lahir'] . "/ " . $dat['tanggal_lahir']);
@@ -106,7 +106,7 @@
 			$dat0 = $res0->fetch_assoc();
 
 			$docx = new DOCXTemplate('template/template_domisili.docx');
-			$docx->set('nomor',  $data['no_surat']);
+			$docx->set('nomor',  '470 / ' . $data['no_surat'] . ' / 35.07.23.2003 / ' . date('Y', strtotime($data['tanggal_input'])));
 			$docx->set('nama', $data['dari_kpd']);
 			$docx->set('nik', $dat['nik']);
 			$docx->set('ttl', $dat['tempat_lahir'] . "/ " . $dat['tanggal_lahir']);

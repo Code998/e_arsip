@@ -177,12 +177,6 @@
 								    </div>
 								  </div>
 								  <div class="form-group row">
-								    <label for="index" class="col-sm-2 col-form-label">Indeks</label>
-								    <div class="col-sm-10">
-								      <input type="text" readonly class="form-control-plaintext" id="index" value="<?=$data['indeks']?>">
-								    </div>
-								  </div>
-								  <div class="form-group row">
 								    <label for="perihal" class="col-sm-2 col-form-label">Perihal</label>
 								    <div class="col-sm-10">
 								      <input type="text" readonly class="form-control-plaintext" id="perihal" value="<?=$data['perihal']?>">

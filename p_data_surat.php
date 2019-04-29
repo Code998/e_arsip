@@ -21,7 +21,7 @@
   $search = $_POST['search'];
 
   if ($search != "") {
-    $sql = "SELECT * FROM arsip_surat WHERE jenis LIKE '%" . $search . "%' OR no_surat LIKE '%" . $search . "%' OR dari_kpd LIKE '%" . $search . "%' OR tanggal_surat LIKE '%" . $search . "%' OR tanggal_input LIKE '%" . $search . "%' OR perihal LIKE '%" . $search . "%' OR laci LIKE '%" . $search . "%' OR guide LIKE '%" . $search . "%'";
+    $sql = "SELECT * FROM arsip_surat WHERE jenis LIKE '%" . $search . "%' OR no_surat LIKE '%" . $search . "%' OR dari_kpd LIKE '%" . $search . "%' OR tanggal_surat LIKE '%" . $search . "%' OR tanggal_input LIKE '%" . $search . "%' OR perihal LIKE '%" . $search . "%' OR alamat LIKE '%" . $search . "%' OR laci LIKE '%" . $search . "%' OR guide LIKE '%" . $search . "%'";
   }
 
   $result = $conn->query($sql);
@@ -121,6 +121,7 @@
                       <th scope="col">Perihal</th>
                       <th scope="col">Laci</th>
                       <th scope="col">Guide</th>
+                      <th scope="col">Alamat</th>
                       <th scope="col" colspan="3">Keterangan</th>
                     </tr>
                   </thead>
@@ -130,7 +131,14 @@
                     ?>
                         <tr>
                           <td>
-                            <?= $row['no_surat'] ?>
+                            <?php  
+                              if ($row['jenis'] == "Surat Keluar") {
+                               echo "470 / " . $row['no_surat'] . " / 35.07.23.2003 / " . date('Y', strtotime($row['tanggal_input']));
+                              }
+                              elseif ($row['jenis'] == "Surat Keluar"){
+                                echo $row['no_surat'];
+                              }
+                            ?>
                           </td>
                           <td>
                             <?= $row['jenis'] ?>
@@ -158,6 +166,9 @@
                           </td>
                           <td>
                             <?= $row['guide'] ?>
+                          </td>
+                          <td>
+                            <?= $row['alamat'] ?>
                           </td>
                           <td>
                             <a href="show_image.php?id=<?=$row['no_surat']?>">

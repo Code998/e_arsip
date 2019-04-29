@@ -18,7 +18,6 @@ $(document).ready(function(){
 			            display: true,
 			            ticks: {
 			                beginAtZero: true,
-			                max: 5,
 			                min: 0
 			            }
 			        }],
