@@ -12,6 +12,15 @@
 	$result = $conn->query($sql0);
 	$data = $result->fetch_assoc();
 
+	$sql1 = "SELECT * FROM penduduk WHERE nik = '" . $data['nik'] . "'";
+	$res = $conn->query($sql1);
+	$dat = $res->fetch_assoc();
+
+	$sql2 = "SELECT * FROM pegawai WHERE nama = '" . $data['nama_pe'] . "'";
+
+	$res0 = $conn->query($sql2);
+	$dat0 = $res0->fetch_assoc();
+
 	if ($data['jenis'] == "Surat Masuk") {
 		$info = pathinfo($data['file']);
 		if ($info["extension"] == "jpg" OR $info["extension"] == "png") {
@@ -30,20 +39,11 @@
 	elseif ($data['jenis'] == "Surat Keluar") {
 		if ($data['laci'] == "Surat Pengantar") {
 
-			$sql1 = "SELECT * FROM penduduk WHERE nik = '" . $data['nik'] . "'";
-			$res = $conn->query($sql1);
-			$dat = $res->fetch_assoc();
-
-			$sql2 = "SELECT * FROM arsip_surat WHERE nik = '" . $data['nik'] . "'";
-
-			$res0 = $conn->query($sql2);
-			$dat0 = $res0->fetch_assoc();
-
 			$docx = new DOCXTemplate('template/template_pengantar.docx');
 			$docx->set('nomor',  '470 / ' . $data['no_surat'] . ' / 35.07.23.2003 / ' . date('Y', strtotime($data['tanggal_input'])));
 			$docx->set('nama', $data['dari_kpd']);
 			$docx->set('nik', $dat['nik']);
-			$docx->set('ttl', $dat['tempat_lahir'] . "/ " . $dat['tanggal_lahir']);
+			$docx->set('ttl', $dat['tempat_lahir'] . "/ " . date('d/m/Y', strtotime($dat['tanggal_lahir'])));
 			$docx->set('jk', $dat['jenis_kelamin']);
 			$docx->set('status', $dat['status']);
 			$docx->set('bangsa', $dat['kewarnegaraan']);
@@ -52,7 +52,8 @@
 			$docx->set('alamat', $dat['alamat']);
 			$docx->set('guide', $data['guide']);
 			$docx->set('tgl', date('d/m/Y', strtotime($data['tanggal_input'])));
-			$docx->set('nope', $dat0['nama_pe']);
+			$docx->set('nope', $data['nama_pe']);
+			$docx->set('jabatan', $dat0['jabatan']);
 
 			$nama = "surat_". $data['perihal'] . "_" . $data['nik']. ".docx";
 			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');
@@ -63,20 +64,11 @@
 		}
 		elseif ($data['laci'] == "Surat Keterangan" AND $data['guide'] == "SKCK") {
 
-			$sql1 = "SELECT * FROM penduduk WHERE nik = '" . $data['nik'] . "'";
-			$res = $conn->query($sql1);
-			$dat = $res->fetch_assoc();
-
-			$sql2 = "SELECT * FROM arsip_surat WHERE nik = '" . $data['nik'] . "'";
-
-			$res0 = $conn->query($sql2);
-			$dat0 = $res0->fetch_assoc();
-
 			$docx = new DOCXTemplate('template/template_skck.docx');
 			$docx->set('nomor',  '470 / ' . $data['no_surat'] . ' / 35.07.23.2003 / ' . date('Y', strtotime($data['tanggal_input'])));
 			$docx->set('nama', $data['dari_kpd']);
 			$docx->set('nik', $dat['nik']);
-			$docx->set('ttl', $dat['tempat_lahir'] . "/ " . $dat['tanggal_lahir']);
+			$docx->set('ttl', $dat['tempat_lahir'] . "/ " . date('d/m/Y', strtotime($dat['tanggal_lahir'])));
 			$docx->set('jk', $dat['jenis_kelamin']);
 			$docx->set('agama', $dat['agama']);
 			$docx->set('kene', $dat['kewarnegaraan']);
@@ -84,7 +76,8 @@
 			$docx->set('peke', $dat['pekerjaan']);
 			$docx->set('alamat', $dat['alamat']);
 			$docx->set('tgl', date('d/m/Y', strtotime($data['tanggal_input'])));
-			$docx->set('np', $dat0['nama_pe']);
+			$docx->set('np', $data['nama_pe']);
+			$docx->set('jabatan', $dat0['jabatan']);
 
 			$nama = "surat_". $data['perihal'] . "_" . $data['nik']. ".docx";
 			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');
@@ -96,20 +89,13 @@
 
 		elseif ($data['laci'] == "Surat Keterangan" AND $data['guide'] == "Domisili") {
 
-			$sql1 = "SELECT * FROM penduduk WHERE nik = '" . $data['nik'] . "'";
-			$res = $conn->query($sql1);
-			$dat = $res->fetch_assoc();
-
-			$sql2 = "SELECT * FROM arsip_surat WHERE nik = '" . $data['nik'] . "'";
-
-			$res0 = $conn->query($sql2);
-			$dat0 = $res0->fetch_assoc();
+			
 
 			$docx = new DOCXTemplate('template/template_domisili.docx');
 			$docx->set('nomor',  '470 / ' . $data['no_surat'] . ' / 35.07.23.2003 / ' . date('Y', strtotime($data['tanggal_input'])));
 			$docx->set('nama', $data['dari_kpd']);
 			$docx->set('nik', $dat['nik']);
-			$docx->set('ttl', $dat['tempat_lahir'] . "/ " . $dat['tanggal_lahir']);
+			$docx->set('ttl', $dat['tempat_lahir'] . "/ " . date('d/m/Y', strtotime($dat['tanggal_lahir'])));
 			$docx->set('jk', $dat['jenis_kelamin']);
 			$docx->set('agama', $dat['agama']);
 			$docx->set('kene', $dat['kewarnegaraan']);
@@ -117,7 +103,8 @@
 			$docx->set('peke', $dat['pekerjaan']);
 			$docx->set('alamat', $dat['alamat']);
 			$docx->set('tgl', date('d/m/Y', strtotime($data['tanggal_input'])));
-			$docx->set('nape', $dat0['nama_pe']);
+			$docx->set('nape', $data['nama_pe']);
+			$docx->set('jabatan', $dat0['jabatan']);
 
 			$nama = "surat_". $data['perihal'] . "_" . $data['nik']. ".docx";
 			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');

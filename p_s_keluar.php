@@ -196,7 +196,7 @@
                       <select class="form-control" id="namaPe" name="namaPeg1">
                         <?php 
                           while ($dat = $result->fetch_assoc()) {
-                            echo "<option value='" . $data['nama'] . "'>" . $data['nama'] . "</option>";
+                            echo "<option value='" . $dat['nama'] . "'>" . $dat['nama'] . "</option>";
                           }
                         ?>
                       </select>

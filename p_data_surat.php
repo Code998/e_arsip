@@ -9,13 +9,13 @@
   $jenis = $_POST['jenis'];
 
   if ($jenis == "Surat Masuk") {
-    $sql = "SELECT * FROM arsip_surat WHERE jenis = '" . $jenis . "'";
+    $sql = "SELECT * FROM arsip_surat WHERE jenis = '" . $jenis . "' ORDER BY tanggal_input";
   }
   elseif ($jenis == "Surat Keluar") {
-    $sql = "SELECT * FROM arsip_surat WHERE jenis = '" . $jenis . "'";
+    $sql = "SELECT * FROM arsip_surat WHERE jenis = '" . $jenis . "' ORDER BY tanggal_input";
   }
   else{
-    $sql = "SELECT * FROM arsip_surat";
+    $sql = "SELECT * FROM arsip_surat ORDER BY tanggal_input";
   }
 
   $search = $_POST['search'];

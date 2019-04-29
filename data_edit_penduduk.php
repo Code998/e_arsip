@@ -117,7 +117,10 @@
                 <div class="form-group row">
                   <label for="JenisKelamin" class="col-sm-2 col-form-label">Jenis Kelamin</label>
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" id="JenisKelamin" name="jenis_kelamin" value="<?=$data['jenis_kelamin']?>">
+                    <select class="form-control" id="jk" name="jenis_kelamin">
+                      <option>Laki-Laki</option>
+                      <option>Perempuan</option>
+                    </select>
                   </div>
                 </div>
                 <div class="form-group row">

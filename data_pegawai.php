@@ -9,7 +9,7 @@
   $search = $_POST['search'];
 
   if ($search == "") {
-    $sql = "SELECT * FROM pegawai";
+    $sql = "SELECT * FROM pegawai ORDER BY nip";
   }
   else{
     $sql = "SELECT * FROM pegawai WHERE nip LIKE '%" . $search . "%' OR nama LIKE '%" . $search . "%' OR alamat LIKE '%" . $search . "%' OR jabatan LIKE '%" . $search . "%'";
