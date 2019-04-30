@@ -29,10 +29,10 @@
 			header("Location:data_penduduk.php");
 		}
 		else{
-			echo "<script> alert('Maaf Anda Sudah Mendaftar'); </script>";
+			echo "<script> alert('Maaf Anda Sudah Mendaftar'); window.location = 'data_penduduk.php';</script>";
 		}
 	}
 	else{
-		echo "<script> alert('Data Anda Sudah Terdaftar'); </script>";
+		echo "<script> alert('Data Anda Sudah Terdaftar'); window.location = 'data_penduduk.php';</script>";
 	}
 ?>

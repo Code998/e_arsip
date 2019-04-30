@@ -89,7 +89,7 @@
                   <label for="stat" class="col-sm-2 col-form-label">Status</label>
                   <div class="col-sm-4">
                     <select class="form-control" id="stat" name="status">
-                      <option>Single</option>
+                      <option>Belum Menikah</option>
                       <option>Menikah</option>
                       <option>Cerai Hidup</option>
                       <option>Cerai Mati</option>

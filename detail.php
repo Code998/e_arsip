@@ -84,7 +84,7 @@
 								    <label for="no" class="col-sm-2 col-form-label">No. Surat</label>
 								    <div class="col-sm-4">
 								    	<input type="hidden" value="<?=$data['no_surat']?>" name="noas">
-								      <input type="text"  class="form-control" id="no" name="nosu" value="<?=$data['no_surat']?>">
+								      <input type="text"  class="form-control" id="no" name="nosu" value="<?=$data['r_no_su']?>">
 								    </div>
 								  </div>
 									<div class="form-group row">
@@ -173,7 +173,7 @@
 								  <div class="form-group row">
 								    <label for="no" class="col-sm-2 col-form-label">No. Surat</label>
 								    <div class="col-sm-10">
-								      <input type="text" readonly class="form-control-plaintext" id="no" value="<?=$data['no_surat']?>">
+								      <input type="text" readonly class="form-control-plaintext" id="no" value="<?="407 / " . $data['no_surat'] . " / 35.07.23.2003 / " . date('Y', strtotime($data['tanggal_input']))?>">
 								    </div>
 								  </div>
 								  <div class="form-group row">

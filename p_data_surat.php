@@ -135,8 +135,8 @@
                               if ($row['jenis'] == "Surat Keluar") {
                                echo "470 / " . $row['no_surat'] . " / 35.07.23.2003 / " . date('Y', strtotime($row['tanggal_input']));
                               }
-                              elseif ($row['jenis'] == "Surat Keluar"){
-                                echo $row['no_surat'];
+                              elseif ($row['jenis'] == "Surat Masuk"){
+                                echo $row['r_no_su'];
                               }
                             ?>
                           </td>
@@ -186,6 +186,9 @@
                   </tbody>
                 </table>
               </div>
+              <div class="float-right">
+                  <a href="data_cetak_surat.php" class="btn btn-dark d-flex justify-content-center"><i class="material-icons md-light mr-1">print</i>Print</a>
+                </div>
             </div>
           </div>
         </div>

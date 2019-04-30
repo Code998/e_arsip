@@ -18,7 +18,7 @@
 			header("Location: p_data_surat.php");
 		}
 		else{
-			echo "<script> alert('Maaf Anda Sudah Mendaftar'); </script>";
+			echo "<script> alert('Gagal Menghapus'); window.location = 'p_data_surat.php';</script>";
 		}
 	}
 	else{
@@ -28,7 +28,7 @@
 			header("Location: p_data_surat.php");
 		}
 		else{
-			echo "<script> alert('Maaf Anda Sudah Mendaftar'); </script>";
+			echo "<script> alert('Gagal Menghapus'); window.location = 'p_data_surat.php';</script>";
 		}
 
 	}

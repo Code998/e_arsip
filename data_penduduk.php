@@ -92,7 +92,10 @@
                 </form>
               </div>
               <div class="float-right">
-                <a href="data_add_penduduk.php" class="btn btn-primary">Tambah</a>
+                <a href="data_cetak_pen.php" class="btn btn-dark d-flex justify-content-center"><i class="material-icons md-light mr-1">print</i>Print</a>
+              </div>
+              <div class="float-right mr-3">
+                <a href="data_add_penduduk.php" class="btn btn-primary d-flex justify-content-center"><i class="material-icons">add</i> Tambah</a>
               </div>
               <div class="table-responsive">
                 <table class="table text-center">
@@ -138,7 +141,7 @@
                           </td>
                           <td>
                             <?php
-                            if ($row['jenis_kelamin'] == "L") {
+                            if ($row['jenis_kelamin'] == "L" || $row['jenis_kelamin'] == "Laki-Laki") {
                               echo "Laki-Laki";
                             }
                             else{

@@ -20,10 +20,10 @@
 			header("Location:data_pegawai.php");
 		}
 		else{
-			echo "<script> alert('Maaf Anda Sudah Mendaftar'); </script>";
+			echo "<script> alert('Maaf Anda Sudah Mendaftar'); window.location = 'data_pegawai.php';</script>";
 		}
 	}
 	else{
-		echo "<script> alert('Data Anda Sudah Terdaftar'); </script>";
+		echo "<script> alert('Data Anda Sudah Terdaftar'); window.location = 'data_pegawai.php';</script>";
 	}
 ?>

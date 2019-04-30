@@ -92,7 +92,10 @@
                 </form>
               </div>
               <div class="float-right">
-                <a href="data_add_pegawai.php" class="btn btn-primary">Tambah</a>
+                <a href="data_cetak_peg.php" class="btn btn-dark d-flex justify-content-center"><i class="material-icons md-light mr-1">print</i>Print</a>
+              </div>
+              <div class="float-right">
+                <a href="data_add_pegawai.php" class="btn btn-primary d-flex justify-content-center mr-2"><i class="material-icons md-light mr-1">add</i>Tambah</a>
               </div>
               <div class="table-responsive-lg">
                 <table class="table text-center">

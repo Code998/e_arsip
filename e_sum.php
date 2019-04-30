@@ -20,6 +20,6 @@
 		header("Location: p_data_surat.php");
 	}
 	else{
-			echo "<script> alert('Maaf Anda Sudah Mendaftar'); </script>";
+			echo "<script> alert('Gagal Mengupdate'); window.location = 'p_data_surat.php';</script>";
 		}
 ?>

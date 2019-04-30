@@ -27,14 +27,14 @@
 				header("Location:p_data_surat.php");
 			}
 			else{
-				echo "Gagal!";
+				echo "<script> alert('Data Gagal Dimasukkan'); window.location = 'p_data_surat.php';</script>";
 			}
 		}
 		else{
-			echo "<script> alert('Data Gagal Dimasukkan'); </script>";
+			echo "<script> alert('Maaf Anda Sudah Mendaftar'); window.location = 'p_data_surat.php';</script>";
 		}
 	}
 	else{
-		echo "<script> alert('Data Anda Sudah Terdaftar'); </script>";
+		echo "<script> alert('Data Anda Sudah Terdaftar'); window.location = 'p_data_surat.php';</script>";
 	}
 ?>

@@ -118,15 +118,20 @@
                   <label for="JenisKelamin" class="col-sm-2 col-form-label">Jenis Kelamin</label>
                   <div class="col-sm-4">
                     <select class="form-control" id="jk" name="jenis_kelamin">
-                      <option>Laki-Laki</option>
-                      <option>Perempuan</option>
+                      <option <?php if($options=="Laki-Laki") echo 'selected="selected"'; ?>>Laki-Laki</option>
+                      <option <?php if($options=="Perempuan") echo 'selected="selected"'; ?>>Perempuan</option>
                     </select>
                   </div>
                 </div>
                 <div class="form-group row">
                   <label for="Status" class="col-sm-2 col-form-label">Status</label>
                   <div class="col-sm-4">
-                    <input type="text" class="form-control" id="Status" name="status" value="<?=$data['status']?>">
+                    <select class="form-control" id="stat" name="status">
+                      <option <?php if($options=="Belum Menikah") echo 'selected="selected"'; ?>>Belum Menikah</option>
+                      <option <?php if($options=="Menikah") echo 'selected="selected"'; ?>>Menikah</option>
+                      <option <?php if($options=="Cerai Hidup") echo 'selected="selected"'; ?>>Cerai Hidup</option>
+                      <option <?php if($options=="Cerai Mati") echo 'selected="selected"'; ?>>Cerai Mati</option>
+                    </select>
                   </div>
                 </div>
                 <div class="form-group row">
