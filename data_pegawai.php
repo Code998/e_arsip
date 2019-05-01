@@ -23,7 +23,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>E-Sip - Data Pegawai</title>
+  <title>E-Sides - Data Pegawai</title>
   <link rel="icon" href="assets/img/office-material.svg">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/infinite.css">
@@ -34,7 +34,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">
         <img src="assets/img/office-material.svg" width="40" height="30" alt="">
-        E-Sip
+        E-Sides
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -93,9 +93,6 @@
               </div>
               <div class="float-right">
                 <a href="data_cetak_peg.php" class="btn btn-dark d-flex justify-content-center"><i class="material-icons md-light mr-1">print</i>Print</a>
-              </div>
-              <div class="float-right">
-                <a href="data_add_pegawai.php" class="btn btn-primary d-flex justify-content-center mr-2"><i class="material-icons md-light mr-1">add</i>Tambah</a>
               </div>
               <div class="table-responsive-lg">
                 <table class="table text-center">

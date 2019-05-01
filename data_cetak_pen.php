@@ -1,5 +1,8 @@
 <?php  
 	session_start();
+	if ($_SESSION['user'] == "" && $_SESSION['nip'] == "") {
+		header("Location: index.php");
+	}
 	include_once 'connection.php';
 
 	$sql = "SELECT * FROM penduduk";
@@ -11,7 +14,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Cetak Surat Pegawai</title>
+		<title>Cetak Surat Penduduk</title>
 		<style type="text/css">
 				body{
 					text-align: center;

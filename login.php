@@ -18,7 +18,7 @@
 	}
 	elseif ($conn->query($sql0)->num_rows == 1) {
 		$_SESSION['nip'] = $user;
-		header("Location:data_chart.php");
+		header("Location:data_char_pe.php");
 	}
 	else{
 			echo "<script> alert('Username / Pass Salah'); </script>";

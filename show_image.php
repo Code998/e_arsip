@@ -1,8 +1,8 @@
 <?php  
   session_start();
-  if ($_SESSION['user'] == "") {
-    header("Location: index.php");
-  }
+  if ($_SESSION['user'] == "" && $_SESSION['nip'] == "") {
+		header("Location: index.php");
+	}
   include_once 'connection.php';
 	include('docxtemplate.class.php');
 

@@ -1,7 +1,7 @@
 <?php
   error_reporting(0);
   session_start();
-  if ($_SESSION['user'] == "") {
+  if ($_SESSION['nip'] == "") {
     header("Location: index.php");
   }
   include_once 'connection.php';
@@ -42,27 +42,22 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="pilih_surat.php">Tambah Surat</a>
-          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Data
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="p_data_surat.php">Data Surat</a>
+              <a class="dropdown-item" href="p_data_surat_pe.php">Data Surat</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="data_pegawai.php">Data Pegawai</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="data_penduduk.php">Data Penduduk</a>
+              <a class="dropdown-item" href="data_penduduk_pe.php">Data Penduduk</a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="data_chart.php">Statistik Surat</a>
+            <a class="nav-link" href="data_char_pe.php">Statistik Surat</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Hello, <?=$_SESSION['user']?>
+              Hello, <?=$_SESSION['nip']?>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">About</a>
@@ -94,9 +89,6 @@
               <div class="float-right">
                 <a href="data_cetak_pen.php" class="btn btn-dark d-flex justify-content-center"><i class="material-icons md-light mr-1">print</i>Print</a>
               </div>
-              <div class="float-right mr-3">
-                <a href="data_add_penduduk.php" class="btn btn-primary d-flex justify-content-center"><i class="material-icons">add</i> Tambah</a>
-              </div>
               <div class="table-responsive">
                 <table class="table text-center">
                   <thead class="thead-light">
@@ -113,7 +105,6 @@
                       <th scope="col">Agama</th>
                       <th scope="col">Pekerjaan</th>
                       <th scope="col">Kewarnegaraan</th>
-                      <th scope="col">Keterangan</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -163,14 +154,6 @@
                           </td>
                           <td>
                             <?= $row['kewarnegaraan'] ?>
-                          </td>
-                          <td>
-                            <a href="data_edit_penduduk.php?nik=<?=$row['nik']?>">
-                                <img src="assets/img/writing.svg" height="25" width="25" title="Edit Data">
-                            </a>
-                            <a href="#" data-href="data_delete_action_pe.php?nik=<?=$row['nik']?>" data-toggle="modal" data-target="#confirm-delete">
-                              <img src="assets/img/clear-button.svg" height="25" width="25" title="Delete">
-                            </a>
                           </td>
                         </tr>
                       <?php } ?>
