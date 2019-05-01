@@ -20,20 +20,44 @@
 
 	$sql1 = "INSERT INTO arsip_surat(jenis, no_surat, nik, dari_kpd, tanggal_input, alamat, perihal, laci, guide, nama_pe, admin) VALUES ('" . $jenis . "', '', '" . $nik . "','" . $dake . "', NOW(), '" . $data['alamat'] . "' ,'" . $laci . " " . $guide . "', '" . $laci . "', '" . $guide . "', '" . $np . "', '" . $_SESSION['user'] . "')";
 
-	if ($conn->query($sql)->num_rows == 1) {
-		if ($conn->query($sql0)->num_rows == 0) {
-			if ($conn->query($sql1) === TRUE) {
-				header("Location:p_data_surat.php");
+	$sql2 = "SELECT * FROM arsip_surat";
+
+	if ($conn->query($sql2)->num_rows == 0) {
+		$sql3 = "ALTER TABLE arsip_surat AUTO_INCREMENT = 1";
+		$conn->query($sql3);
+		if ($conn->query($sql)->num_rows == 1) {
+			if ($conn->query($sql0)->num_rows == 0) {
+				if ($conn->query($sql1) === TRUE) {
+					header("Location:p_data_surat.php");
+				}
+				else{
+					echo "<script> alert('Data Gagal Dimasukkan'); window.location = 'p_data_surat.php';</script>";
+				}
 			}
 			else{
-				echo "<script> alert('Data Gagal Dimasukkan'); window.location = 'p_data_surat.php';</script>";
+				echo "<script> alert('Maaf Anda Sudah Mendaftar'); window.location = 'p_data_surat.php';</script>";
 			}
 		}
 		else{
-			echo "<script> alert('Maaf Anda Sudah Mendaftar'); window.location = 'p_data_surat.php';</script>";
+			echo "<script> alert('Data Anda Sudah Terdaftar'); window.location = 'p_data_surat.php';</script>";
 		}
 	}
 	else{
-		echo "<script> alert('Data Anda Sudah Terdaftar'); window.location = 'p_data_surat.php';</script>";
+		if ($conn->query($sql)->num_rows == 1) {
+			if ($conn->query($sql0)->num_rows == 0) {
+				if ($conn->query($sql1) === TRUE) {
+					header("Location:p_data_surat.php");
+				}
+				else{
+					echo "<script> alert('Data Gagal Dimasukkan'); window.location = 'p_data_surat.php';</script>";
+				}
+			}
+			else{
+				echo "<script> alert('Maaf Anda Sudah Mendaftar'); window.location = 'p_data_surat.php';</script>";
+			}
+		}
+		else{
+			echo "<script> alert('Data Anda Sudah Terdaftar'); window.location = 'p_data_surat.php';</script>";
+		}
 	}
 ?>

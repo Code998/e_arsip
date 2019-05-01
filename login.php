@@ -21,6 +21,6 @@
 		header("Location:data_char_pe.php");
 	}
 	else{
-			echo "<script> alert('Username / Pass Salah'); </script>";
+		echo "<script> alert('Username / Pass Salah'); </script>";
 	}
 ?>

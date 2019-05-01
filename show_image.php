@@ -71,7 +71,6 @@
 			header('Content-Type:application/msword');
 			header('Content-Disposition: attachment; filename="' . $nama);
 			@readfile($nama);
-			header("refresh:5; url=p_data_surat.php");
 		}
 		elseif ($data['laci'] == "Surat Keterangan" AND $data['guide'] == "SKCK") {
 
@@ -97,7 +96,6 @@
 			header('Content-Type:application/msword');
 			header('Content-Disposition: attachment; filename="' . $nama);
 			@readfile($nama);
-			header("refresh:5; url=p_data_surat.php");
 		}
 
 		elseif ($data['laci'] == "Surat Keterangan" AND $data['guide'] == "Domisili") {
@@ -124,7 +122,6 @@
 			header('Content-Type:application/msword');
 			header('Content-Disposition: attachment; filename="' . $nama);
 			@readfile($nama);
-			header("refresh:5; url=p_data_surat.php");
 		}
 	}
 

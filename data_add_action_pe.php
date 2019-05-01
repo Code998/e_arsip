@@ -22,7 +22,12 @@
 
 	$sql1 = "INSERT INTO penduduk VALUES ('" . $nik . "', '" . $nokk . "', '" . $nama . "', '" . $tela . "', '" . $tala . "', '" . $usi . "', '" . $jk . "', '" . $stat . "', '" . $alamat . "', '" . $agama . "', '" . $peker . "', '" . $kener . "', NOW())";
 
-	// echo $sql1;
+	$sql2 = "SELECT * FROM pegawai";
+
+	if ($conn->query($sql2)->num_rows == 0) {
+		$sql3 = "ALTER TABLE penduduk AUTO_INCREMENT = 1";
+		$conn->query($sql3);
+	}
 	if ($conn->query($sql0)->num_rows == 0) {
 		if ($conn->query($sql1) === TRUE) {
 			echo "Data Sudah Dimasukkan";
