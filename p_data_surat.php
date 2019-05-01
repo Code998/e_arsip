@@ -32,7 +32,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>E-Sip - Data Surat</title>
+  <title>E-Sides - Data Surat</title>
   <link rel="icon" href="assets/img/office-material.svg">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/infinite.css">
@@ -43,7 +43,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">
         <img src="assets/img/office-material.svg" width="40" height="30" alt="">
-        E-Sip
+        E-Sides
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -114,14 +114,15 @@
                 <table class="table">
                   <thead class="thead-light">
                     <tr>
-                      <th scope="col">No. Surat</th>
+                      <th scope="col">Nomor</th>
                       <th scope="col">Jenis</th>
                       <th scope="col">Dari / Kepada</th>
+                      <th scope="col">Alamat</th>
+                      <th scope="col">Nomor Surat</th>
                       <th scope="col">Tanggal Surat</th>
                       <th scope="col">Perihal</th>
                       <th scope="col">Laci</th>
                       <th scope="col">Guide</th>
-                      <th scope="col">Alamat</th>
                       <th scope="col" colspan="3">Keterangan</th>
                     </tr>
                   </thead>
@@ -131,20 +132,26 @@
                     ?>
                         <tr>
                           <td>
-                            <?php  
-                              if ($row['jenis'] == "Surat Keluar") {
-                               echo "470 / " . $row['no_surat'] . " / 35.07.23.2003 / " . date('Y', strtotime($row['tanggal_input']));
-                              }
-                              elseif ($row['jenis'] == "Surat Masuk"){
-                                echo $row['r_no_su'];
-                              }
-                            ?>
+                            <?=$row['no_surat']?>
                           </td>
                           <td>
                             <?= $row['jenis'] ?>
                           </td>
                           <td>
                             <?= $row['dari_kpd'] ?>
+                          </td>
+                          <td>
+                            <?= $row['alamat'] ?>
+                          </td>
+                          <td>
+                            <?php  
+                              if ($row['jenis'] == "Surat Keluar") {
+                               echo "470 / " . $row['no_surat'] . " / 35.07.23.2203 / " . date('Y', strtotime($row['tanggal_input']));
+                              }
+                              elseif ($row['jenis'] == "Surat Masuk"){
+                                echo $row['r_no_su'];
+                              }
+                            ?>
                           </td>
                           <td>
                             <?php
@@ -168,17 +175,14 @@
                             <?= $row['guide'] ?>
                           </td>
                           <td>
-                            <?= $row['alamat'] ?>
-                          </td>
-                          <td>
                             <a href="show_image.php?id=<?=$row['no_surat']?>">
-                                <img src="assets/img/writing.svg" height="25" width="25" title="Lihat Lampiran">
-                            </a>&nbsp;
+                                <img src="assets/img/writing.svg" height="22" width="22" title="Lihat Lampiran">
+                            </a>
                             <a href="#" data-href="delete.php?id=<?=$row['no_surat']?>" data-toggle="modal" data-target="#confirm-delete">
-                              <img src="assets/img/clear-button.svg" height="25" width="25" title="Delete">
-                            </a>&nbsp;
+                              <img src="assets/img/clear-button.svg" height="22" width="22" title="Delete">
+                            </a>
                             <a href="detail.php?id=<?=$row['no_surat']?>">
-                              <img src="assets/img/info.svg" height="25" width="25" title="Detail">
+                              <img src="assets/img/info.svg" height="22" width="22" title="Detail">
                             </a>
                           </td>
                         </tr>
@@ -187,8 +191,8 @@
                 </table>
               </div>
               <div class="float-right">
-                  <a href="data_cetak_surat.php" class="btn btn-dark d-flex justify-content-center"><i class="material-icons md-light mr-1">print</i>Print</a>
-                </div>
+                <a href="data_cetak_surat.php" class="btn btn-dark d-flex justify-content-center"><i class="material-icons md-light mr-1">print</i>Print</a>
+              </div>
             </div>
           </div>
         </div>

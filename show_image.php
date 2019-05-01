@@ -23,13 +23,22 @@
 
 	if ($data['jenis'] == "Surat Masuk") {
 		$info = pathinfo($data['file']);
-		if ($info["extension"] == "jpg" OR $info["extension"] == "png") {
+		if ($info["extension"] == "jpg" || $info["extension"] == "png") {
 			echo '<img src="assets/photo/'. rawurldecode($data['file']) .'">';
 		}
 		elseif ($info["extension"] == "pdf") {
 			$filename = rawurldecode($data['file']);
 			$file = "assets/photo/" . $filename;
 			header('Content-type: application/pdf');
+			header('Content-Disposition: inline; filename="' . $filename . '"');
+			header('Content-Transfer-Encoding: binary');
+			header('Accept-Ranges: bytes');
+			@readfile($file);
+		}
+		elseif ($info["extension"] == "docx" || $info["extension"] == "doc") {
+			$filename = rawurldecode($data['file']);
+			$file = "assets/photo/" . $filename;
+			header('Content-type: application/msword');
 			header('Content-Disposition: inline; filename="' . $filename . '"');
 			header('Content-Transfer-Encoding: binary');
 			header('Accept-Ranges: bytes');
@@ -54,6 +63,7 @@
 			$docx->set('tgl', date('d/m/Y', strtotime($data['tanggal_input'])));
 			$docx->set('nope', $data['nama_pe']);
 			$docx->set('jabatan', $dat0['jabatan']);
+			$docx->set('nip', $dat0['nip']);
 
 			$nama = "surat_". $data['perihal'] . "_" . $data['nik']. ".docx";
 			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');
@@ -61,6 +71,7 @@
 			header('Content-Type:application/msword');
 			header('Content-Disposition: attachment; filename="' . $nama);
 			@readfile($nama);
+			header("refresh:5; url=p_data_surat.php");
 		}
 		elseif ($data['laci'] == "Surat Keterangan" AND $data['guide'] == "SKCK") {
 
@@ -78,6 +89,7 @@
 			$docx->set('tgl', date('d/m/Y', strtotime($data['tanggal_input'])));
 			$docx->set('np', $data['nama_pe']);
 			$docx->set('jabatan', $dat0['jabatan']);
+			$docx->set('nip', $dat0['nip']);
 
 			$nama = "surat_". $data['perihal'] . "_" . $data['nik']. ".docx";
 			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');
@@ -85,11 +97,10 @@
 			header('Content-Type:application/msword');
 			header('Content-Disposition: attachment; filename="' . $nama);
 			@readfile($nama);
+			header("refresh:5; url=p_data_surat.php");
 		}
 
 		elseif ($data['laci'] == "Surat Keterangan" AND $data['guide'] == "Domisili") {
-
-			
 
 			$docx = new DOCXTemplate('template/template_domisili.docx');
 			$docx->set('nomor',  '470 / ' . $data['no_surat'] . ' / 35.07.23.2003 / ' . date('Y', strtotime($data['tanggal_input'])));
@@ -105,6 +116,7 @@
 			$docx->set('tgl', date('d/m/Y', strtotime($data['tanggal_input'])));
 			$docx->set('nape', $data['nama_pe']);
 			$docx->set('jabatan', $dat0['jabatan']);
+			$docx->set('nip', $dat0['nip']);
 
 			$nama = "surat_". $data['perihal'] . "_" . $data['nik']. ".docx";
 			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');
@@ -112,6 +124,7 @@
 			header('Content-Type:application/msword');
 			header('Content-Disposition: attachment; filename="' . $nama);
 			@readfile($nama);
+			header("refresh:5; url=p_data_surat.php");
 		}
 	}
 

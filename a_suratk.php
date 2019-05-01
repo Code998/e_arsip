@@ -16,7 +16,7 @@
 
 	$data = $conn->query($sql)->fetch_assoc();
 
-	$sql0 = "SELECT * FROM arsip_surat WHERE nik = '" . $nik . "' AND date(tanggal_input) = '" . date('Y-m-d') . "'";
+	$sql0 = "SELECT * FROM arsip_surat WHERE nik = '" . $nik . " AND perihal '" . $laci . " " . $guide . "' ' AND date(tanggal_input) = '" . date('Y-m-d') . "'";
 
 	$sql1 = "INSERT INTO arsip_surat(jenis, no_surat, nik, dari_kpd, tanggal_input, alamat, perihal, laci, guide, nama_pe, admin) VALUES ('" . $jenis . "', '', '" . $nik . "','" . $dake . "', NOW(), '" . $data['alamat'] . "' ,'" . $laci . " " . $guide . "', '" . $laci . "', '" . $guide . "', '" . $np . "', '" . $_SESSION['user'] . "')";
 
