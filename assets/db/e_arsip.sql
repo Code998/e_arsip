@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 01, 2019 at 04:47 PM
+-- Generation Time: May 02, 2019 at 01:57 AM
 -- Server version: 5.6.26
 -- PHP Version: 5.5.28
 
@@ -64,20 +64,15 @@ CREATE TABLE IF NOT EXISTS `arsip_surat` (
   `nama_pe` varchar(50) NOT NULL,
   `file` varchar(255) DEFAULT NULL,
   `admin` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `arsip_surat`
 --
 
 INSERT INTO `arsip_surat` (`jenis`, `no_surat`, `r_no_su`, `nik`, `dari_kpd`, `indeks`, `tanggal_surat`, `tanggal_input`, `alamat`, `perihal`, `isi_ringkas`, `laci`, `guide`, `nama_pe`, `file`, `admin`) VALUES
-('Surat Keluar', 31, '', '1', 'Cold Coffe', NULL, NULL, '2019-05-01 09:35:15', 'Artistic Drink Street Number 12', 'Surat Keterangan Domisili', NULL, 'Surat Keterangan', 'Domisili', 'Kiki Arnita S.M', NULL, 'admin'),
-('Surat Keluar', 32, '', '1', 'Cold Coffe', NULL, NULL, '2019-05-01 09:41:57', 'Artistic Drink Street Number 12', 'Surat Pengantar KTP', NULL, 'Surat Pengantar', 'KTP', 'Kiki Arnita S.M', NULL, 'admin'),
-('Surat Keluar', 33, '', '2', 'Chocolate Bar', NULL, NULL, '2019-05-01 09:42:46', 'Artistic Drink Street Number 12', 'Surat Keterangan SKCK', NULL, 'Surat Keterangan', 'SKCK', 'Kiki Arnita S.M', NULL, 'admin'),
-('Surat Keluar', 34, '', '2', 'Chocolate Bar', NULL, NULL, '2019-05-01 09:47:51', 'Artistic Drink Street Number 12', 'Surat Pengantar KTP', NULL, 'Surat Pengantar', 'KTP', 'Kiki Arnita S.M', NULL, 'admin'),
-('Surat Keluar', 35, '', '2', 'Chocolate Bar', NULL, NULL, '2019-05-01 10:25:08', 'Artistic Drink Street Number 12', 'Surat Keterangan Domisili', NULL, 'Surat Keterangan', 'Domisili', 'Kiki Arnita S.M', NULL, 'admin'),
-('Surat Keluar', 36, '', '2', 'Chocolate Bar', NULL, NULL, '2019-05-01 10:29:11', 'Artistic Drink Street Number 12', 'Surat Pengantar KK', NULL, 'Surat Pengantar', 'KK', 'Kiki Arnita S.M', NULL, 'admin'),
-('Surat Keluar', 37, '', '1', 'Cold Coffe', NULL, NULL, '2019-05-01 10:32:10', 'Artistic Drink Street Number 12', 'Surat Keterangan SKCK', NULL, 'Surat Keterangan', 'SKCK', 'Kiki Arnita S.M', NULL, 'admin');
+('Surat Keluar', 1, '', '1', 'Cold Coffe', NULL, NULL, '2019-05-02 07:25:56', 'Artistic Drink Street Number 12', 'Surat Pengantar KTP', NULL, 'Surat Pengantar', 'KTP', 'The Hot One', NULL, 'admin'),
+('Surat Masuk', 3, '12/JA/OGT/22.00.13', NULL, 'James Albas', 'GA', '2019-05-18', '2019-05-02 07:47:18', 'Numba Numbos Street number 12', 'Eat an eggplant', 'Please eat some eggplant. for ur health.', 'Surat Dinas', 'Tugas Dinas', '', 'Screenshot from 2019-04-29 03-29-32.png', 'admin');
 
 -- --------------------------------------------------------
 
@@ -98,8 +93,10 @@ CREATE TABLE IF NOT EXISTS `pegawai` (
 --
 
 INSERT INTO `pegawai` (`nama`, `password`, `alamat`, `nip`, `jabatan`) VALUES
+('Bagas', 'bagas31', 'Jalan Sudirman', '1', 'Kaur Kesra'),
 ('Kiki Arnita S.M', 'kiki20', 'Jalan Ikan Ikanan Nomor 1', '10001', 'Kepala Desa'),
-('The Hot One', 'hot11', 'Artistic Drink Street Number 1', '10002', 'Kaur Kesra');
+('The Hot One', 'hot11', 'Artistic Drink Street Number 1', '10002', 'Kaur Kesra'),
+('James', 'haha123', 'Jalan Sudimoro', '12000', 'Kepala Desa');
 
 -- --------------------------------------------------------
 
@@ -167,7 +164,7 @@ ALTER TABLE `penduduk`
 -- AUTO_INCREMENT for table `arsip_surat`
 --
 ALTER TABLE `arsip_surat`
-  MODIFY `no_surat` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=38;
+  MODIFY `no_surat` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
