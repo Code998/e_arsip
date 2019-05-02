@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 02, 2019 at 01:57 AM
+-- Generation Time: May 02, 2019 at 10:20 PM
 -- Server version: 5.6.26
 -- PHP Version: 5.5.28
 
@@ -96,7 +96,8 @@ INSERT INTO `pegawai` (`nama`, `password`, `alamat`, `nip`, `jabatan`) VALUES
 ('Bagas', 'bagas31', 'Jalan Sudirman', '1', 'Kaur Kesra'),
 ('Kiki Arnita S.M', 'kiki20', 'Jalan Ikan Ikanan Nomor 1', '10001', 'Kepala Desa'),
 ('The Hot One', 'hot11', 'Artistic Drink Street Number 1', '10002', 'Kaur Kesra'),
-('James', 'haha123', 'Jalan Sudimoro', '12000', 'Kepala Desa');
+('James', 'haha123', 'Jalan Sudimoro', '12000', 'Kepala Desa'),
+('James', '!!!', 'Jalan Sudimoro', '123', 'KAUR PEMBANGUNAN');
 
 -- --------------------------------------------------------
 
