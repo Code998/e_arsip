@@ -53,7 +53,7 @@
                         <div class="card-body">
                           <form action="login.php" method="POST">
                             <div class="form-group">
-                              <label for="user">Username</label>
+                              <label for="user">Username / NIP</label>
                               <input type="text" class="form-control" name="username" aria-describedby="username" id="user">
                             </div>
                             <div class="form-group">
@@ -88,7 +88,15 @@
                             </div>
                             <div class="form-group">
                               <label for="Jabatan">Jabatan</label>
-                              <input type="text" class="form-control" id="Jabatan" name="jabatan">
+                              <select class="form-control" name="jabatan" id="Jabatan">
+                                <option>Kepala Desa</option>
+                                <option>Sekretaris Desa</option>
+                                <option>KAUR PEM</option>
+                                <option>KAUR PEMBANGUNAN</option>
+                                <option>KAUR KESRA</option>
+                                <option>KAUR KEU</option>
+                                <option>KAUR UMUM</option>
+                              </select>
                             </div>
                             <div class="form-group row">
                               <div class="col-sm-12">

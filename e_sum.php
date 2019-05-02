@@ -14,7 +14,7 @@
 	$perihal = $_POST['perihal'];
 	$isri = $_POST['isri'];
 
-	$sql = "UPDATE arsip_surat SET dari_kpd = '" . $dake . "', tanggal_surat = '" . $tsur . "', alamat = '" . $alamat . "', indeks = '" . $indeks . "', perihal = '" . $perihal . "', isi_ringkas = '" . $isri . "', no_surat = '" . $nosu . "' WHERE no_surat = ". $noas;
+	$sql = "UPDATE arsip_surat SET dari_kpd = '" . $dake . "', tanggal_surat = '" . $tsur . "', alamat = '" . $alamat . "', indeks = '" . $indeks . "', perihal = '" . $perihal . "', isi_ringkas = '" . $isri . "', r_no_su = '" . $nosu . "' WHERE no_surat = ". $noas;
 
 	if ($conn->query($sql) === TRUE) {
 		header("Location: p_data_surat.php");

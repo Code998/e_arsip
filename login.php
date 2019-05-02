@@ -1,8 +1,5 @@
 <?php  
   session_start();
-  if ($_SESSION['user'] == "") {
-    header("Location: index.php");
-  }
   include_once 'connection.php';
 
 	$user = $_POST['username'];

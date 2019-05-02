@@ -5,7 +5,7 @@
   }
   include_once 'connection.php';
 
-  $sql = "SELECT * FROM pegawai";
+  $sql = "SELECT * FROM pegawai WHERE jabatan = 'Kepala Desa' OR jabatan = 'KAUR KESRA'";
   $result = $conn->query($sql);
   $result1 = $conn->query($sql);
 ?>
@@ -138,7 +138,7 @@
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="namaP" class="col-sm-2 col-form-label">Nama</label>
+                    <label for="namaP" class="col-sm-2 col-form-label">Petugas</label>
                     <div class="col-sm-10">
                       <select class="form-control" id="namaP" name="namaPeg">
                         <?php 
@@ -187,6 +187,12 @@
                       <select class="form-control" id="Guide" name="guide">
                         <option>SKCK</option>
                         <option>Domisili</option>
+                        <option>Izin Keramaian</option>
+                        <option>Tidak Mampu</option>
+                        <option>Janda/Duda</option>
+                        <option>Usaha</option>
+                        <option>Penghasilan</option>
+                        <option>Kematian</option>
                       </select>
                     </div>
                   </div>
