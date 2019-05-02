@@ -57,7 +57,7 @@
               Hello, <?=$_SESSION['user']?>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">About</a>
+              <a class="dropdown-item" href="about.php">About</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="logout.php">Log Out</a>
             </div>
@@ -197,7 +197,7 @@
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="namaPe" class="col-sm-2 col-form-label">Nama</label>
+                    <label for="namaPe" class="col-sm-2 col-form-label">Petugas</label>
                     <div class="col-sm-10">
                       <select class="form-control" id="namaPe" name="namaPeg1">
                         <?php 
