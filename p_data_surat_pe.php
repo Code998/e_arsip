@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/infinite.css">
 </head>
-<body style="background-color: #3B3B3B;">
+<body style="background-color: #0079a7;">
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -88,7 +88,7 @@
           <div class="card">
             <div class="card-body">
               <div class="float-right mb-3">
-                <form action="p_data_surat.php" method="POST" class="form-inline">
+                <form action="p_data_surat_pe.php" method="POST" class="form-inline">
                 <select name="jenis" class="form-group mx-sm-3 mb-2">
                   <option value="Semua">Semua</option>
                   <option value="Surat Masuk">Surat Masuk</option>
@@ -98,7 +98,7 @@
                 </form>
               </div>
               <div class="float-left mb-3">
-                <form class="form-inline" method="POST" action="p_data_surat.php">
+                <form class="form-inline" method="POST" action="p_data_surat_pe.php">
                   <div class="form-group mr-sm-3 mb-2">
                     <input type="text" class="form-control" name="search" placeholder="Search....">
                   </div>

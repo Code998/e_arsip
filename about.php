@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/infinite.css">
 </head>
-<body style="background-color: #3B3B3B;">
+<body>
 
   <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -61,6 +61,31 @@
         </ul>
       </div>
     </nav>
+
+    <!-- Content -->
+    <div class="container-fluid">
+      <div class="row align-items-center justify-content-center" id="page1">     
+        <div class="text-white text-center">
+          <h1 class="display-1">E-Sides</h1>
+          <h1>Aplikasi Penyimpanan Arsip dan Pembuatan Surat Desa <br> Secara Elektronik</h1>
+        </div>
+      </div>
+      <div class="row text-center" id="page2">
+        <div class="col-sm-12">
+          <h1 class="mt-5">Apa tujuan kita?</h1>
+        </div>
+        <div class="col-sm-6">
+          <img src="assets/img/file.svg" height="100" width="100">
+          <br>
+          <p class="h2 mt-3">Mepermudah Penemuan Arsip</p>
+        </div>
+        <div class="col-sm-6">
+          <img src="assets/img/contract.svg" height="100" width="100">
+          <br>
+          <p class="h2 mt-3">Mempermudah Pembuatan Surat Desa</p>
+        </div>
+      </div>
+  </div>
 
     <!-- JavaScript -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>

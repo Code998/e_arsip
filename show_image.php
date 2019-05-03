@@ -62,6 +62,12 @@
 			$docx->set('guide', $data['guide']);
 			$docx->set('tgl', date('d/m/Y', strtotime($data['tanggal_input'])));
 			$docx->set('nope', $data['nama_pe']);
+			if ($dat0['jabatan'] == "Kepala Desa") {
+				$docx->set('tambahan', "")
+			}
+			else{
+				$docx->set('tambahan', "An. Kepala Desa")
+			}
 			$docx->set('jabatan', $dat0['jabatan']);
 			$docx->set('nip', $dat0['nip']);
 
@@ -87,6 +93,12 @@
 			$docx->set('alamat', $dat['alamat']);
 			$docx->set('tgl', date('d/m/Y', strtotime($data['tanggal_input'])));
 			$docx->set('np', $data['nama_pe']);
+			if ($dat0['jabatan'] == "Kepala Desa") {
+				$docx->set('tambahan', "")
+			}
+			else{
+				$docx->set('tambahan', "An. Kepala Desa")
+			}
 			$docx->set('jabatan', $dat0['jabatan']);
 			$docx->set('nip', $dat0['nip']);
 
@@ -113,6 +125,12 @@
 			$docx->set('alamat', $dat['alamat']);
 			$docx->set('tgl', date('d/m/Y', strtotime($data['tanggal_input'])));
 			$docx->set('nape', $data['nama_pe']);
+			if ($dat0['jabatan'] == "Kepala Desa") {
+				$docx->set('tambahan', "")
+			}
+			else{
+				$docx->set('tambahan', "An. Kepala Desa")
+			}
 			$docx->set('jabatan', $dat0['jabatan']);
 			$docx->set('nip', $dat0['nip']);
 

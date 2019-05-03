@@ -37,7 +37,7 @@
         <div class="col-lg-4 col-md-12 col-sm-12 contain2">
           <div class="container h-100">
             <div class="row align-items-center h-100">
-              <div class="col-md-12 mx-auto">
+              <div class="col-md-12 mt-5">
                 <div class="jumbotron p-md-4 shadow">
                   <ul class="nav nav-pills" id="pills-tab" role="tablist">
                     <li class="nav-item">
