@@ -63,10 +63,10 @@
 			$docx->set('tgl', date('d/m/Y', strtotime($data['tanggal_input'])));
 			$docx->set('nope', $data['nama_pe']);
 			if ($dat0['jabatan'] == "Kepala Desa") {
-				$docx->set('tambahan', "")
+				$docx->set('tambahan', "");
 			}
 			else{
-				$docx->set('tambahan', "An. Kepala Desa")
+				$docx->set('tambahan', "An. Kepala Desa");
 			}
 			$docx->set('jabatan', $dat0['jabatan']);
 			$docx->set('nip', $dat0['nip']);
@@ -94,10 +94,10 @@
 			$docx->set('tgl', date('d/m/Y', strtotime($data['tanggal_input'])));
 			$docx->set('np', $data['nama_pe']);
 			if ($dat0['jabatan'] == "Kepala Desa") {
-				$docx->set('tambahan', "")
+				$docx->set('tambahan', "");
 			}
 			else{
-				$docx->set('tambahan', "An. Kepala Desa")
+				$docx->set('tambahan', "An. Kepala Desa");
 			}
 			$docx->set('jabatan', $dat0['jabatan']);
 			$docx->set('nip', $dat0['nip']);
@@ -126,10 +126,41 @@
 			$docx->set('tgl', date('d/m/Y', strtotime($data['tanggal_input'])));
 			$docx->set('nape', $data['nama_pe']);
 			if ($dat0['jabatan'] == "Kepala Desa") {
-				$docx->set('tambahan', "")
+				$docx->set('tambahan', "");
 			}
 			else{
-				$docx->set('tambahan', "An. Kepala Desa")
+				$docx->set('tambahan', "An. Kepala Desa");
+			}
+			$docx->set('jabatan', $dat0['jabatan']);
+			$docx->set('nip', $dat0['nip']);
+
+			$nama = "surat_". $data['perihal'] . "_" . $data['nik']. ".docx";
+			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');
+
+			header('Content-Type:application/msword');
+			header('Content-Disposition: attachment; filename="' . $nama);
+			@readfile($nama);
+		}
+
+		elseif ($data['laci'] == "Surat Keterangan" AND $data['guide'] == "Belum Menikah") {
+
+			$docx = new DOCXTemplate('template/template_belum_menikah.docx');
+			$docx->set('nomor',  '470 / ' . $data['no_surat'] . ' / 35.07.23.2003 / ' . date('Y', strtotime($data['tanggal_input'])));
+			$docx->set('nama', $data['dari_kpd']);
+			$docx->set('nik', $dat['nik']);
+			$docx->set('ttl', $dat['tempat_lahir'] . "/ " . date('d/m/Y', strtotime($dat['tanggal_lahir'])));
+			$docx->set('jk', $dat['jenis_kelamin']);
+			$docx->set('agama', $dat['agama']);
+			$docx->set('kene', $dat['kewarnegaraan']);
+			$docx->set('peke', $dat['pekerjaan']);
+			$docx->set('alamat', $dat['alamat']);
+			$docx->set('tgl', date('d/m/Y', strtotime($data['tanggal_input'])));
+			$docx->set('np', $data['nama_pe']);
+			if ($dat0['jabatan'] == "Kepala Desa") {
+				$docx->set('tambahan', "");
+			}
+			else{
+				$docx->set('tambahan', "An. Kepala Desa");
 			}
 			$docx->set('jabatan', $dat0['jabatan']);
 			$docx->set('nip', $dat0['nip']);

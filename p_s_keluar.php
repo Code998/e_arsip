@@ -187,6 +187,7 @@
                       <select class="form-control" id="Guide" name="guide">
                         <option>SKCK</option>
                         <option>Domisili</option>
+                        <option>Belum Menikah</option>
                         <option>Izin Keramaian</option>
                         <option>Tidak Mampu</option>
                         <option>Janda/Duda</option>
