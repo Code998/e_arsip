@@ -1,6 +1,6 @@
 <?php  
   session_start();
-  if ($_SESSION['user'] == "" AND $_SESSION['nip'] == "") {
+  if ($_SESSION['user'] == "") {
     header("Location: index.php");
   }
   include_once 'connection.php';

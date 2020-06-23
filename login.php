@@ -19,5 +19,6 @@
 	}
 	else{
 		echo "<script> alert('Username / Pass Salah'); </script>";
+		header("Location:index.php");
 	}
 ?>
