@@ -48,7 +48,7 @@
         <th>Tanggal Meninggal</th>
         <th>Sakit</th>
         <th>Tempat Meninggal</th>
-        <th>Nama Keluarha</th>
+        <th>Nama Keluarga</th>
         <th>Alamat</th>
         <th>Keterangan</th>
 			</tr>
