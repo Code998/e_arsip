@@ -20,10 +20,10 @@
 
 	if ($conn->query($sql) === TRUE) {
 		echo "Data Sudah Dimasukkan";
-		header("Location:pilih_surat.php");
+		header("Location:data_masuk.php");
 	}
 	else{
 		echo "Gagal";
-		header("Location:pilih_surat.php");
+		header("Location:data_masuk.php");
 	}
 ?>

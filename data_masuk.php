@@ -8,15 +8,7 @@
 
   $jenis = $_POST['jenis'];
 
-  if ($jenis == "Surat Masuk") {
-    $sql = "SELECT * FROM data_surat_masuk WHERE jenis = '" . $jenis . "' ORDER BY tgl_simpan";
-  }
-  elseif ($jenis == "Surat Keluar") {
-    $sql = "SELECT * FROM data_surat_masuk WHERE jenis = '" . $jenis . "' ORDER BY tgl_simpan";
-  }
-  else{
-    $sql = "SELECT * FROM data_surat_masuk ORDER BY tgl_simpan";
-  }
+  $sql = "SELECT * FROM data_surat_masuk ORDER BY tgl_simpan";
 
   $search = $_POST['search'];
 

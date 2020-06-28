@@ -35,16 +35,16 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Data Surat
+              Buku Registrasi
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="data_masuk.php">Data Masuk</a>
+              <a class="dropdown-item" href="data_masuk.php">Registrasi Masuk</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="data_umum.php">Data Umum</a>
+              <a class="dropdown-item" href="data_umum.php">Registrasi Umum</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="data_kelahiran.php">Data Kelahiran</a>
+              <a class="dropdown-item" href="data_kelahiran.php">Registrasi Kelahiran</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="data_kematian.php">Data Kematian</a>
+              <a class="dropdown-item" href="data_kematian.php">Registrasi Kematian</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -426,7 +426,10 @@
                   <div class="form-group row">
                     <label for="tt2" class="col-sm-4 col-form-label">TTD</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="tt2" name="ttd2">
+                      <select class="form-control" id="tt2" name="ttd2">
+                        <option>Kepala Desa</option>
+                        <option>Sekertaris Desa</option>
+                      </select>
                     </div>
                   </div>
                   <br>
@@ -506,7 +509,10 @@
                   <div class="form-group row">
                     <label for="tt3" class="col-sm-4 col-form-label">TTD</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="tt3" name="ttd3">
+                      <select class="form-control" id="tt3" name="ttd3">
+                        <option>Kepala Desa</option>
+                        <option>Sekertaris Desa</option>
+                      </select>
                     </div>
                   </div>
                   <br>
@@ -592,7 +598,10 @@
                   <div class="form-group row">
                     <label for="tt4" class="col-sm-4 col-form-label">TTD</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="tt4" name="ttd4">
+                      <select class="form-control" id="tt4" name="ttd4">
+                        <option>Kepala Desa</option>
+                        <option>Sekertaris Desa</option>
+                      </select>
                     </div>
                   </div>
                   <br>
@@ -678,7 +687,10 @@
                   <div class="form-group row">
                     <label for="tt5" class="col-sm-4 col-form-label">TTD</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="tt5" name="ttd5">
+                      <select class="form-control" id="tt5" name="ttd5">
+                        <option>Kepala Desa</option>
+                        <option>Sekertaris Desa</option>
+                      </select>
                     </div>
                   </div>
                   <br>
@@ -782,7 +794,10 @@
                   <div class="form-group row">
                     <label for="tt5" class="col-sm-4 col-form-label">TTD</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="tt5" name="ttd5">
+                      <select class="form-control" id="tt5" name="ttd5">
+                        <option>Kepala Desa</option>
+                        <option>Sekertaris Desa</option>
+                      </select>
                     </div>
                   </div>
                   <div class="form-group row">
@@ -904,7 +919,10 @@
                   <div class="form-group row">
                     <label for="tt7" class="col-sm-4 col-form-label">TTD</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="tt7" name="ttd7">
+                      <select class="form-control" id="t7t" name="ttd7">
+                        <option>Kepala Desa</option>
+                        <option>Sekertaris Desa</option>
+                      </select>
                     </div>
                   </div>
                   <br>
@@ -1017,7 +1035,10 @@
                   <div class="form-group row">
                     <label for="tt8" class="col-sm-4 col-form-label">TTD</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="tt8" name="ttd8">
+                      <select class="form-control" id="tt8" name="ttd8">
+                        <option>Kepala Desa</option>
+                        <option>Sekertaris Desa</option>
+                      </select>
                     </div>
                   </div>
                   <br>
@@ -1194,7 +1215,10 @@
                   <div class="form-group row">
                     <label for="ttdsl" class="col-sm-4 col-form-label">TTD</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="ttdsl" name="tsl">
+                      <select class="form-control" id="ttdsl" name="tsl">
+                        <option>Kepala Desa</option>
+                        <option>Sekertaris Desa</option>
+                      </select>
                     </div>
                   </div>
                   <br>
@@ -1286,7 +1310,10 @@
                   <div class="form-group row">
                     <label for="ttdsk" class="col-sm-4 col-form-label">TTD</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="ttdsk" name="ttsk">
+                      <select class="form-control" id="ttdsk" name="ttsk">
+                        <option>Kepala Desa</option>
+                        <option>Sekertaris Desa</option>
+                      </select>
                     </div>
                   </div>
                   <br>
@@ -1297,7 +1324,6 @@
           </div>
         </div>
         
-        <!-- Kerjain -->
         <div class="modal fade" id="lapke" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-scrollable mw-100 w-50" role="document">
             <div class="modal-content">
@@ -1394,7 +1420,10 @@
                   <div class="form-group row">
                     <label for="tlk" class="col-sm-4 col-form-label">TTD</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="tlk" name="ttdlk">
+                      <select class="form-control" id="tlk" name="ttdlk">
+                        <option>Kepala Desa</option>
+                        <option>Sekertaris Desa</option>
+                      </select>
                     </div>
                   </div>
                   <br>

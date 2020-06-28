@@ -13,7 +13,7 @@
   $search = $_POST['search'];
 
   if ($search != "") {
-    $sql = "SELECT * FROM data_surat_kemat WHERE jenis LIKE '%" . $search . "%' OR nama LIKE '%" . $search . "%' OR jk LIKE '%" . $search . "%' OR nama LIKE '%" . $search . "%' OR umur LIKE '%" . $search . "%' OR hari LIKE '%" . $search . "%' OR sakit LIKE '%" . $search . "%' OR men_di LIKE '%" . $search . "%' OR na_keluarga LIKE '%" . $search . "%' OR alamat LIKE '%" . $search . "%' OR ket LIKE '%" . $search . "%'";
+    $sql = "SELECT * FROM data_surat_kemat WHERE jenis LIKE '%" . $search . "%' OR nama LIKE '%" . $search . "%' OR jk LIKE '%" . $search . "%' OR umur LIKE '%" . $search . "%' OR hari LIKE '%" . $search . "%' OR sakit LIKE '%" . $search . "%' OR men_di LIKE '%" . $search . "%' OR na_keluarga LIKE '%" . $search . "%' OR alamat LIKE '%" . $search . "%' OR ket LIKE '%" . $search . "%'";
   }
 
   $result = $conn->query($sql);
@@ -170,7 +170,7 @@
                 </table>
               </div>
               <div class="float-right">
-                <a href="data_cetak_surat.php" class="btn btn-dark d-flex justify-content-center"><i class="material-icons md-light mr-1">print</i>Print</a>
+                <a href="c_p_data_kematian.php" class="btn btn-dark d-flex justify-content-center"><i class="material-icons md-light mr-1">print</i>Print</a>
               </div>
             </div>
           </div>

@@ -174,7 +174,7 @@
                 </table>
               </div>
               <div class="float-right">
-                <a href="data_cetak_surat.php" class="btn btn-dark d-flex justify-content-center"><i class="material-icons md-light mr-1">print</i>Print</a>
+                <a href="c_p_data_kelahiran.php" class="btn btn-dark d-flex justify-content-center"><i class="material-icons md-light mr-1">print</i>Print</a>
               </div>
             </div>
           </div>
