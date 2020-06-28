@@ -56,16 +56,16 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Data Surat
+              Buku Registrasi
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="data_masuk.php">Data Masuk</a>
+              <a class="dropdown-item" href="data_masuk.php">Registrasi Masuk</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="data_umum.php">Data Umum</a>
+              <a class="dropdown-item" href="data_umum.php">Registrasi Umum</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="data_kelahiran.php">Data Kelahiran</a>
+              <a class="dropdown-item" href="data_kelahiran.php">Registrasi Kelahiran</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="data_kematian.php">Data Kematian</a>
+              <a class="dropdown-item" href="data_kematian.php">Registrasi Kematian</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -85,7 +85,7 @@
     <div class="container-fluid">
        <div class="row">
         <div class="col-sm-12">
-          <div class="judul m-3">Data Surat</div>
+          <div class="judul m-3">Registrasi Masuk</div>
         </div>
         <div class="col-sm-12 px-5">
           <div class="card">
@@ -119,7 +119,7 @@
                       <th scope="col">Perihal</th>
                       <th scope="col">Isi</th>
                       <th scope="col">Alamat</th>
-                      <th scope="col" colspan="3">Keterangan</th>
+                      <th scope="col" colspan="2">Keterangan</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -154,9 +154,6 @@
                             </a>
                             <a href="#" data-href="d_p_data_masuk.php?no=<?=$row['no']?>" data-toggle="modal" data-target="#confirm-delete">
                               <img src="assets/img/clear-button.svg" height="22" width="22" title="Delete">
-                            </a>
-                            <a href="detail.php?id=<?=$row['no']?>">
-                              <img src="assets/img/info.svg" height="22" width="22" title="Detail">
                             </a>
                           </td>
                         </tr>

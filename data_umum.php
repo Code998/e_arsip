@@ -48,16 +48,16 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Data Surat
+               Buku Registrasi
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="data_masuk.php">Data Masuk</a>
+              <a class="dropdown-item" href="data_masuk.php">Registrasi Masuk</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="data_umum.php">Data Umum</a>
+              <a class="dropdown-item" href="data_umum.php">Registrasi Umum</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="data_kelahiran.php">Data Kelahiran</a>
+              <a class="dropdown-item" href="data_kelahiran.php">Registrasi Kelahiran</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="data_kematian.php">Data Kematian</a>
+              <a class="dropdown-item" href="data_kematian.php">Registrasi Kematian</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -77,21 +77,11 @@
     <div class="container-fluid">
        <div class="row">
         <div class="col-sm-12">
-          <div class="judul m-3">Data Surat</div>
+          <div class="judul m-3">Registrasi Umum</div>
         </div>
         <div class="col-sm-12 px-5">
           <div class="card">
             <div class="card-body">
-              <div class="float-right mb-3">
-                <form action="data_masuk.php" method="POST" class="form-inline">
-                <select name="jenis" class="form-group mx-sm-3 mb-2">
-                  <option value="Semua">Semua</option>
-                  <option value="Surat Masuk">Surat Masuk</option>
-                  <option value="Surat Keluar">Surat Keluar</option>
-                </select>
-                <input type="submit" class="btn btn-primary mb-2" value="Sort">
-                </form>
-              </div>
               <div class="float-left mb-3">
                 <form class="form-inline" method="POST" action="data_masuk.php">
                   <div class="form-group mr-sm-3 mb-2">
@@ -114,9 +104,9 @@
                       <th scope="col">Status Perkawinan</th>
                       <th scope="col">Tempat Tinggal</th>
                       <th scope="col">Keperluan</th>
-                      <th scope="col">Keteranagan</th>
+                      <th scope="col">Keterangan</th>
                       <th scope="col">Surat Ini Untuk</th>
-                      <th scope="col" colspan="3">Keterangan</th>
+                      <th scope="col" colspan="2">Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -164,11 +154,8 @@
                             <a href="show_image.php?id=<?=$row['no']?>">
                                 <img src="assets/img/writing.svg" height="22" width="22" title="Lihat Lampiran">
                             </a>
-                            <a href="#" data-href="delete.php?id=<?=$row['no_surat']?>" data-toggle="modal" data-target="#confirm-delete">
+                            <a href="#" data-href="d_p_data_umum.php?no=<?=$row['no']?>" data-toggle="modal" data-target="#confirm-delete">
                               <img src="assets/img/clear-button.svg" height="22" width="22" title="Delete">
-                            </a>
-                            <a href="detail.php?id=<?=$row['no_surat']?>">
-                              <img src="assets/img/info.svg" height="22" width="22" title="Detail">
                             </a>
                           </td>
                         </tr>
