@@ -11,11 +11,11 @@
 
 	if ($conn->query($sql)->num_rows == 1) {
 		$_SESSION['user'] = $user;
-		header("Location:data_chart.php");
+		header("Location:pilih_surat.php");
 	}
 	elseif ($conn->query($sql0)->num_rows == 1) {
 		$_SESSION['nip'] = $user;
-		header("Location:data_char_pe.php");
+		header("Location:index.php");
 	}
 	else{
 		echo "<script> alert('Username / Pass Salah'); </script>";

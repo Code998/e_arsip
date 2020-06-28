@@ -33,14 +33,16 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Data
+               Data Surat
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="p_data_surat.php">Data Surat</a>
+              <a class="dropdown-item" href="data_masuk.php">Data Masuk</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="data_pegawai.php">Data Pegawai</a>
+              <a class="dropdown-item" href="data_umum.php">Data Umum</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="data_penduduk.php">Data Penduduk</a>
+              <a class="dropdown-item" href="data_kelahiran.php">Data Kelahiran</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="data_kematian.php">Data Kematian</a>
             </div>
           </li>
           <li class="nav-item">
@@ -69,26 +71,24 @@
         </div>
       </div>
       <div class="row mt-3 ml-3">
-        <div class="col-md-3 text-center">
+        <div class="col-sm-4 text-center">
           <div class="card bg-card">
             <div class="card-header">
               Surat Masuk
             </div>
             <img class="card-img-top mt-3" src="assets/img/message.svg" height="100" width="100" alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text">Semua surat yang diterima oleh suatu perusahaan atau organisasi yang berasal dari pihak lain, baik itu perorangan maupun perusahaan/ organisasi.</p>
+            <div class="card-body mt-3">
               <a href="#" data-toggle="modal" data-target="#sm" class="btn btn-primary">Pilih!</a>
             </div>
           </div>
         </div> 
-        <div class="col-sm-3 text-center">
+        <div class="col-sm-4 text-center">
           <div class="card bg-card">
             <div class="card-header">
               Surat Keluar
             </div>
             <img class="card-img-top mt-3" src="assets/img/newsletter.svg" height="100" width="100" alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text">Semua surat yang dikeluarkan oleh suatu perusahaan atau organisasi untuk diberikan kepada pihak perorangan maupun perusahaan/ organisasi.</p>
+            <div class="card-body mt-3">
               <a href="p_s_keluar.php" class="btn btn-primary">Pilih!</a>
             </div>
           </div>
@@ -107,7 +107,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form class="mx-3" method="POST" action="a_sum.php" enctype="multipart/form-data">
+            <form class="mx-3" method="POST" action="a_p_sumas.php" enctype="multipart/form-data">
               <input type="hidden" name="jenis_sp" value="Surat Masuk">
               <div class="form-group row">
                 <label for="Asal" class="col-sm-2 col-form-label">Nama</label>
@@ -128,18 +128,6 @@
                 </div>
               </div>
               <div class="form-group row">
-                <label for="Alamat" class="col-sm-2 col-form-label">Alamat</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="Alamat" name="alamat">
-                </div>
-              </div>
-              <div class="form-group row">
-                <label for="Indeks" class="col-sm-2 col-form-label">Indeks</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="Indeks" name="indeks">
-                </div>
-              </div>
-              <div class="form-group row">
                 <label for="peri" class="col-sm-2 col-form-label">Perihal</label>
                 <div class="col-sm-10">
                   <input type="text" class="form-control" id="peri" name="perihal">
@@ -152,19 +140,9 @@
                 </div>
               </div>
               <div class="form-group row">
-                <label for="Laci" class="col-sm-2 col-form-label">Laci</label>
+                <label for="alam" class="col-sm-2 col-form-label">Alamat</label>
                 <div class="col-sm-10">
-                  <select class="form-control" id="Laci" name="laci">
-                    <option value="Surat Dinas">Dinas</option>
-                    <option value="Surat Umum">Umum</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group row">
-                <label for="Guide" class="col-sm-2 col-form-label">Guide</label>
-                <div class="col-sm-10">
-                  <select class="form-control" id="Guide" name="guide">
-                  </select>
+                  <input type="text" class="form-control" id="alam" name="alamat">
                 </div>
               </div>
               <div class="form-group row">
