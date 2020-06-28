@@ -82,6 +82,9 @@
         <div class="col-sm-12 px-5">
           <div class="card">
             <div class="card-body">
+              <div class="float-right mb-3">
+                <a href="#" data-toggle="modal" data-target="#tambahd" class="btn btn-success text-light" >Tambah Data</a>
+              </div>
               <div class="float-left mb-3">
                 <form class="form-inline" method="POST" action="data_masuk.php">
                   <div class="form-group mr-sm-3 mb-2">
@@ -189,6 +192,100 @@
         </div>
     </div>
 </div>
+
+      <div class="modal fade" id="tambahd" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable mw-100 w-50" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Registrasi Umum</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form class="mx-3" method="POST" action="a_p_regum.php" enctype="multipart/form-data">
+                  <div class="form-group row">
+                    <label for="namask" class="col-sm-4 col-form-label">Nama Lengkap</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="namask" name="nsk">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="ttl3" class="col-sm-4 col-form-label">Tempat Tanggal Lahir</label>
+                    <div class="col-sm-3">
+                      <input type="text" class="form-control" id="ttl3" name="tetl3">
+                    </div>
+                    <div class="col-sm-5">
+                      <input type="date" name="d3" id="date3" class="form-control">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="kewa3" class="col-sm-4 col-form-label">Kewarnegaraan</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="kewa3" name="kew3">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="jk4" class="col-sm-4 col-form-label">Jenis Kelamin</label>
+                    <div class="col-sm-8">
+                      <select class="form-control" id="jk4" name="jke4">
+                        <option>Laki-Laki</option>
+                        <option>Perempuan</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="agama2" class="col-sm-4 col-form-label">Agama</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="agama2" name="agama3">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="peker2" class="col-sm-4 col-form-label">Pekerjaan</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="peker2" name="pkj2">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="st_pe4" class="col-sm-4 col-form-label">Status Perkawinan</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="st_pe4" name="sp4">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="tempat4" class="col-sm-4 col-form-label">Tempat Tinggal</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="tempat4" name="tempa4">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="jenru" class="col-sm-4 col-form-label">Keperluan Untuk</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="jenru" name="jenis_s3">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="tt4" class="col-sm-4 col-form-label">TTD</label>
+                    <div class="col-sm-8">
+                      <select class="form-control" id="tt4" name="ttd4">
+                        <option>Kepala Desa</option>
+                        <option>Sekertaris Desa</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="File" class="col-sm-4 col-form-label">File</label>
+                    <div class="col-sm-8">
+                      <input type="file" name="file">
+                    </div>
+                  </div>
+                  <br>
+                  <input type="submit" value="Buat" class="btn btn-primary float-right">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
 
     <!-- JavaScript -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
