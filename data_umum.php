@@ -48,16 +48,16 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               Buku Registrasi
+               Buku Register
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="data_masuk.php">Registrasi Masuk</a>
+              <a class="dropdown-item" href="data_masuk.php">Register Masuk</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="data_umum.php">Registrasi Umum</a>
+              <a class="dropdown-item" href="data_umum.php">Register Umum</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="data_kelahiran.php">Registrasi Kelahiran</a>
+              <a class="dropdown-item" href="data_kelahiran.php">Register Kelahiran</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="data_kematian.php">Registrasi Kematian</a>
+              <a class="dropdown-item" href="data_kematian.php">Register Kematian</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -77,7 +77,7 @@
     <div class="container-fluid">
        <div class="row">
         <div class="col-sm-12">
-          <div class="judul m-3">Registrasi Umum</div>
+          <div class="judul m-3">Register Umum</div>
         </div>
         <div class="col-sm-12 px-5">
           <div class="card">
@@ -108,7 +108,6 @@
                       <th scope="col">Tempat Tinggal</th>
                       <th scope="col">Keperluan</th>
                       <th scope="col">Keterangan</th>
-                      <th scope="col">Surat Ini Untuk</th>
                       <th scope="col" colspan="2">Action</th>
                     </tr>
                   </thead>
@@ -149,9 +148,6 @@
                           </td>
                           <td>
                             <?= $row['jenis'] ?>
-                          </td>
-                          <td>
-                            <?= $row['untuk'] ?>
                           </td>
                           <td>
                             <a href="show_image_su.php?no=<?=$row['no']?>">
@@ -197,7 +193,7 @@
           <div class="modal-dialog modal-dialog-scrollable mw-100 w-50" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title">Registrasi Umum</h5>
+                <h5 class="modal-title">Register Umum</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>

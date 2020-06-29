@@ -100,7 +100,7 @@
 		}
 		elseif ($data['jenis'] == "Beda Identitas") {
 
-			$docx = new DOCXTemplate('template/source/SKTM_BEASISWA.docx');
+			$docx = new DOCXTemplate('template/source/Surat_Keterangan_Beda_Nama.docx');
 			$docx->set('nomor',  '470 / ' . $data['no'] . ' / 35.07.27.20.007 / ' . date('Y', strtotime($data['ket'])));
 			$docx->set('nama', $data['nama']);
 			$docx->set('ttl', $data['ttl'] . "/ " . date('d/m/Y', strtotime($data['ttl'])));
@@ -135,7 +135,7 @@
 		}
 		elseif ($data['jenis'] == "Domisli Lembaga") {
 
-			$docx = new DOCXTemplate('template/source/SKTM_BEASISWA.docx');
+			$docx = new DOCXTemplate('template/source/Surat_keterangan_Domisili_Lembaga.docx');
 			$docx->set('nomor',  '474 / ' . $data['no'] . ' / 35.07.27.20.007 / ' . date('Y', strtotime($data['ket'])));
 			$docx->set('nama', $data['nama']);
 			$docx->set('umur', $data['umur_pe']);
@@ -145,6 +145,134 @@
 			$docx->set('nleg', $data['nama']);
 			$docx->set('bahuk', $data['ba_huk']);
 			$docx->set('allem', $data['alamat_le']);
+			if ($data['ttd_jabat'] == "Kepala Desa") {
+				$docx->set('tambahan', "");
+			}
+			else{
+				$docx->set('tambahan', "An. Kepala Desa");
+			}
+			$nama = "surat_". $data['jenis'] . "_" . $data['no']. ".docx";
+			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');
+
+			header('Content-Type:application/msword');
+			header('Content-Disposition: attachment; filename="' . $nama);
+			@readfile($nama);
+		}
+		elseif ($data['jenis'] == "Domisili Pribadi") {
+
+			$docx = new DOCXTemplate('template/source/Surat_keterangan_domisili_pribadi.docx');
+			$docx->set('nomor',  '474 / ' . $data['no'] . ' / 35.07.27.20.007 / ' . date('Y', strtotime($data['ket'])));
+			$docx->set('nama', $data['nama']);
+			$docx->set('ttl', $data['ttl']);
+			$docx->set('kewar', $data['kewar']);
+			$docx->set('pekerja', $data['pekerjaan']);
+			$docx->set('st_pe', $data['st_pe']);
+			$docx->set('nike', $data['nike']);
+			$docx->set('tempat', $data['tempat']);
+			if ($data['ttd_jabat'] == "Kepala Desa") {
+				$docx->set('tambahan', "");
+			}
+			else{
+				$docx->set('tambahan', "An. Kepala Desa");
+			}
+			$nama = "surat_". $data['jenis'] . "_" . $data['no']. ".docx";
+			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');
+
+			header('Content-Type:application/msword');
+			header('Content-Disposition: attachment; filename="' . $nama);
+			@readfile($nama);
+		}
+		elseif ($data['jenis'] == "Belum Menikah") {
+
+			$docx = new DOCXTemplate('template/source/Surat_Keterangan_Belum_Menikah.docx');
+			$docx->set('nomor',  '474 / ' . $data['no'] . ' / 35.07.27.20.007 / ' . date('Y', strtotime($data['ket'])));
+			$docx->set('nama', $data['nama']);
+			$docx->set('ttl', $data['ttl']);
+			$docx->set('kewar', $data['kewar']);
+			$docx->set('pekerja', $data['pekerjaan']);
+			$docx->set('st_pe', $data['st_pe']);
+			$docx->set('nike', $data['nike']);
+			$docx->set('tempat', $data['tempat']);
+			if ($data['ttd_jabat'] == "Kepala Desa") {
+				$docx->set('tambahan', "");
+			}
+			else{
+				$docx->set('tambahan', "An. Kepala Desa");
+			}
+			$nama = "surat_". $data['jenis'] . "_" . $data['no']. ".docx";
+			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');
+
+			header('Content-Type:application/msword');
+			header('Content-Disposition: attachment; filename="' . $nama);
+			@readfile($nama);
+		}
+		elseif ($data['jenis'] == "Surat Kerja") {
+
+			$docx = new DOCXTemplate('template/source/Surat_Kerja.docx');
+			$docx->set('nomor',  '471 / ' . $data['no'] . ' / 35.07.27.20.007 / ' . date('Y', strtotime($data['ket'])));
+			$docx->set('nama', $data['nama']);
+			$docx->set('ttl', $data['ttl']);
+			$docx->set('kewar', $data['kewar']);
+			$docx->set('pekerja', $data['pekerjaan']);
+			$docx->set('st_pe', $data['st_pe']);
+			$docx->set('nike', $data['nike']);
+			$docx->set('tempat', $data['tempat']);
+			if ($data['ttd_jabat'] == "Kepala Desa") {
+				$docx->set('tambahan', "");
+			}
+			else{
+				$docx->set('tambahan', "An. Kepala Desa");
+			}
+			$nama = "surat_". $data['jenis'] . "_" . $data['no']. ".docx";
+			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');
+
+			header('Content-Type:application/msword');
+			header('Content-Disposition: attachment; filename="' . $nama);
+			@readfile($nama);
+		}
+		elseif ($data['jenis'] == "Keterangan Usaha") {
+
+			$docx = new DOCXTemplate('template/source/Surat_keterangan_domisili_pribadi.docx');
+			$docx->set('nomor',  '470 / ' . $data['no'] . ' / 35.07.27.20.007 / ' . date('Y', strtotime($data['ket'])));
+			$docx->set('nama', $data['nama']);
+			$docx->set('ttl', $data['ttl']);
+			$docx->set('kewar', $data['kewar']);
+			$docx->set('pekerja', $data['pekerjaan']);
+			$docx->set('st_pe', $data['st_pe']);
+			$docx->set('nike', $data['nike']);
+			$docx->set('tempat', $data['tempat']);
+			$docx->set('jenus]', $data['jenus']);
+			$docx->set('taber', $data['taber']);
+			$docx->set('temp_us', $data['dapem']);
+			$docx->set('pem', $data['tempat']);
+			if ($data['ttd_jabat'] == "Kepala Desa") {
+				$docx->set('tambahan', "");
+			}
+			else{
+				$docx->set('tambahan', "An. Kepala Desa");
+			}
+			$nama = "surat_". $data['jenis'] . "_" . $data['no']. ".docx";
+			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');
+
+			header('Content-Type:application/msword');
+			header('Content-Disposition: attachment; filename="' . $nama);
+			@readfile($nama);
+		}
+		elseif ($data['jenis'] == "Laporan Kehilangan") {
+
+			$docx = new DOCXTemplate('template/source/Surat_keterangan_domisili_pribadi.docx');
+			$docx->set('nomor',  '474 / ' . $data['no'] . ' / 35.07.27.20.007 / ' . date('Y', strtotime($data['ket'])));
+			$docx->set('nama', $data['nama']);
+			$docx->set('ttl', $data['ttl']);
+			$docx->set('kewar', $data['kewar']);
+			$docx->set('agama]', $data['agama']);
+			$docx->set('st_pe', $data['st_pe']);
+			$docx->set('pekerja', $data['pekerjaan']);
+			$docx->set('nik', $data['nike']);
+			$docx->set('tempat', $data['tempat']);
+			$docx->set('temp_hil', $data['temp_hil']);
+			$docx->set('hari', $data['hari']);
+			$docx->set('waktu', $data['waktu']);
 			if ($data['ttd_jabat'] == "Kepala Desa") {
 				$docx->set('tambahan', "");
 			}

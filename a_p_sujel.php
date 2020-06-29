@@ -17,15 +17,16 @@
 	$temp1 = $_POST['tempa8'];
 	$altuj = $_POST['altu0'];
 	$bermu = $_POST['bemu0'];
+	$ttd = $_POST['ttdsj'];
 	
-	$sql = "INSERT INTO data_surat_umum(no, jenis, nama, kewar, jk, agama, pekerjaan, st_pe, tempat, altuj, bermu, ttl, ket) VALUES ( '', '" . $jenis . "', '" . $nama1 . "', '" . $kewa1 . "', '" . $jkel1 . "', '" . $agam1 . "', '" . $peker . "', '" . $stpe1 . "', '" . $temp1 . "', '" . $altuj . "', '" . $bermu . "', '" . $tmpt1 . ", " . $date1 . "', '" . date('Y-m-d') . "')";
+	$sql = "INSERT INTO data_surat_umum(no, jenis, nama, kewar, jk, agama, pekerjaan, st_pe, tempat, altuj, bermu, ttl, ket) VALUES ( '', '" . $jenis . "', '" . $nama1 . "', '" . $kewa1 . "', '" . $jkel1 . "', '" . $agam1 . "', '" . $peker . "', '" . $stpe1 . "', '" . $temp1 . "', '" . $altuj . "', '" . $bermu . "', '" . $tmpt1 . ", " . $date1 . "', " . $ttd . "', '" . date('Y-m-d') . "')";
 	
 	if ($conn->query($sql) === TRUE) {
 		echo "Data Sudah Dimasukkan";
-		header("Location:pilih_surat.php");
+		header("Location:data_umum.php");
 	}
 	else{
 		echo "Gagal";
-		header("Location:pilih_surat.php");
+		header("Location:data_umum.php");
 	}
 ?>

@@ -24,10 +24,10 @@
 	
 	if ($conn->query($sql) === TRUE) {
 				if (move_uploaded_file($_FILES['file']['tmp_name'], $target)) {
-					header("Location:data_masuk.php");
+					header("Location:data_umum.php");
 				}
 			}
 			else{
-				echo "<script> alert('Maaf Anda Sudah Mendaftar'); window.location = 'data_masuk.php';</script>";
+				echo "<script> alert('Maaf Anda Sudah Mendaftar'); window.location = 'data_umum.php';</script>";
 			}
 ?>

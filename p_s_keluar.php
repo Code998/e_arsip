@@ -35,16 +35,16 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Buku Registrasi
+              Buku Register
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="data_masuk.php">Registrasi Masuk</a>
+              <a class="dropdown-item" href="data_masuk.php">Register Masuk</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="data_umum.php">Registrasi Umum</a>
+              <a class="dropdown-item" href="data_umum.php">Register Umum</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="data_kelahiran.php">Registrasi Kelahiran</a>
+              <a class="dropdown-item" href="data_kelahiran.php">Register Kelahiran</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="data_kematian.php">Registrasi Kematian</a>
+              <a class="dropdown-item" href="data_kematian.php">Register Kematian</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -1125,6 +1125,15 @@
                     <label for="bemu" class="col-sm-4 col-form-label">Berlaku Mulai</label>
                     <div class="col-sm-8">
                       <input type="date" class="form-control" id="bemu" name="bemu0">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="ttsj" class="col-sm-4 col-form-label">TTD</label>
+                    <div class="col-sm-8">
+                      <select class="form-control" id="ttsj" name="ttdsj">
+                        <option>Kepala Desa</option>
+                        <option>Sekertaris Desa</option>
+                      </select>
                     </div>
                   </div>
                   <br>
