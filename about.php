@@ -35,18 +35,17 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Data
+              Buku Registrasi
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="p_data_surat.php">Data Surat</a>
+              <a class="dropdown-item" href="data_masuk.php">Registrasi Masuk</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="data_pegawai.php">Data Pegawai</a>
+              <a class="dropdown-item" href="data_umum.php">Registrasi Umum</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="data_penduduk.php">Data Penduduk</a>
+              <a class="dropdown-item" href="data_kelahiran.php">Registrasi Kelahiran</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="data_kematian.php">Registrasi Kematian</a>
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="data_chart.php">Statistik Surat</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

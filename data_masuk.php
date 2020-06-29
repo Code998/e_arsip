@@ -83,14 +83,6 @@
           <div class="card">
             <div class="card-body">
               <div class="float-right mb-3">
-                <form action="data_masuk.php" method="POST" class="form-inline">
-                <select name="jenis" class="form-group mx-sm-3 mb-2">
-                  <option value="Semua">Semua</option>
-                  <option value="Surat Masuk">Surat Masuk</option>
-                  <option value="Surat Keluar">Surat Keluar</option>
-                </select>
-                <input type="submit" class="btn btn-primary mb-2" value="Sort">
-                </form>
               </div>
               <div class="float-left mb-3">
                 <form class="form-inline" method="POST" action="data_masuk.php">

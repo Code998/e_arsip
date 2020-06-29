@@ -154,7 +154,7 @@
                             <?= $row['untuk'] ?>
                           </td>
                           <td>
-                            <a href="show_image.php?id=<?=$row['no']?>">
+                            <a href="show_image_su.php?no=<?=$row['no']?>">
                                 <img src="assets/img/writing.svg" height="22" width="22" title="Lihat Lampiran">
                             </a>
                             <a href="#" data-href="d_p_data_umum.php?no=<?=$row['no']?>" data-toggle="modal" data-target="#confirm-delete">
