@@ -61,7 +61,7 @@ body{
 /* index.php */
 
 .contain1{
-	background-image: url('../img/page1.jpeg');
+	background-image: url('../img/page1.jpg');
 	height: 120vh;
 	background-repeat: no-repeat;
 	background-attachment: fixed;

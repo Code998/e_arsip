@@ -9,9 +9,17 @@
 	$sql0 = "SELECT * FROM data_surat_umum WHERE no = '" . $id . "'";
 	$result = $conn->query($sql0);
 	$data = $result->fetch_assoc();
+
+	$sql1 = "SELECT * FROM data_surat_kemat WHERE no = '" . $id . "'";
+	$result1 = $conn->query($sql1);
+	$data1 = $result1->fetch_assoc();
+
+	$sql2 = "SELECT * FROM data_surat_lahir WHERE no = '" . $id . "'";
+	$result2 = $conn->query($sql2);
+	$data2 = $result2->fetch_assoc();
 	$info = pathinfo($data['file']);
 
-	if ($data['jenis'] == "SKTM") {
+		if ($data['jenis'] == "SKTM") {
 
 			$docx = new DOCXTemplate('template/source/SKTM.docx');
 			$docx->set('nomor',  '470 / ' . $data['no'] . ' / 35.07.27.20.007 / ' . date('Y', strtotime($data['ket'])));
@@ -280,6 +288,61 @@
 				$docx->set('tambahan', "An. Kepala Desa");
 			}
 			$nama = "surat_". $data['jenis'] . "_" . $data['no']. ".docx";
+			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');
+
+			header('Content-Type:application/msword');
+			header('Content-Disposition: attachment; filename="' . $nama);
+			@readfile($nama);
+		}
+
+		elseif ($data2['jenis'] == "Kelahiran") {
+
+			$docx = new DOCXTemplate('template/source/Surat_Kelahiran.docx');
+			$docx->set('nomor',  '474 / ' . $data2['no'] . ' / 35.07.27.20.007 / ' . date('Y', strtotime($data['ket'])));
+			$docx->set('hari', $data2['hari']);
+			$docx->set('tgl', $data2['tgl_lahir']);
+			$docx->set('pukul', $data2['jam']);
+			$docx->set('di]', $data2['tempat']);
+			$docx->set('jk', $data2['jk']);
+			$docx->set('nama', $data2['nm_bayi']);
+			$docx->set('anak_ke', $data2['anak_ke']);
+			$docx->set('nama_ibu', $data2['nm_ibu']);
+			$docx->set('nama_ayah', $data2['nm_ayah']);
+			$docx->set('alamat', $data2['alamat']);
+			if ($data2['jabat'] == "Kepala Desa") {
+				$docx->set('tambahan', "");
+			}
+			else{
+				$docx->set('tambahan', "An. Kepala Desa");
+			}
+			$nama = "surat_". $data2['jenis'] . "_" . $data2['no']. ".docx";
+			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');
+
+			header('Content-Type:application/msword');
+			header('Content-Disposition: attachment; filename="' . $nama);
+			@readfile($nama);
+		}
+
+		elseif ($data1['jenis'] == "Kematian") {
+
+			$docx = new DOCXTemplate('template/source/Surat_Kematian.docx');
+			$docx->set('nomor',  '474 / ' . $data1['no'] . ' / 35.07.27.20.007 / ' . date('Y', strtotime($data['ket'])));
+			$docx->set('nama', $data1['nama']);
+			$docx->set('jk', $data1['jk']);
+			$docx->set('alamat', $data1['alamat']);
+			$docx->set('umur', $data1['umur']);
+			$docx->set('hari', $data1['hari']);
+			$docx->set('tanggal', $data1['tgl_men']);
+			$docx->set('tempat', $data1['hari']);
+			$docx->set('tempat', $data1['alamat']);
+			$docx->set('sakit', $data1['sakit']);
+			if ($data1['jabat'] == "Kepala Desa") {
+				$docx->set('tambahan', "");
+			}
+			else{
+				$docx->set('tambahan', "An. Kepala Desa");
+			}
+			$nama = "surat_". $data1['jenis'] . "_" . $data1['no']. ".docx";
 			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');
 
 			header('Content-Type:application/msword');

@@ -151,7 +151,7 @@
                             <?=$row['ket']?>
                           </td>
                           <td>
-                            <a href="show_image.php?id=<?=$row['no']?>">
+                            <a href="show_image_skel.php?no=<?=$row['no']?>">
                                 <img src="assets/img/writing.svg" height="22" width="22" title="Lihat Lampiran">
                             </a>
                             <a href="#" data-href="d_p_data_kelahiran.php?no=<?=$row['no_surat']?>" data-toggle="modal" data-target="#confirm-delete">
