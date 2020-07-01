@@ -33,7 +33,7 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               Buku Register
+              Buku Register
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="data_masuk.php">Register Masuk</a>
@@ -43,7 +43,9 @@
               <a class="dropdown-item" href="data_kelahiran.php">Register Kelahiran</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="data_kematian.php">Register Kematian</a>
-            </div>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="data_pegawai.php">Data Pegawai</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
