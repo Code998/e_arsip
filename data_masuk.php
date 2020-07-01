@@ -95,7 +95,7 @@
                   <button type="submit" class="btn btn-outline-primary mb-2">Search</button>
                 </form>
               </div>
-              <div class="table-responsive-lg" style="height: 400px;">
+              <div class="table-responsive-lg contain1" style="height: 400px;">
                 <table class="table">
                   <thead class="thead-light">
                     <tr>

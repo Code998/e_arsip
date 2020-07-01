@@ -813,15 +813,6 @@
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="tt5" class="col-sm-4 col-form-label">TTD</label>
-                    <div class="col-sm-8">
-                      <select class="form-control" id="tt5" name="ttd5">
-                        <option>Kepala Desa</option>
-                        <option>Sekertaris Desa</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="form-group row">
                     <label for="jeus" class="col-sm-4 col-form-label">Jenis Usaha</label>
                     <div class="col-sm-8">
                       <input type="text" class="form-control" id="jeus" name="jeus1">
@@ -846,9 +837,12 @@
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="tt6" class="col-sm-4 col-form-label">TTD</label>
+                    <label for="tt5" class="col-sm-4 col-form-label">TTD</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="tt6" name="ttd6">
+                      <select class="form-control" id="tt5" name="ttd5">
+                        <option>Kepala Desa</option>
+                        <option>Sekertaris Desa</option>
+                      </select>
                     </div>
                   </div>
                   <br>

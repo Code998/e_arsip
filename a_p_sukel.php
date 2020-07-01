@@ -9,8 +9,7 @@
 	$namab = $_POST['nbayi'];
 	$jkel1 = $_POST['jsl'];
 	$hari = $_POST['hla'];
-	$date = date_create($_POST['tsk']);
-	$date1 = date_format($date, 'd-m-Y');
+	$tangg = $_POST['tsk'];
 	$jam = $_POST['psk'];
 	$temp = $_POST['tmptla'];
 	$anake = $_POST['ake'];
@@ -19,7 +18,7 @@
 	$asla = $_POST['asla'];
 	$tsl = $_POST['tsl'];
 	
-	$sql = "INSERT INTO data_surat_lahir VALUES ( '', '" . $jenis . "', '" . $namab . "', '" . $anake . "', '" . $jkel1 . "', '" . $hari . "', '" . $tangg . "', '" . $jam . "', '" . $temp . "', '" . $naib . "', '" . $naay . "', '" . $asla . "', '" . $tsl . "', '" . date('Y-m-d') . "')";
+	$sql = "INSERT INTO data_surat_lahir VALUES ( '', '" . $jenis . "', '" . $namab . "', '" . $anake . "', '" . $jkel1 . "', '" . $hari . "', '" . $tangg . "', " . $jam . "', '" . $temp . "', '" . $naib . "', '" . $naay . "', '" . $asla . "', '" . $tsl . "', '" . date('Y-m-d') . "')";
 	
 	if ($conn->query($sql) === TRUE) {
 		echo "Data Sudah Dimasukkan";

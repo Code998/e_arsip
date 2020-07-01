@@ -10,7 +10,7 @@
 	$jenis = $_POST['jenis_s11'];
 	$nama1 = $_POST['nlap'];
 	$tmpt1 = $_POST['tlk'];
-	$date1 = date_format($date 'd-m-Y');
+	$date1 = date_format($date, 'd-m-Y');
 	$kewa1 = $_POST['klk'];
 	$agam1 = $_POST['alk'];
 	$jk = $_POST['jklk'];

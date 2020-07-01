@@ -154,10 +154,13 @@
                             ?>
                           </td>
                           <td>
-                            <?= $row['ket'] ?>
+                            <?= $row['jenis'] ?>
                           </td>
                           <td>
-                            <?= $row['jenis'] ?>
+                            <?php
+                              $date = date_create($row['ket']);
+                              echo date_format($date, 'd-m-Y');
+                            ?>
                           </td>
                           <td>
                             <a href="show_image_su.php?no=<?=$row['no']?>">

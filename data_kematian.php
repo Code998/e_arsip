@@ -93,7 +93,7 @@
                   <button type="submit" class="btn btn-outline-primary mb-2">Search</button>
                 </form>
               </div>
-              <div class="table-responsive-lg" style="height: 400px;">
+              <div class="table-responsive contain1" style="height: 400px;">
                 <table class="table">
                   <thead class="thead-light">
                     <tr>
@@ -129,7 +129,10 @@
                             <?= $row['umur'] ?>
                           </td>
                           <td>
-                            <?= $row['tgl_men'] ?>
+                            <?php
+                              $date = date_create($row['tgl_men']);
+                              echo date_format($date, 'd-m-Y');
+                            ?>
                           </td>
                           <td>
                             <?= $row['hari'] ?>
@@ -147,7 +150,10 @@
                             <?= $row['alamat'] ?>
                           </td>
                           <td>
-                            <?= $row['ket'] ?>
+                            <?php
+                              $date = date_create($row['ket']);
+                              echo date_format($date, 'd-m-Y');
+                            ?>
                           </td>
                           <td>
                             <a href="show_image_skem.php?no=<?=$row['no']?>">

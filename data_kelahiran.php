@@ -93,7 +93,7 @@
                   <button type="submit" class="btn btn-outline-primary mb-2">Search</button>
                 </form>
               </div>
-              <div class="table-responsive-lg" style="height: 400px;">
+              <div class="table-responsive contain1" style="height: 400px;">
                 <table class="table">
                   <thead class="thead-light">
                     <tr>
@@ -133,7 +133,10 @@
                             <?=$row['hari']?>
                           </td>
                           <td>
-                            <?=$row['tgl_lahir']?>
+                            <?php
+                              $date = date_create($row['tgl_lahir']);
+                              echo date_format($date, 'd-m-Y');
+                            ?>
                           </td>
                           <td>
                             <?=$row['jam']?>
@@ -151,13 +154,16 @@
                             <?=$row['alamat']?>
                           </td>
                           <td>
-                            <?=$row['ket']?>
+                            <?php
+                              $date = date_create($row['ket']);
+                              echo date_format($date, 'd-m-Y');
+                            ?>
                           </td>
                           <td>
                             <a href="show_image_skel.php?no=<?=$row['no']?>">
                                 <img src="assets/img/writing.svg" height="22" width="22" title="Lihat Lampiran">
                             </a>
-                            <a href="#" data-href="d_p_data_kelahiran.php?no=<?=$row['no_surat']?>" data-toggle="modal" data-target="#confirm-delete">
+                            <a href="#" data-href="d_p_data_kelahiran.php?no=<?=$row['no']?>" data-toggle="modal" data-target="#confirm-delete">
                               <img src="assets/img/clear-button.svg" height="22" width="22" title="Delete">
                             </a>
                           </td>

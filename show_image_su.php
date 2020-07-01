@@ -29,7 +29,6 @@
 			$docx->set('tempat', $data['tempat']);
 			$docx->set('tgl', date('d/m/Y', strtotime($data['ket'])));
 			$docx->set('nope', $data['nama_pe']);
-			$docx->set('ttd_jabat', $data['ttd_jabat']);
 			$docx->set('tgl_sekarang', date("d-m-Y"));
 			if ($data['ttd_jabat'] == "Kepala Desa") {
 				$docx->set('tambahan', "");
@@ -60,10 +59,10 @@
 			$docx->set('untuk', $data['untuk']);
 			$docx->set('nik', $data['nike']);
 			$docx->set('tempat', $data['tempat']);
-			$docx->set('nama_anak', $data['tempat']);
-			$docx->set('ttl_anak', $data['tempat']);
-			$docx->set('agama', $data['tempat']);
-			$docx->set('pker_anak', $data['tempat']);
+			$docx->set('nama_anak', $data['na_anak']);
+			$docx->set('ttl_anak', $data['ttl_anak']);
+			$docx->set('agama', $data['agama']);
+			$docx->set('pker_anak', $data['peke_anak']);
 			$docx->set('keperluan', $data['tempat']);
 			$docx->set('tgl_sekarang', date("d-m-Y"));
 			if ($data['ttd_jabat'] == "Kepala Desa") {
