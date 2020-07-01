@@ -249,6 +249,12 @@
                     </div>
                   </div>
                   <div class="form-group row">
+                    <label for="nikbi" class="col-sm-4 col-form-label">NIK</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="nikbi" name="nbi">
+                    </div>
+                  </div>
+                  <div class="form-group row">
                     <label for="jk1" class="col-sm-4 col-form-label">Jenis Kelamin</label>
                     <div class="col-sm-8">
                       <select class="form-control" id="jk1" name="jke1">
@@ -474,6 +480,12 @@
                     </div>
                   </div>
                   <div class="form-group row">
+                    <label for="nikdopr" class="col-sm-4 col-form-label">NIK</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="nikdopr" name="ndpr">
+                    </div>
+                  </div>
+                  <div class="form-group row">
                     <label for="jk3" class="col-sm-4 col-form-label">Jenis Kelamin</label>
                     <div class="col-sm-8">
                       <select class="form-control" id="jk3" name="jke3">
@@ -554,6 +566,12 @@
                     <label for="kewa3" class="col-sm-4 col-form-label">Kewarnegaraan</label>
                     <div class="col-sm-8">
                       <input type="text" class="form-control" id="kewa3" name="kew3">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="nikbm" class="col-sm-4 col-form-label">NIK</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="nikbm" name="nbme">
                     </div>
                   </div>
                   <div class="form-group row">
@@ -1361,6 +1379,15 @@
                     </div>
                   </div>
                   <div class="form-group row">
+                    <label for="jklakeh" class="col-sm-4 col-form-label">Jenis Kelamin</label>
+                    <div class="col-sm-8">
+                      <select class="form-control" id="jklakeh" name="jklk">
+                        <option>Laki-Laki</option>
+                        <option>Perempuan</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
                     <label for="kelapke" class="col-sm-4 col-form-label">Kewarnegaraan</label>
                     <div class="col-sm-8">
                       <input type="text" class="form-control" id="kelapke" name="klk">
@@ -1391,6 +1418,12 @@
                     </div>
                   </div>
                   <div class="form-group row">
+                    <label for="tting1" class="col-sm-4 col-form-label">Tempat tinggal</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="tting1" name="ttin">
+                    </div>
+                  </div>
+                  <div class="form-group row">
                     <label for="byg1" class="col-sm-4 col-form-label">Barang Yang Hilang</label>
                     <div class="col-sm-8">
                       <input type="text" class="form-control" id="byg1" name="bayg1">
@@ -1400,12 +1433,6 @@
                     <label for="tptk" class="col-sm-4 col-form-label">Tempat Kehilangan</label>
                     <div class="col-sm-8">
                       <input type="text" class="form-control" id="tptk" name="tlk1">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="tting1" class="col-sm-4 col-form-label">Tempat tinggal</label>
-                    <div class="col-sm-8">
-                      <input type="text" class="form-control" id="tting1" name="ttin">
                     </div>
                   </div>
                   <div class="form-group row">

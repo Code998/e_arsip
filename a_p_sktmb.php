@@ -4,11 +4,13 @@
 		header("Location: index.php");
 	}
 	include_once 'connection.php';
+
+	$date = date_create($_POST['d7']);
 	
 	$jenis = $_POST['jenis_s7'];
 	$nama1 = $_POST['nsktmb'];
 	$tmpt1 = $_POST['tetl7'];
-	$date1 = $_POST['d7'];
+	$date1 = date_format($date, 'd-m-Y');
 	$jkel1 = $_POST['jke8'];
 	$kewa1 = $_POST['kew7'];
 	$agam1 = $_POST['agama7'];

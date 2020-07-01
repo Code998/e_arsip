@@ -5,12 +5,13 @@
 	}
 	include_once 'connection.php';
 
+	$date = date_create($_POST['d3']);
 	$target = "assets/photo/".basename($_FILES['file']['name']);
 	
 	$jenis = $_POST['jenis_s3'];
 	$nama1 = $_POST['nsk'];
 	$tmpt1 = $_POST['tetl3'];
-	$date1 = $_POST['d3'];
+	$date1 = date_format($date, 'd-m-Y');
 	$kewa1 = $_POST['kew3'];
 	$jkel1 = $_POST['jke4'];
 	$agam1 = $_POST['agama3'];

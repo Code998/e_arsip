@@ -9,7 +9,8 @@
 	$namab = $_POST['nkem'];
 	$jkel1 = $_POST['jkem0'];
 	$umur = $_POST['ukem'];
-	$tangg = $_POST['tsuke'];
+	$date = date_create($_POST['tsuke']);
+	$date1 = date_format($date, 'd-m-Y');
 	$hari = $_POST['hkem'];
 	$sebab = $_POST['sbb'];
 	$asla = $_POST['alke1'];

@@ -86,7 +86,7 @@
                 <a href="#" data-toggle="modal" data-target="#tambahd" class="btn btn-success text-light" >Tambah Data</a>
               </div>
               <div class="float-left mb-3">
-                <form class="form-inline" method="POST" action="data_masuk.php">
+                <form class="form-inline" method="POST" action="data_umum.php">
                   <div class="form-group mr-sm-3 mb-2">
                     <input type="text" class="form-control" name="search" placeholder="Search....">
                   </div>
@@ -141,7 +141,14 @@
                             <?= $row['st_pe'] ?>
                           </td>
                           <td>
-                            <?= $row['tempat'] ?>
+                            <?php
+                              if ($row['jenis'] == "Keterangan Usaha") {
+                                 echo "RT " . $row['rt'] . " RW " . $row['rw'] . " Desa " . $row['desa'] . " Dusun " . $row['dusun'];
+                               } 
+                               else{
+                                  echo $row['tempat'] ;
+                               }
+                            ?>
                           </td>
                           <td>
                             <?= $row['ket'] ?>

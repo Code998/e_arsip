@@ -8,7 +8,8 @@
 	$jenis = $_POST['jenis_s4'];
 	$nama1 = $_POST['nsk'];
 	$tmpt1 = $_POST['tetl4'];
-	$date1 = $_POST['d4'];
+	$date = date_create($_POST['d4']);
+	$date1 = date_format($date, 'd-m-Y');
 	$kewa1 = $_POST['kew4'];
 	$jkel1 = $_POST['jke5'];
 	$agam1 = $_POST['agama4'];

@@ -5,10 +5,12 @@
 	}
 	include_once 'connection.php';
 	
+	$date = date_create($_POST['d5']);
+
 	$jenis = $_POST['jenis_s5'];
 	$nama1 = $_POST['nku'];
 	$tmpt1 = $_POST['tetl5'];
-	$date1 = $_POST['d5'];
+	$date1 = date_format($date, 'd-m-Y');
 	$jkel1 = $_POST['jke6'];
 	$kewa1 = $_POST['kew5'];
 	$agam1 = $_POST['agama5'];

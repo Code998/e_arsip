@@ -9,7 +9,8 @@
 	$namab = $_POST['nbayi'];
 	$jkel1 = $_POST['jsl'];
 	$hari = $_POST['hla'];
-	$tangg = $_POST['tsk'];
+	$date = date_create($_POST['tsk']);
+	$date1 = date_format($date, 'd-m-Y');
 	$jam = $_POST['psk'];
 	$temp = $_POST['tmptla'];
 	$anake = $_POST['ake'];

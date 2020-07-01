@@ -83,7 +83,7 @@
           <div class="card">
             <div class="card-body">
               <div class="float-left mb-3">
-                <form class="form-inline" method="POST" action="data_masuk.php">
+                <form class="form-inline" method="POST" action="data_kelahiran.php">
                   <div class="form-group mr-sm-3 mb-2">
                     <input type="text" class="form-control" name="search" placeholder="Search....">
                   </div>
