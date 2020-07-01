@@ -22,6 +22,12 @@ body{
 	
 }
 
+.collapse1{
+max-height: 100px;
+  overflow: auto;
+  display:inline-block;
+}
+
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;

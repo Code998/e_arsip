@@ -83,7 +83,7 @@
           <div class="judul m-3">Register Masuk</div>
         </div>
         <div class="col-sm-12 px-5">
-          <div class="card">
+          <div class="card mb-5">
             <div class="card-body">
               <div class="float-right mb-3">
               </div>
@@ -95,7 +95,7 @@
                   <button type="submit" class="btn btn-outline-primary mb-2">Search</button>
                 </form>
               </div>
-              <div class="table-responsive-lg">
+              <div class="table-responsive-lg" style="height: 400px;">
                 <table class="table">
                   <thead class="thead-light">
                     <tr>

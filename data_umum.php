@@ -83,7 +83,7 @@
           <div class="judul m-3">Register Umum</div>
         </div>
         <div class="col-sm-12 px-5">
-          <div class="card">
+          <div class="card mb-5">
             <div class="card-body">
               <div class="float-right mb-3">
                 <a href="#" data-toggle="modal" data-target="#tambahd" class="btn btn-success text-light" >Tambah Data</a>
@@ -96,7 +96,7 @@
                   <button type="submit" class="btn btn-outline-primary mb-2">Search</button>
                 </form>
               </div>
-              <div class="table-responsive">
+              <div class="table-responsive contain1"  style="height: 400px;">
                 <table class="table">
                   <thead class="thead-light">
                     <tr>
@@ -172,7 +172,7 @@
                   </tbody>
                 </table>
               </div>
-              <div class="float-right">
+              <div class="float-right mt-3">
                 <a href="c_p_data_umum.php" class="btn btn-dark d-flex justify-content-center"><i class="material-icons md-light mr-1">print</i>Print</a>
               </div>
             </div>

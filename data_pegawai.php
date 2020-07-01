@@ -82,7 +82,7 @@
           <div class="judul m-3">Data Pegawai</div>
         </div>
         <div class="col-sm-12 px-5">
-          <div class="card">
+          <div class="card mb-5">
             <div class="card-body">
               <div class="float-left mb-3">
                 <form class="form-inline" method="POST" action="data_pegawai.php">
@@ -95,7 +95,7 @@
               <div class="float-right">
                 <a href="data_cetak_peg.php" class="btn btn-dark d-flex justify-content-center"><i class="material-icons md-light mr-1">print</i>Print</a>
               </div>
-              <div class="table-responsive-lg">
+              <div class="table-responsive-lg" style="height: 400px;">
                 <table class="table text-center">
                   <thead class="thead-light">
                     <tr>

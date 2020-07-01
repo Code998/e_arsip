@@ -83,7 +83,7 @@
           <div class="judul m-3">Register Kematian</div>
         </div>
         <div class="col-sm-12 px-5">
-          <div class="card">
+          <div class="card mb-5">
             <div class="card-body">
               <div class="float-left mb-3">
                 <form class="form-inline" method="POST" action="data_kematian.php">
@@ -93,7 +93,7 @@
                   <button type="submit" class="btn btn-outline-primary mb-2">Search</button>
                 </form>
               </div>
-              <div class="table-responsive-lg">
+              <div class="table-responsive-lg" style="height: 400px;">
                 <table class="table">
                   <thead class="thead-light">
                     <tr>

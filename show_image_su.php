@@ -10,10 +10,13 @@
 	$result = $conn->query($sql0);
 	$data = $result->fetch_assoc();
 
+	$array_bln	= array("01"=>"I", "02"=>"II", "03"=>"III", "04"=>"IV", "05"=>"V", "06"=>"VI", "07"=>"VII", "08"=>"VIII", "09"=>"IX", "10"=>"X", "11"=>"XI", "12"=>"XII");
+	$bln		= $array_bln[date('m', strtotime($data['ket']))];
+
 		if ($data['jenis'] == "SKTM") {
 
 			$docx = new DOCXTemplate('template/source/SKTM.docx');
-			$docx->set('nomor',  '470 / ' . $data['no'] . ' / 35.07.20.007 / ' . date('Y', strtotime($data['ket'])));
+			$docx->set('nomor',  '470 / ' . $data['no'] . ' / 35.07.20.007 / ' . $bln . "/ " . date('Y', strtotime($data['ket'])));
 			$docx->set('nama', $data['nama']);
 			$docx->set('ttl', $data['ttl']);
 			$docx->set('jk', $data['jk']);
@@ -47,7 +50,7 @@
 		elseif ($data['jenis'] == "SKTM Beasiswa") {
 
 			$docx = new DOCXTemplate('template/source/SKTM_BEASISWA.docx');
-			$docx->set('nomor',  '470 / ' . $data['no'] . ' / 35.07.20.007 / ' . date('Y', strtotime($data['ket'])));
+			$docx->set('nomor',  '470 / ' . $data['no'] . ' / 35.07.20.007 / ' . $bln . "/ " . date('Y', strtotime($data['ket'])));
 			$docx->set('nama', $data['nama']);
 			$docx->set('ttl', $data['ttl']);
 			$docx->set('kewar', $data['kewar']);
@@ -82,7 +85,7 @@
 		elseif ($data['jenis'] == "Surat jalan") {
 
 			$docx = new DOCXTemplate('template/source/Surat_Jalan.docx');
-			$docx->set('nomor',  '474 / ' . $data['no'] . ' / 35.07.20.007 / ' . date('Y', strtotime($data['ket'])));
+			$docx->set('nomor',  '474 / ' . $data['no'] . ' / 35.07.20.007 / ' . $bln . "/ " . date('Y', strtotime($data['ket'])));
 			$docx->set('nama', $data['nama']);
 			$docx->set('ttl', $data['ttl']);
 			$docx->set('kewar', $data['kewar']);
@@ -114,7 +117,7 @@
 		elseif ($data['jenis'] == "Beda Identitas") {
 
 			$docx = new DOCXTemplate('template/source/Surat_Keterangan_Beda_Nama.docx');
-			$docx->set('nomor',  '470 / ' . $data['no'] . ' / 35.07.20.007 / ' . date('Y', strtotime($data['ket'])));
+			$docx->set('nomor',  '470 / ' . $data['no'] . ' / 35.07.20.007 / ' . $bln . "/ " . date('Y', strtotime($data['ket'])));
 			$docx->set('nama', $data['nama']);
 			$docx->set('ttl', $data['ttl']);
 			$docx->set('kewar', $data['kewar']);
@@ -154,7 +157,7 @@
 		elseif ($data['jenis'] == "Domisili Lembaga") {
 
 			$docx = new DOCXTemplate('template/source/Surat_keterangan_Domisili_Lembaga.docx');
-			$docx->set('nomor',  '474 / ' . $data['no'] . ' / 35.07.20.007 / ' . date('Y', strtotime($data['ket'])));
+			$docx->set('nomor',  '474 / ' . $data['no'] . ' / 35.07.20.007 / ' . $bln . "/ " . date('Y', strtotime($data['ket'])));
 			$docx->set('nama', $data['nama']);
 			$docx->set('umur', $data['umur_pe']);
 			$docx->set('jabatan', $data['jabatan_pe']);
@@ -183,7 +186,7 @@
 		elseif ($data['jenis'] == "Domisili Pribadi") {
 
 			$docx = new DOCXTemplate('template/source/Surat_keterangan_domisili_pribadi.docx');
-			$docx->set('nomor',  '474 / ' . $data['no'] . ' / 35.07.20.007 / ' . date('Y', strtotime($data['ket'])));
+			$docx->set('nomor',  '474 / ' . $data['no'] . ' / 35.07.20.007 / ' . $bln . "/ " . date('Y', strtotime($data['ket'])));
 			$docx->set('nama', $data['nama']);
 			$docx->set('ttl', $data['ttl']);
 			$docx->set('kewar', $data['kewar']);
@@ -211,7 +214,7 @@
 		elseif ($data['jenis'] == "Belum Menikah") {
 
 			$docx = new DOCXTemplate('template/source/Surat_Keterangan_Belum_Menikah.docx');
-			$docx->set('nomor',  '474 / ' . $data['no'] . ' / 35.07.20.007 / ' . date('Y', strtotime($data['ket'])));
+			$docx->set('nomor',  '474 / ' . $data['no'] . ' / 35.07.20.007 / ' . $bln . "/ " . date('Y', strtotime($data['ket'])));
 			$docx->set('nama', $data['nama']);
 			$docx->set('ttl', $data['ttl']);
 			$docx->set('kewar', $data['kewar']);
@@ -241,7 +244,7 @@
 		elseif ($data['jenis'] == "Surat Kerja") {
 
 			$docx = new DOCXTemplate('template/source/Surat_Kerja.docx');
-			$docx->set('nomor',  '471 / ' . $data['no'] . ' / 35.07.20.007 / ' . date('Y', strtotime($data['ket'])));
+			$docx->set('nomor',  '471 / ' . $data['no'] . ' / 35.07.20.007 / ' . $bln . "/ " . date('Y', strtotime($data['ket'])));
 			$docx->set('nama', $data['nama']);
 			$docx->set('ttl', $data['ttl']);
 			$docx->set('kewar', $data['kewar']);
@@ -270,7 +273,7 @@
 		elseif ($data['jenis'] == "Keterangan Usaha") {
 
 			$docx = new DOCXTemplate('template/source/Surat_keterangan_Usaha.docx');
-			$docx->set('nomor',  '470 / ' . $data['no'] . ' / 35.07.20.007 / ' . date('Y', strtotime($data['ket'])));
+			$docx->set('nomor',  '470 / ' . $data['no'] . ' / 35.07.20.007 / ' . $bln . "/ " . date('Y', strtotime($data['ket'])));
 			$docx->set('nama', $data['nama']);
 			$docx->set('ttl', $data['ttl']);
 			$docx->set('kewar', $data['kewar']);
@@ -304,7 +307,7 @@
 		elseif ($data['jenis'] == "Laporan Kehilangan") {
 
 			$docx = new DOCXTemplate('template/source/Surat_Tanda_Lapor_Kehilangan.docx');
-			$docx->set('nomor',  '474 / ' . $data['no'] . ' / 35.07.20.007 / ' . date('Y', strtotime($data['ket'])));
+			$docx->set('nomor',  '474 / ' . $data['no'] . ' / 35.07.20.007 / ' . $bln . "/ " . date('Y', strtotime($data['ket'])));
 			$docx->set('nama', $data['nama']);
 			$docx->set('ttl', $data['ttl']);
 			$docx->set('kewar', $data['kewar']);
