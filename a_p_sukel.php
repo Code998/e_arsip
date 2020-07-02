@@ -18,7 +18,7 @@
 	$asla = $_POST['asla'];
 	$tsl = $_POST['tsl'];
 	
-	$sql = "INSERT INTO data_surat_lahir VALUES ( '', '" . $jenis . "', '" . $namab . "', '" . $anake . "', '" . $jkel1 . "', '" . $hari . "', '" . $tangg . "', " . $jam . "', '" . $temp . "', '" . $naib . "', '" . $naay . "', '" . $asla . "', '" . $tsl . "', '" . date('Y-m-d') . "')";
+	$sql = "INSERT INTO data_surat_lahir VALUES ( '', '" . $jenis . "', '" . $namab . "', '" . $anake . "', '" . $jkel1 . "', '" . $hari . "', '" . $tangg . "', '" . $jam . "', '" . $temp . "', '" . $naib . "', '" . $naay . "', '" . $asla . "', '" . $tsl . "', '" . date('Y-m-d') . "')";
 	
 	if ($conn->query($sql) === TRUE) {
 		echo "Data Sudah Dimasukkan";

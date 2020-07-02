@@ -95,7 +95,7 @@
               <div class="float-right">
                 <a href="data_cetak_peg.php" class="btn btn-dark d-flex justify-content-center"><i class="material-icons md-light mr-1">print</i>Print</a>
               </div>
-              <div class="table-responsive contain1" style="height: 400px;">
+              <div class="table-responsive" style="height: 400px;">
                 <table class="table text-center">
                   <thead class="thead-light">
                     <tr>

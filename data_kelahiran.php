@@ -93,7 +93,7 @@
                   <button type="submit" class="btn btn-outline-primary mb-2">Search</button>
                 </form>
               </div>
-              <div class="table-responsive contain1" style="height: 400px;">
+              <div class="table-responsive" style="height: 400px;">
                 <table class="table">
                   <thead class="thead-light">
                     <tr>
@@ -172,7 +172,7 @@
                   </tbody>
                 </table>
               </div>
-              <div class="float-right">
+              <div class="float-right mt-3">
                 <a href="c_p_data_kelahiran.php" class="btn btn-dark d-flex justify-content-center"><i class="material-icons md-light mr-1">print</i>Print</a>
               </div>
             </div>

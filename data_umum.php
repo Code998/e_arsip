@@ -17,6 +17,7 @@
   }
 
   $result = $conn->query($sql);
+  
 ?>
 
 <!DOCTYPE html>
@@ -96,11 +97,12 @@
                   <button type="submit" class="btn btn-outline-primary mb-2">Search</button>
                 </form>
               </div>
-              <div class="table-responsive contain1"  style="height: 400px;">
+              <div class="table-responsive"  style="height: 400px;">
                 <table class="table">
                   <thead class="thead-light">
                     <tr>
                       <th scope="col">Nomor</th>
+                      <th scope="col">Nomor Registrasi</th>
                       <th scope="col">Nama</th>
                       <th scope="col">Tempat, Tangall Lahir</th>
                       <th scope="col">Kewarnegaraan</th>
@@ -121,6 +123,23 @@
                         <tr>
                           <td>
                             <?=$row['no']?>
+                          </td>
+                          <td>
+                            <?php
+                               $array_bln  = array("01"=>"I", "02"=>"II", "03"=>"III", "04"=>"IV", "05"=>"V", "06"=>"VI", "07"=>"VII", "08"=>"VIII", "09"=>"IX", "10"=>"X", "11"=>"XI", "12"=>"XII");
+                              $bln    = $array_bln[date('m', strtotime($row['ket']))];
+                              
+                              $a = $row['jenis'];
+                              if ($a == "Beda Identitas" || $a == "Keterangan Usaha" || $a == "SKTM" || $a == "SKTM Beasiswa") {
+                                echo '470 / ' . $row['no'] . ' / 35.07.20.007 / ' . $bln . "/ " . date('Y', strtotime($row['ket']));
+                              }
+                              elseif ($a == "Keterangan Usaha" || $a == "Surat Kerja") {
+                                echo '471 / ' . $row['no'] . ' / 35.07.20.007 / ' . $bln . "/ " . date('Y', strtotime($row['ket']));
+                              }
+                              elseif ($a == "Domisili Lembaga" || $a == "Domisili Pribadi" || $a == "Belum Menikah" || $a == "Laporan Kehilangan" || $a == "Surat jalan") {
+                                echo '474 / ' . $row['no'] . ' / 35.07.20.007 / ' . $bln . "/ " . date('Y', strtotime($row['ket']));
+                              }
+                            ?>
                           </td>
                           <td>
                             <?= $row['nama'] ?>
@@ -154,7 +173,7 @@
                             ?>
                           </td>
                           <td>
-                            <?= $row['jenis'] ?>
+                            <?=$row['jenis'] ?>
                           </td>
                           <td>
                             <?php

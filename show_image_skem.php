@@ -17,6 +17,7 @@ $sql1 = "SELECT * FROM data_surat_kemat WHERE no = '" . $id . "'";
 			$docx->set('nama', $data1['nama']);
 			$docx->set('jk', $data1['jk']);
 			$docx->set('alamat', $data1['alamat']);
+			$docx->set('men_di', $data1['men_di']);
 			$docx->set('umur', $data1['umur']);
 			$docx->set('hari', $data1['hari']);
 			$docx->set('tanggal', date('d/m/Y', strtotime($data1['tgl_men'])));

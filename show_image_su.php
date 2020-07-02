@@ -10,6 +10,11 @@
 	$result = $conn->query($sql0);
 	$data = $result->fetch_assoc();
 
+	$a = $data['ttd_jabat'];
+	$sql1 = "SELECT * FROM pegawai WHERE jabatan = '" . $a . "'";
+	$result1 = $conn->query($sql1);
+	$data1 = $result1->fetch_assoc();
+
 	$array_bln	= array("01"=>"I", "02"=>"II", "03"=>"III", "04"=>"IV", "05"=>"V", "06"=>"VI", "07"=>"VII", "08"=>"VIII", "09"=>"IX", "10"=>"X", "11"=>"XI", "12"=>"XII");
 	$bln		= $array_bln[date('m', strtotime($data['ket']))];
 
@@ -67,12 +72,11 @@
 			$docx->set('tgl_sekarang', date("d-m-Y"));
 			if ($data['ttd_jabat'] == "Kepala Desa") {
 				$docx->set('tambahan', "");
-				$docx->set('n', "Purwito");
 			}
 			else{
 				$docx->set('tambahan', "An. Kepala Desa");
-				$docx->set('n', "Nur Hasim");
 			}
+			$docx->set('n', $data1['nama']);
 			$docx->set('ttd_jabat', $data['ttd_jabat']);
 			$nama = "surat_". $data['jenis'] . "_" . $data['no']. ".docx";
 			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');
@@ -99,12 +103,11 @@
 			$docx->set('tgl_sekarang', date("d-m-Y"));
 			if ($data['ttd_jabat'] == "Kepala Desa") {
 				$docx->set('tambahan', "");
-				$docx->set('n', "Purwito");
 			}
 			else{
 				$docx->set('tambahan', "An. Kepala Desa");
-				$docx->set('n', "Nur Hasim");
 			}
+			$docx->set('n', $data1['nama']);
 			$docx->set('ttd_jabat', $data['ttd_jabat']);
 			$nama = "surat_". $data['jenis'] . "_" . $data['no']. ".docx";
 			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');
@@ -139,12 +142,11 @@
 			$docx->set('tgl_sekarang', date("d-m-Y"));
 			if ($data['ttd_jabat'] == "Kepala Desa") {
 				$docx->set('tambahan', "");
-				$docx->set('n', "Purwito");
 			}
 			else{
 				$docx->set('tambahan', "An. Kepala Desa");
-				$docx->set('n', "Nur Hasim");
 			}
+			$docx->set('n', $data1['nama']);
 			$docx->set('ttd_jabat', $data['ttd_jabat']);
 			$nama = "surat_". $data['jenis'] . "_" . $data['no']. ".docx";
 			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');
@@ -162,18 +164,17 @@
 			$docx->set('jabatan', $data['jabatan_pe']);
 			$docx->set('tempat', $data['tempat']);
 			$docx->set('kleg', $data['jenis_le']);
-			$docx->set('nleg', $data['nama']);
+			$docx->set('nleg', $data['nama_pe']);
 			$docx->set('bahuk', $data['ba_huk']);
 			$docx->set('allem', $data['alamat_le']);
 			$docx->set('tgl_sekarang', date("d-m-Y"));
 			if ($data['ttd_jabat'] == "Kepala Desa") {
 				$docx->set('tambahan', "");
-				$docx->set('n', "Purwito");
 			}
 			else{
 				$docx->set('tambahan', "An. Kepala Desa");
-				$docx->set('n', "Nur Hasim");
 			}
+			$docx->set('n', $data1['nama']);
 			$docx->set('ttd_jabat', $data['ttd_jabat']);
 			$nama = "surat_". $data['jenis'] . "_" . $data['no']. ".docx";
 			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');
@@ -196,12 +197,11 @@
 			$docx->set('tgl_sekarang', date("d-m-Y"));
 			if ($data['ttd_jabat'] == "Kepala Desa") {
 				$docx->set('tambahan', "");
-				$docx->set('n', "Purwito");
 			}
 			else{
 				$docx->set('tambahan', "An. Kepala Desa");
-				$docx->set('n', "Nur Hasim");
 			}
+			$docx->set('n', $data1['nama']);
 			$docx->set('ttd_jabat', $data['ttd_jabat']);
 			$nama = "surat_". $data['jenis'] . "_" . $data['no']. ".docx";
 			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');
@@ -226,12 +226,11 @@
 			$docx->set('tgl_sekarang', date("d-m-Y"));
 			if ($data['ttd_jabat'] == "Kepala Desa") {
 				$docx->set('tambahan', "");
-				$docx->set('n', "Purwito");
 			}
 			else{
 				$docx->set('tambahan', "An. Kepala Desa");
-				$docx->set('n', "Nur Hasim");
 			}
+			$docx->set('n', $data1['nama']);
 			$docx->set('ttd_jabat', $data['ttd_jabat']);
 			$nama = "surat_". $data['jenis'] . "_" . $data['no']. ".docx";
 			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');
@@ -255,12 +254,11 @@
 			$docx->set('tgl_sekarang', date("d-m-Y"));
 			if ($data['ttd_jabat'] == "Kepala Desa") {
 				$docx->set('tambahan', "");
-				$docx->set('n', "Purwito");
 			}
 			else{
 				$docx->set('tambahan', "An. Kepala Desa");
-				$docx->set('n', "Nur Hasim");
 			}
+			$docx->set('n', $data1['nama']);
 			$docx->set('ttd_jabat', $data['ttd_jabat']);
 			$nama = "surat_". $data['jenis'] . "_" . $data['no']. ".docx";
 			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');
@@ -289,12 +287,11 @@
 			$docx->set('tgl_sekarang', date("d-m-Y"));
 			if ($data['ttd_jabat'] == "Kepala Desa") {
 				$docx->set('tambahan', "");
-				$docx->set('n', "Purwito");
 			}
 			else{
 				$docx->set('tambahan', "An. Kepala Desa");
-				$docx->set('n', "Nur Hasim");
 			}
+			$docx->set('n', $data1['nama']);
 			$docx->set('ttd_jabat', $data['ttd_jabat']);
 			$nama = "surat_". $data['jenis'] . "_" . $data['no']. ".docx";
 			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');
@@ -317,18 +314,18 @@
 			$docx->set('pekerja', $data['pekerjaan']);
 			$docx->set('nik', $data['nike']);
 			$docx->set('tempat', $data['tempat']);
+			$docx->set('bhil', $data['b_hil']);
 			$docx->set('temp_hil', $data['temp_hil']);
 			$docx->set('hari', $data['hari']);
 			$docx->set('waktu', $data['waktu']);
 			$docx->set('tgl_sekarang', date("d-m-Y"));
 			if ($data['ttd_jabat'] == "Kepala Desa") {
 				$docx->set('tambahan', "");
-				$docx->set('n', "Purwito");
 			}
 			else{
 				$docx->set('tambahan', "An. Kepala Desa");
-				$docx->set('n', "Nur Hasim");
 			}
+			$docx->set('n', $data1['nama']);
 			$docx->set('ttd_jabat', $data['ttd_jabat']);
 			$nama = "surat_". $data['jenis'] . "_" . $data['no']. ".docx";
 			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');
