@@ -12,6 +12,11 @@ $sql1 = "SELECT * FROM data_surat_kemat WHERE no = '" . $id . "'";
 	$array_bln	= array("01"=>"I", "02"=>"II", "03"=>"III", "04"=>"IV", "05"=>"V", "06"=>"VI", "07"=>"VII", "08"=>"VIII", "09"=>"IX", "10"=>"X", "11"=>"XI", "12"=>"XII");
 	$bln		= $array_bln[date('m', strtotime($data1['ket']))];
 
+	$a = $data1['jabat'];
+	$sql2 = "SELECT * FROM pegawai WHERE jabatan = '" . $a . "'";
+	$result2 = $conn->query($sql2);
+	$data2 = $result2->fetch_assoc();
+
 			$docx = new DOCXTemplate('template/source/Surat_Kematian.docx');
 			$docx->set('nomor',  '474 / ' . $data1['no'] . ' / 35.07.27.20.007 / ' . $bln . "/ " . date('Y', strtotime($data1['ket'])));
 			$docx->set('nama', $data1['nama']);
@@ -27,12 +32,11 @@ $sql1 = "SELECT * FROM data_surat_kemat WHERE no = '" . $id . "'";
 			$docx->set('tgl_sekarang', date("d-m-Y"));
 			if ($data1['jabat'] == "Kepala Desa") {
 				$docx->set('tambahan', "");
-				$docx->set('n', "Purwito");
 			}
 			else{
 				$docx->set('tambahan', "An. Kepala Desa");
-				$docx->set('n', "Nur Hasim");
 			}
+			$docx->set('n', $data2['nama']);
 			$docx->set('ttd_jabat', $data1['jabat']);
 			$nama = "surat_". $data1['jenis'] . "_" . $data1['no']. ".docx";
 			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');

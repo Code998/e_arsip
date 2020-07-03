@@ -1,6 +1,6 @@
 <?php  
   session_start();
-  if ($_SESSION['user'] == "") {
+  if ($_SESSION['nip'] == "") {
     header("Location: index.php");
   }
   include_once 'connection.php';
@@ -30,33 +30,27 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="pilih_surat.php">Pilih Surat</a>
-          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Buku Register
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="data_masuk.php">Register Masuk</a>
+              <a class="dropdown-item" href="data_masuk_pe.php">Register Masuk</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="data_umum.php">Register Umum</a>
+              <a class="dropdown-item" href="data_umum_pe.php">Register Umum</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="data_kelahiran.php">Register Kelahiran</a>
+              <a class="dropdown-item" href="data_kelahiran_pe.php">Register Kelahiran</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="data_kematian.php">Register Kematian</a>
+              <a class="dropdown-item" href="data_kematian_pe.php">Register Kematian</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="data_pindah_tempat.php">Register Pindah Tempat</a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" href="data_pegawai.php">Data Pegawai</a>
+              <a class="dropdown-item" href="data_pindah_tempat_pe.php">Register Pindah Tempat</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Hello, <?=$_SESSION['user']?>
+              Hello, <?=$_SESSION['nip']?>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="about.php">About</a>
+              <a class="dropdown-item" href="about_pe.php">About</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="logout.php">Log Out</a>
             </div>

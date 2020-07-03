@@ -7,13 +7,13 @@
   include_once 'connection.php';
 
   $jenis = $_POST['jenis'];
-  
-  $sql = "SELECT * FROM data_surat_kemat ORDER BY ket";
+
+  $sql = "SELECT * FROM data_surat_masuk ORDER BY tgl_simpan";
 
   $search = $_POST['search'];
 
   if ($search != "") {
-    $sql = "SELECT * FROM data_surat_kemat WHERE jenis LIKE '%" . $search . "%' OR nama LIKE '%" . $search . "%' OR jk LIKE '%" . $search . "%' OR umur LIKE '%" . $search . "%' OR hari LIKE '%" . $search . "%' OR sakit LIKE '%" . $search . "%' OR men_di LIKE '%" . $search . "%' OR na_keluarga LIKE '%" . $search . "%' OR alamat LIKE '%" . $search . "%' OR ket LIKE '%" . $search . "%'";
+    $sql = "SELECT * FROM data_surat_masuk WHERE nama LIKE '%" . $search . "%' OR no_surat LIKE '%" . $search . "%' OR tgl_surat LIKE '%" . $search . "%' OR tgl_simpan LIKE '%" . $search . "%' OR perihal LIKE '%" . $search . "%' OR isi LIKE '%" . $search . "%' OR alamat LIKE '%" . $search . "%'";
   }
 
   $result = $conn->query($sql);
@@ -82,13 +82,15 @@
     <div class="container-fluid">
        <div class="row">
         <div class="col-sm-12">
-          <div class="judul m-3">Register Kematian</div>
+          <div class="judul m-3">Register Masuk</div>
         </div>
         <div class="col-sm-12 px-5">
           <div class="card mb-5">
             <div class="card-body">
+              <div class="float-right mb-3">
+              </div>
               <div class="float-left mb-3">
-                <form class="form-inline" method="POST" action="data_kematian.php">
+                <form class="form-inline" method="POST" action="data_masuk.php">
                   <div class="form-group mr-sm-3 mb-2">
                     <input type="text" class="form-control" name="search" placeholder="Search....">
                   </div>
@@ -100,17 +102,13 @@
                   <thead class="thead-light">
                     <tr>
                       <th scope="col">Nomor</th>
-                      <th scope="col">Nama</th>
-                      <th scope="col">Jenis Kelamin</th>
-                      <th scope="col">Umur</th>
-                      <th scope="col">Tanggal Meninggal</th>
-                      <th scope="col">Hari</th>
-                      <th scope="col">Sakit</th>
-                      <th scope="col">Tempat</th>
-                      <th scope="col">Nama Keluarga</th>
-                      <th scope="col">Alamat Rumah</th>
-                      <th scope="col">Keterangan</th>
-                      <th scope="col" colspan="2">Aksi</th>
+                      <th scope="col">Dari / Kepada</th>
+                      <th scope="col">No Surat</th>
+                      <th scope="col">Tanggal Surat</th>
+                      <th scope="col">Perihal</th>
+                      <th scope="col">Isi</th>
+                      <th scope="col">Alamat</th>
+                      <th scope="col" colspan="2">Keterangan</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -125,43 +123,25 @@
                             <?= $row['nama'] ?>
                           </td>
                           <td>
-                            <?= $row['jk'] ?>
+                            <?= $row['no_surat'] ?>
                           </td>
                           <td>
-                            <?= $row['umur'] ?>
+                            <?= $row['tgl_surat'] ?>
                           </td>
                           <td>
-                            <?php
-                              $date = date_create($row['tgl_men']);
-                              echo date_format($date, 'd-m-Y');
-                            ?>
+                            <?= $row['perihal'] ?>
                           </td>
                           <td>
-                            <?= $row['hari'] ?>
-                          </td>
-                          <td>
-                            <?= $row['sakit'] ?>
-                          </td>
-                          <td>
-                            <?= $row['men_di'] ?>
-                          </td>
-                          <td>
-                            <?= $row['na_keluarga'] ?>
+                            <?= $row['isi'] ?>
                           </td>
                           <td>
                             <?= $row['alamat'] ?>
                           </td>
                           <td>
-                            <?php
-                              $date = date_create($row['ket']);
-                              echo date_format($date, 'd-m-Y');
-                            ?>
-                          </td>
-                          <td>
-                            <a href="show_image_skem.php?no=<?=$row['no']?>">
+                            <a href="show_image.php?no=<?=$row['no']?>">
                                 <img src="assets/img/writing.svg" height="22" width="22" title="Lihat Lampiran">
                             </a>
-                            <a href="#" data-href="d_p_data_kematian.php?no=<?=$row['no']?>" data-toggle="modal" data-target="#confirm-delete">
+                            <a href="#" data-href="d_p_data_masuk.php?no=<?=$row['no']?>" data-toggle="modal" data-target="#confirm-delete">
                               <img src="assets/img/clear-button.svg" height="22" width="22" title="Delete">
                             </a>
                           </td>
@@ -171,7 +151,7 @@
                 </table>
               </div>
               <div class="float-right">
-                <a href="c_p_data_kematian.php" class="btn btn-dark d-flex justify-content-center"><i class="material-icons md-light mr-1">print</i>Print</a>
+                <a href="data_cetak_surat.php" class="btn btn-dark d-flex justify-content-center"><i class="material-icons md-light mr-1">print</i>Print</a>
               </div>
             </div>
           </div>

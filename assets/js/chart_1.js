@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$.ajax({
-		url: "../../data_action_chart.php",
+		url: "../../data_chart_umum.php",
 		method: "GET",
 		success: function(data) {
 			console.log(data);
@@ -33,7 +33,7 @@ $(document).ready(function(){
 				datasets : [
 					{
 						label : ["Surat M/K"],
-						backgroundColor: ["#e74c3c", "#3498db"],
+						backgroundColor: ["#0D1321", "#1D2D44", "#3E5C76", "#EFECCA", "#A9CBB7"],
 						data: s
 					}
 				]

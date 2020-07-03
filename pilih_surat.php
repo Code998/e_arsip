@@ -43,6 +43,8 @@
               <a class="dropdown-item" href="data_kelahiran.php">Register Kelahiran</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="data_kematian.php">Register Kematian</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="data_pindah_tempat.php">Register Pindah Tempat</a>
           </li>
            <li class="nav-item">
             <a class="nav-link" href="data_pegawai.php">Data Pegawai</a>
@@ -92,8 +94,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="sm" tabindex="-1" role="dialog" aria-labelledby="Title1" aria-hidden="true">

@@ -57,6 +57,8 @@
               <a class="dropdown-item" href="data_kelahiran.php">Register Kelahiran</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="data_kematian.php">Register Kematian</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="data_pindah_tempat.php">Register Pindah Tempat</a>
           </li>
            <li class="nav-item">
             <a class="nav-link" href="data_pegawai.php">Data Pegawai</a>
@@ -124,6 +126,9 @@
                             <?= $row['jabatan'] ?>
                           </td>
                           <td>
+                            <a href="data_edit_pegawai.php?nip=<?=$row['nip']?>">
+                                <img src="assets/img/writing.svg" height="25" width="25" title="Edit">
+                            </a>
                             <a href="#" data-href="data_delete_action_p.php?nip=<?=$row['nip']?>" data-toggle="modal" data-target="#confirm-delete">
                               <img src="assets/img/clear-button.svg" height="25" width="25" title="Delete">
                             </a>

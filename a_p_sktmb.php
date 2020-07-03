@@ -6,6 +6,7 @@
 	include_once 'connection.php';
 
 	$date = date_create($_POST['d7']);
+	$date = date_create($_POST['d8']);
 	
 	$jenis = $_POST['jenis_s7'];
 	$nama1 = $_POST['nsktmb'];
@@ -20,7 +21,7 @@
 	$temp1 = $_POST['tempa7'];
 	$namaa = $_POST['namaa0'];
 	$tmpt2 = $_POST['tetl8'];
-	$date2 = $_POST['d8'];
+	$date2 = date_format($date, 'd-m-Y');
 	$pekea = $_POST['pean0'];
 	$keper = $_POST['keperl2'];
 	$jabat = $_POST['ttd8'];

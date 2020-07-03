@@ -7,17 +7,16 @@
   include_once 'connection.php';
 
   $jenis = $_POST['jenis'];
-  
-  $sql = "SELECT * FROM data_surat_umum ORDER BY ket";
+
+  $sql = "SELECT * FROM data_surat_pite ORDER BY tgl";
 
   $search = $_POST['search'];
 
   if ($search != "") {
-    $sql = "SELECT * FROM data_surat_umum WHERE jenis LIKE '%" . $search . "%' OR nama LIKE '%" . $search . "%' OR jk LIKE '%" . $search . "%' OR ttl LIKE '%" . $search . "%' OR kewar LIKE '%" . $search . "%' OR jk LIKE '%" . $search . "%' OR agama LIKE '%" . $search . "%' OR pekerjaan LIKE '%" . $search . "%' OR st_pe LIKE '%" . $search . "%' OR tempat LIKE '%" . $search . "%' OR ket LIKE '%" . $search . "%'";
+    $sql = "SELECT * FROM data_surat_pite WHERE nama LIKE '%" . $search . "%' OR ttl LIKE '%" . $search . "%' OR nik LIKE '%" . $search . "%' OR jk LIKE '%" . $search . "%' OR st_perk LIKE '%" . $search . "%' OR al_sek LIKE '%" . $search . "%' OR al_tuj LIKE '%" . $search . "%' OR agama LIKE '%" . $search . "%' OR pekerjaan LIKE '%" . $search . "%'";
   }
 
   $result = $conn->query($sql);
-  
 ?>
 
 <!DOCTYPE html>
@@ -83,7 +82,7 @@
     <div class="container-fluid">
        <div class="row">
         <div class="col-sm-12">
-          <div class="judul m-3">Register Umum</div>
+          <div class="judul m-3">Register Pindah Tempat</div>
         </div>
         <div class="col-sm-12 px-5">
           <div class="card mb-5">
@@ -92,14 +91,14 @@
                 <a href="#" data-toggle="modal" data-target="#tambahd" class="btn btn-success text-light" >Tambah Data</a>
               </div>
               <div class="float-left mb-3">
-                <form class="form-inline" method="POST" action="data_umum.php">
+                <form class="form-inline" method="POST" action="data_masuk.php">
                   <div class="form-group mr-sm-3 mb-2">
                     <input type="text" class="form-control" name="search" placeholder="Search....">
                   </div>
                   <button type="submit" class="btn btn-outline-primary mb-2">Search</button>
                 </form>
               </div>
-              <div class="table-responsive"  style="height: 400px;">
+              <div class="table-responsive" style="height: 400px;">
                 <table class="table">
                   <thead class="thead-light">
                     <tr>
@@ -107,14 +106,13 @@
                       <th scope="col">Nomor Registrasi</th>
                       <th scope="col">Nama</th>
                       <th scope="col">Tempat, Tanggal Lahir</th>
-                      <th scope="col">Kewarnegaraan</th>
+                      <th scope="col">NIK</th>
                       <th scope="col">Jenis Kelamin</th>
+                      <th scope="col">Status Perkawinan</th>
                       <th scope="col">Agama</th>
                       <th scope="col">Pekerjaan</th>
-                      <th scope="col">Status Perkawinan</th>
-                      <th scope="col">Tempat Tinggal</th>
-                      <th scope="col">Keperluan</th>
-                      <th scope="col">Keterangan</th>
+                      <th scope="col">Alamat Sekarang </th>
+                      <th scope="col">Alamat Tujuan</th>
                       <th scope="col" colspan="2">Action</th>
                     </tr>
                   </thead>
@@ -127,24 +125,7 @@
                             <?=$row['no']?>
                           </td>
                           <td>
-                            <?php
-                               $array_bln  = array("01"=>"I", "02"=>"II", "03"=>"III", "04"=>"IV", "05"=>"V", "06"=>"VI", "07"=>"VII", "08"=>"VIII", "09"=>"IX", "10"=>"X", "11"=>"XI", "12"=>"XII");
-                              $bln    = $array_bln[date('m', strtotime($row['ket']))];
-                              
-                              $a = $row['jenis'];
-                              if ($a == "Beda Identitas" || $a == "Keterangan Usaha" || $a == "SKTM" || $a == "SKTM Beasiswa") {
-                                echo '470 / ' . $row['no'] . ' / 35.07.20.007 / ' . $bln . "/ " . date('Y', strtotime($row['ket']));
-                              }
-                              elseif ($a == "Keterangan Usaha" || $a == "Surat Kerja") {
-                                echo '471 / ' . $row['no'] . ' / 35.07.20.007 / ' . $bln . "/ " . date('Y', strtotime($row['ket']));
-                              }
-                              elseif ($a == "Domisili Lembaga" || $a == "Domisili Pribadi" || $a == "Belum Menikah" || $a == "Laporan Kehilangan" || $a == "Surat jalan") {
-                                echo '474 / ' . $row['no'] . ' / 35.07.20.007 / ' . $bln . "/ " . date('Y', strtotime($row['ket']));
-                              }
-                              else{
-                                echo $row['no_reg'];
-                              }
-                            ?>
+                            <?= $row['no_reg'] ?>
                           </td>
                           <td>
                             <?= $row['nama'] ?>
@@ -153,10 +134,13 @@
                             <?= $row['ttl'] ?>
                           </td>
                           <td>
-                            <?= $row['kewar'] ?>
+                            <?= $row['nik'] ?>
                           </td>
                           <td>
                             <?= $row['jk'] ?>
+                          </td>
+                          <td>
+                            <?= $row['st_perk'] ?>
                           </td>
                           <td>
                             <?= $row['agama'] ?>
@@ -165,32 +149,16 @@
                             <?= $row['pekerjaan'] ?>
                           </td>
                           <td>
-                            <?= $row['st_pe'] ?>
+                            <?= $row['al_sek'] ?>
                           </td>
                           <td>
-                            <?php
-                              if ($row['jenis'] == "Keterangan Usaha") {
-                                 echo "RT " . $row['rt'] . " RW " . $row['rw'] . " Desa " . $row['desa'] . " Dusun " . $row['dusun'];
-                               } 
-                               else{
-                                  echo $row['tempat'] ;
-                               }
-                            ?>
+                            <?= $row['al_tuj'] ?>
                           </td>
                           <td>
-                            <?=$row['jenis'] ?>
-                          </td>
-                          <td>
-                            <?php
-                              $date = date_create($row['ket']);
-                              echo date_format($date, 'd-m-Y');
-                            ?>
-                          </td>
-                          <td>
-                            <a href="show_image_su.php?no=<?=$row['no']?>">
+                            <a href="show_image_ptem.php?no=<?=$row['no']?>">
                                 <img src="assets/img/writing.svg" height="22" width="22" title="Lihat Lampiran">
                             </a>
-                            <a href="#" data-href="d_p_data_umum.php?no=<?=$row['no']?>" data-toggle="modal" data-target="#confirm-delete">
+                            <a href="#" data-href="d_p_data_pitem.php?no=<?=$row['no']?>" data-toggle="modal" data-target="#confirm-delete">
                               <img src="assets/img/clear-button.svg" height="22" width="22" title="Delete">
                             </a>
                           </td>
@@ -200,7 +168,7 @@
                 </table>
               </div>
               <div class="float-right mt-3">
-                <a href="c_p_data_umum.php" class="btn btn-dark d-flex justify-content-center"><i class="material-icons md-light mr-1">print</i>Print</a>
+                <a href="c_p_data_petim.php" class="btn btn-dark d-flex justify-content-center"><i class="material-icons md-light mr-1">print</i>Print</a>
               </div>
             </div>
           </div>
@@ -226,57 +194,57 @@
     </div>
 </div>
 
-      <div class="modal fade" id="tambahd" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal fade" id="tambahd" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-scrollable mw-100 w-50" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title">Register Umum</h5>
+                <h5 class="modal-title">Register Pindah Tempat</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
-                <form class="mx-3" method="POST" action="a_p_regum.php" enctype="multipart/form-data">
+                <form class="mx-3" method="POST" action="a_p_pite.php" enctype="multipart/form-data">
                   <div class="form-group row">
-                    <label for="namask" class="col-sm-4 col-form-label">Nama Lengkap</label>
+                    <label for="nrpt" class="col-sm-4 col-form-label">No Registrasi</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="namask" name="nsk">
+                      <input type="text" class="form-control" id="nrpt" name="noreg">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="noregru" class="col-sm-4 col-form-label">No Registrasi</label>
+                    <label for="namapt" class="col-sm-4 col-form-label">Nama Lengkap</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="noregru" name="nrru">
+                      <input type="text" class="form-control" id="namapt" name="npt">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="ttl3" class="col-sm-4 col-form-label">Tempat Tanggal Lahir</label>
+                    <label for="ttpt" class="col-sm-4 col-form-label">Tempat Tanggal Lahir</label>
                     <div class="col-sm-3">
-                      <input type="text" class="form-control" id="ttl3" name="tetl3">
+                      <input type="text" class="form-control" id="ttpt" name="tetpt">
                     </div>
                     <div class="col-sm-5">
                       <input type="date" name="d3" id="date3" class="form-control">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="kewa3" class="col-sm-4 col-form-label">Kewarnegaraan</label>
+                    <label for="nikpt" class="col-sm-4 col-form-label">NIK</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="kewa3" name="kew3">
+                      <input type="text" class="form-control" id="nikpt" name="nkpt">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="jk4" class="col-sm-4 col-form-label">Jenis Kelamin</label>
+                    <label for="jeka" class="col-sm-4 col-form-label">Jenis Kelamin</label>
                     <div class="col-sm-8">
-                      <select class="form-control" id="jk4" name="jke4">
+                      <select class="form-control" id="jeka" name="jpt">
                         <option>Laki-Laki</option>
                         <option>Perempuan</option>
                       </select>
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="agama2" class="col-sm-4 col-form-label">Agama</label>
+                    <label for="agamapt" class="col-sm-4 col-form-label">Agama</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="agama2" name="agama3">
+                      <input type="text" class="form-control" id="agamapt" name="apt">
                     </div>
                   </div>
                   <div class="form-group row">
@@ -286,21 +254,27 @@
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="st_pe4" class="col-sm-4 col-form-label">Status Perkawinan</label>
+                    <label for="stppt" class="col-sm-4 col-form-label">Status Perkawinan</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="st_pe4" name="sp4">
+                      <input type="text" class="form-control" id="stppt" name="spt">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="tempat4" class="col-sm-4 col-form-label">Tempat Tinggal</label>
+                    <label for="as" class="col-sm-4 col-form-label">Alamat Sekarang</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="tempat4" name="tempa4">
+                      <textarea name="al_sek" id="as" cols="10" rows="3" class="form-control"></textarea>
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="jenru" class="col-sm-4 col-form-label">Keperluan Untuk</label>
+                    <label for="at" class="col-sm-4 col-form-label">Alamat Tujuan</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control" id="jenru" name="jenis_s3">
+                      <textarea name="al_tuj" id="at" cols="10" rows="3" class="form-control"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="File" class="col-sm-4 col-form-label">File</label>
+                    <div class="col-sm-8">
+                      <input type="file" name="file">
                     </div>
                   </div>
                   <div class="form-group row">
@@ -310,12 +284,6 @@
                         <option>Kepala Desa</option>
                         <option>Sekertaris Desa</option>
                       </select>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="File" class="col-sm-4 col-form-label">File</label>
-                    <div class="col-sm-8">
-                      <input type="file" name="file">
                     </div>
                   </div>
                   <br>

@@ -5,21 +5,20 @@
   }
   include_once 'connection.php';
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>E-Sides - Surat Keluar</title>
+  <title>E-Sip - Chart</title>
   <link rel="icon" href="assets/img/office-material.svg">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/infinite.css">
 </head>
-<body>
+<body style="background-color: #3B3B3B;">
 
   <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">
         <img src="assets/img/office-material.svg" width="40" height="30" alt="">
         E-Sides
@@ -51,6 +50,9 @@
            <li class="nav-item">
             <a class="nav-link" href="data_pegawai.php">Data Pegawai</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="data_chart.php">Data Chart</a>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Hello, <?=$_SESSION['user']?>
@@ -65,33 +67,34 @@
       </div>
     </nav>
 
-    <!-- Content -->
+    <!-- Container -->
     <div class="container-fluid">
-      <div class="row align-items-center justify-content-center" id="page1">     
-        <div class="text-white text-center">
-          <h1 class="display-1">E-Sides</h1>
-          <h1>Aplikasi Penyimpanan Arsip dan Pembuatan Surat Desa <br> Secara Elektronik</h1>
-        </div>
-      </div>
-      <div class="row text-center" id="page2">
+       <div class="row">
         <div class="col-sm-12">
-          <h1 class="mt-5">Apa tujuan kita?</h1>
+          <div class="judul m-3">Statistik Surat</div>
         </div>
-        <div class="col-sm-6">
-          <img src="assets/img/file.svg" height="100" width="100">
-          <br>
-          <p class="h2 mt-3">Mepermudah Penemuan Arsip</p>
-        </div>
-        <div class="col-sm-6">
-          <img src="assets/img/contract.svg" height="100" width="100">
-          <br>
-          <p class="h2 mt-3">Mempermudah Pembuatan Surat Desa</p>
+        <div class="col-sm-12 px-5">
+          <div class="card">
+            <div class="card-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-8">
+                    <h2 class="h2">Surat</h2>
+                    <canvas id="mycanvas"></canvas>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-  </div>
+    </div>
 
     <!-- JavaScript -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="assets/js/chart_1.js"></script>
   </body>
 </html>

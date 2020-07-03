@@ -4,22 +4,27 @@
     header("Location: index.php");
   }
   include_once 'connection.php';
-?>
 
+  $a = $_GET['nip'];
+
+  $sql = "SELECT * FROM pegawai WHERE nip = " . $a;
+  $result = $conn->query($sql);
+  $data = $result->fetch_assoc();
+?>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>E-Sides - Surat Keluar</title>
+  <title>E-Sides - Data Pegawai</title>
   <link rel="icon" href="assets/img/office-material.svg">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/infinite.css">
 </head>
-<body>
+<body style="background-color: #0079a7;">
 
-  <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+ <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">
         <img src="assets/img/office-material.svg" width="40" height="30" alt="">
         E-Sides
@@ -67,28 +72,51 @@
 
     <!-- Content -->
     <div class="container-fluid">
-      <div class="row align-items-center justify-content-center" id="page1">     
-        <div class="text-white text-center">
-          <h1 class="display-1">E-Sides</h1>
-          <h1>Aplikasi Penyimpanan Arsip dan Pembuatan Surat Desa <br> Secara Elektronik</h1>
-        </div>
-      </div>
-      <div class="row text-center" id="page2">
+       <div class="row">
         <div class="col-sm-12">
-          <h1 class="mt-5">Apa tujuan kita?</h1>
+          <div class="judul m-3">Edit Data Pegawai</div>
         </div>
-        <div class="col-sm-6">
-          <img src="assets/img/file.svg" height="100" width="100">
-          <br>
-          <p class="h2 mt-3">Mepermudah Penemuan Arsip</p>
-        </div>
-        <div class="col-sm-6">
-          <img src="assets/img/contract.svg" height="100" width="100">
-          <br>
-          <p class="h2 mt-3">Mempermudah Pembuatan Surat Desa</p>
+        <div class="col-sm-12 px-5">
+          <div class="card">
+            <div class="card-body">
+              <form method="POST" action="data_edit_action_pegawai.php">
+                <div class="form-group row">
+                  <label for="NIP" class="col-sm-2 col-form-label">NIP</label>
+                  <div class="col-sm-4">
+                    <input type="hidden" name="nipas" value="<?=$data['nip']?>">
+                    <input type="text" class="form-control" id="NIP" name="nip" value="<?=$data['nip']?>">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="Nama" class="col-sm-2 col-form-label">Nama</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="Nama" name="nama" value="<?=$data['nama']?>">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="Alamat" class="col-sm-2 col-form-label">Alamat</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="Alamat" name="alamat" value="<?=$data['alamat']?>">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="Jabatan" class="col-sm-2 col-form-label">Jabatan</label>
+                  <div class="col-sm-4">
+                    <input type="text" class="form-control" id="Jabatan" name="jabatan" value="<?=$data['jabatan']?>">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-6">
+                      <a href="data_pegawai.php" class="btn btn-primary">Back</a>
+                      <input type="submit" value="Edit" class="btn btn-primary float-right">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
-  </div>
+    </div>
 
     <!-- JavaScript -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>

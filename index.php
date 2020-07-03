@@ -91,11 +91,10 @@
                               <select class="form-control" name="jabatan" id="Jabatan">
                                 <option>Kepala Desa</option>
                                 <option>Sekretaris Desa</option>
-                                <option>KAUR PEM</option>
                                 <option>KAUR PEMBANGUNAN</option>
                                 <option>KAUR KESRA</option>
-                                <option>KAUR KEU</option>
-                                <option>KAUR UMUM</option>
+                                <option>KAUR KEUANGAN</option>
+                                <option>LAINNYA</option>
                               </select>
                             </div>
                             <div class="form-group row">

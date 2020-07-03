@@ -37,12 +37,11 @@
 			$docx->set('tgl_sekarang', date("d-m-Y"));
 			if ($data['ttd_jabat'] == "Kepala Desa") {
 				$docx->set('tambahan', "");
-				$docx->set('n', "Purwito");
 			}
 			else{
 				$docx->set('tambahan', "An. Kepala Desa");
-				$docx->set('n', "Nur Hasim");
 			}
+			$docx->set('n', $data1['nama']);
 			$docx->set('ttd_jabat', $data['ttd_jabat']);
 			$nama = "surat_". $data['jenis'] . "_" . $data['no']. ".docx";
 			$docx->saveAs($nama); // or $docx->downloadAs('test.docx');
@@ -68,7 +67,7 @@
 			$docx->set('ttl_anak', $data['ttl_anak']);
 			$docx->set('agama', $data['agama']);
 			$docx->set('pker_anak', $data['peke_anak']);
-			$docx->set('keperluan', $data['tempat']);
+			$docx->set('keperluan', $data['untuk']);
 			$docx->set('tgl_sekarang', date("d-m-Y"));
 			if ($data['ttd_jabat'] == "Kepala Desa") {
 				$docx->set('tambahan', "");
@@ -333,5 +332,29 @@
 			header('Content-Type:application/msword');
 			header('Content-Disposition: attachment; filename="' . $nama);
 			@readfile($nama);
+		}
+		else{
+			$info = pathinfo($data['file']);
+			if ($info["extension"] == "jpg" || $info["extension"] == "png") {
+				echo '<img src="assets/photo/'. rawurldecode($data['file']) .'">';
+			}
+			elseif ($info["extension"] == "pdf") {
+				$filename = rawurldecode($data['file']);
+				$file = "assets/photo/" . $filename;
+				header('Content-type: application/pdf');
+				header('Content-Disposition: inline; filename="' . $filename . '"');
+				header('Content-Transfer-Encoding: binary');
+				header('Accept-Ranges: bytes');
+				@readfile($file);
+			}
+			elseif ($info["extension"] == "docx" || $info["extension"] == "doc") {
+				$filename = rawurldecode($data['file']);
+				$file = "assets/photo/" . $filename;
+				header('Content-type: application/msword');
+				header('Content-Disposition: inline; filename="' . $filename . '"');
+				header('Content-Transfer-Encoding: binary');
+				header('Accept-Ranges: bytes');
+				@readfile($file);
+			}
 		}
 ?>

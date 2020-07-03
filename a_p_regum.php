@@ -9,6 +9,7 @@
 	$target = "assets/photo/".basename($_FILES['file']['name']);
 	
 	$jenis = $_POST['jenis_s3'];
+	$nrru = $_POST['nrru'];
 	$nama1 = $_POST['nsk'];
 	$tmpt1 = $_POST['tetl3'];
 	$date1 = date_format($date, 'd-m-Y');
@@ -21,7 +22,7 @@
 	$jabat = $_POST['ttd4'];
 	$image = $_FILES['file']['name'];
 	
-	$sql = "INSERT INTO data_surat_umum(no, jenis, nama, ttl, kewar, jk, agama, pekerjaan, st_pe, tempat,  ttd_jabat, file, ket) VALUES ( '', '" . $jenis . "', '" . $nama1 . "', '" . $tmpt1 . ", " . $date1 . "', '" . $kewa1 . "', '" . $jkel1 . "', '" . $agam1 . "', '" . $peke1 . "', '" . $stpe1 . "', '" . $temp1 . "', '" . $jabat . "', '" . $image . "','" . date('Y-m-d') . "')";
+	$sql = "INSERT INTO data_surat_umum(no, no_reg, jenis, nama, ttl, kewar, jk, agama, pekerjaan, st_pe, tempat,  ttd_jabat, file, ket) VALUES ( '', '". $nrru ."', '" . $jenis . "', '" . $nama1 . "', '" . $tmpt1 . ", " . $date1 . "', '" . $kewa1 . "', '" . $jkel1 . "', '" . $agam1 . "', '" . $peke1 . "', '" . $stpe1 . "', '" . $temp1 . "', '" . $jabat . "', '" . $image . "','" . date('Y-m-d') . "')";
 	
 	if ($conn->query($sql) === TRUE) {
 				if (move_uploaded_file($_FILES['file']['tmp_name'], $target)) {

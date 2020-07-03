@@ -15,7 +15,7 @@
 	}
 	elseif ($conn->query($sql0)->num_rows == 1) {
 		$_SESSION['nip'] = $user;
-		header("Location:index.php");
+		header("Location:about_pe.php");
 	}
 	else{
 		echo "<script> alert('Username / Pass Salah'); </script>";

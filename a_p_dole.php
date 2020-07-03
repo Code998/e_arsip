@@ -16,7 +16,7 @@
 	$allem = $_POST['alemb'];
 	$ttd = $_POST['ttd2'];
 
-	$sql = "INSERT INTO data_surat_umum(no, jenis, nama_pe, umur_pe, jabatan_pe, alamat_le, jenis_le, nama, ba_huk, tempat, ttd_jabat, ket) VALUES ( '', '" . $jenis . "', '" . $nama . "', '" . $umur . "', '" . $jabat . "', '" . $alam . "', '" . $jelam . "', '" . $nalam . "', '" . $bahuk . "', '" . $allem . "', '" . $ttd . "', '" . date('Y-m-d') . "')";
+	$sql = "INSERT INTO data_surat_umum(no, jenis, nama, umur_pe, jabatan_pe, alamat_le, jenis_le, nama_pe, ba_huk, tempat, ttd_jabat, ket) VALUES ( '', '" . $jenis . "', '" . $nama . "', '" . $umur . "', '" . $jabat . "', '" . $alam . "', '" . $jelam . "', '" . $nalam . "', '" . $bahuk . "', '" . $allem . "', '" . $ttd . "', '" . date('Y-m-d') . "')";
 
 	if ($conn->query($sql) === TRUE) {
 		echo "Data Sudah Dimasukkan";
